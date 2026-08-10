@@ -22,7 +22,7 @@ class Woo_Integration {
         return self::$instance;
     }
 
-    private __construct() {
+    private function __construct() {
         // Price formatting in Persian Toman
         add_filter( 'wc_price', array( $this, 'format_persian_wc_price' ), 100, 4 );
 

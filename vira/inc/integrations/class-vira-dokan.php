@@ -22,7 +22,7 @@ class Dokan_Integration {
         return self::$instance;
     }
 
-    private __construct() {
+    private function __construct() {
         if ( ! class_exists( 'WeDevs_Dokan' ) && ! function_exists( 'dokan' ) ) {
             return;
         }

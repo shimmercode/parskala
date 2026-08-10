@@ -42,7 +42,7 @@ class Init {
     /**
      * Constructor.
      */
-    private __construct() {
+    private function __construct() {
         add_action( 'after_setup_theme', array( $this, 'load_core_files' ), 10 );
         add_action( 'init', array( $this, 'register_modules' ), 20 );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ), 30 );

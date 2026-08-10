@@ -22,7 +22,7 @@ class Core_Engine_Integration {
         return self::$instance;
     }
 
-    private __construct() {
+    private function __construct() {
         // Core localized strings override for Vira
         add_filter( 'woodmart_localized_string_array', array( $this, 'customize_engine_strings' ) );
         add_filter( 'woodmart_get_opt', array( $this, 'override_engine_options' ), 10, 2 );
