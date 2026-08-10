@@ -156,7 +156,7 @@ do_action( 'woocommerce_before_cart' );
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
 									sprintf(
-										'<a href="%s" class="remove_add" aria-label="%s" data-product_id="%s" data-product_sku="%s" ><i class="trash-image"></i>'.__('Delete', 'parskala').'</a>',
+										'<a href="%s" class="remove_add" aria-label="%s" data-product_id="%s" data-product_sku="%s" ><i class="trash-image"></i>'.__('Delete', 'vira').'</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										esc_html__( 'Remove this item', 'woocommerce' ),
 										esc_attr( $product_id ),

@@ -42,12 +42,12 @@ else {
 
 	<?php if( $title && $display_advanced_review == 'on' ){ ?><h5 class="title_comment"><?php echo $title; ?></h5><?php } ?>
 	<p class="meta">
-		<strong class="woocommerce-review__author"> <?php _e('توسط', 'parskala'); echo ' '; comment_author(); ?> </strong>
-		<span class="woocommerce-review__dash"> <?php _e('در تاریخ', 'parskala'); ?> </span> <time class="woocommerce-review__published-date" datetime="<?php echo esc_attr( get_comment_date( 'c' ) ); ?>"><?php echo esc_html( get_comment_date( wc_date_format() ) ); ?></time>
+		<strong class="woocommerce-review__author"> <?php _e('توسط', 'vira'); echo ' '; comment_author(); ?> </strong>
+		<span class="woocommerce-review__dash"> <?php _e('در تاریخ', 'vira'); ?> </span> <time class="woocommerce-review__published-date" datetime="<?php echo esc_attr( get_comment_date( 'c' ) ); ?>"><?php echo esc_html( get_comment_date( wc_date_format() ) ); ?></time>
 
 	<?php
 	if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified ) {
-		echo '<em class="woocommerce-review__verified verified">' . esc_attr__( 'خریدار این محصول', 'parskala' ) . '</em> ';
+		echo '<em class="woocommerce-review__verified verified">' . esc_attr__( 'خریدار این محصول', 'vira' ) . '</em> ';
 	}
 	?>
 	</p>
@@ -66,7 +66,7 @@ $disadvantage = get_comment_meta( $comment->comment_ID, 'disadvantage', true );
 		?>
 		<div class="main_advantages">
 
-			<span><?php _e('نقاط قوت', 'parskala'); ?></span>
+			<span><?php _e('نقاط قوت', 'vira'); ?></span>
 
 			<ul>
 
@@ -83,7 +83,7 @@ $disadvantage = get_comment_meta( $comment->comment_ID, 'disadvantage', true );
 		?>
 		<div class="main_disadvantage">
 
-			<span><?php _e('نقاط ضعف', 'parskala'); ?></span>
+			<span><?php _e('نقاط ضعف', 'vira'); ?></span>
 
 			<ul>
 

@@ -1,4 +1,4 @@
-.parskala_mt_prefooter{
+.vira_mt_prefooter{
     background: rgba(245 245 245)!important;
     border-radius: 0.75rem!important;
     padding: 0 20px;
@@ -28,7 +28,7 @@
     justify-content: center;
     align-items: center;
 }
-.parskala_footer_feature a{
+.vira_footer_feature a{
     width: 145px;
     height: 155px;
     display: flex;
@@ -36,7 +36,7 @@
     align-items: center;
     justify-content: center;
 }
-.parskala_footer_feature_title{
+.vira_footer_feature_title{
     line-height: 1.75rem;
     font-size: 12px;
     color: rgb(63 67 77);
@@ -130,7 +130,7 @@
 
 @media (max-width: 990px) {
 
-    .parskala_mt_prefooter{
+    .vira_mt_prefooter{
         flex-direction: column;
     }
     .footer-ser-mobit{

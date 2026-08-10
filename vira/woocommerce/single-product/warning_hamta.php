@@ -10,7 +10,7 @@ function warning_hamta(){
     echo '<span class="hamta">';
     echo '<i class="exclamation-circle"><img src=" '.$hamta_img.'" alt="date send"></i>';
     echo '<span class="text-hamta">';
-      echo _e($hamta_text , 'parskala');
+      echo _e($hamta_text , 'vira');
     echo '</span></span>';
   }
   return $warnings;

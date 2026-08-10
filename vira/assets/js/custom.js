@@ -517,7 +517,7 @@ function get_price_chart_product(product_id) {
     action: "product_price_chart",
   };
 
-  jQuery.post(parskala_values.ajax_url, data, function (response) {
+  jQuery.post(vira_values.ajax_url, data, function (response) {
     jQuery("#productchartprice").html(response);
   });
 
@@ -546,7 +546,7 @@ jQuery(".Quickview").click(ajax_popup_quickview);
 function ajax_popup_quickview(){
 
   var productId = jQuery(this).attr('product-id');
-      jQuery.post(parskala_values.ajax_url,
+      jQuery.post(vira_values.ajax_url,
         {
           action: "get_quick_view", productId: productId
         },

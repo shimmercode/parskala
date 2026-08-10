@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) || exit;
 if(defined( 'ACTIVE_TEMPLATE_WOOCOMMERCE' )){
 ?>
   <div class="sp_top_panel">
-    <h1><?php echo __( 'comments', 'parskala' ) ?></h1>
+    <h1><?php echo __( 'comments', 'vira' ) ?></h1>
   </div>
 <?php
 }
@@ -57,7 +57,7 @@ $comments = get_comments( $args );
     }else{
       echo "<p class='no_announcement'>";
 
-        _e( 'There are no comments!', 'parskala' );
+        _e( 'There are no comments!', 'vira' );
       
       echo "</p>";
      

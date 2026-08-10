@@ -31,59 +31,59 @@ function my_show_extra_profile_fields( $user ) { ?>
  ?>
      <!-- رضایت کالا -->
      <tr>
-        <th><?php esc_html_e( 'رضایت کالا', 'parskala' ); ?></th>
+        <th><?php esc_html_e( 'رضایت کالا', 'vira' ); ?></th>
           <td>
             <input type="number" name="consent" max="100" class="regular-text" value="<?php echo esc_attr($consent); ?>"/>
-            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'parskala' ); ?></p>
+            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'vira' ); ?></p>
           </td>
      </tr>
 
      <!--تامین به موقع -->
      <tr>
-        <th><?php esc_html_e( 'تامین به موقع ', 'parskala' ); ?></th>
+        <th><?php esc_html_e( 'تامین به موقع ', 'vira' ); ?></th>
           <td>
             <input type="number" name="supply" max="100" class="regular-text" value="<?php echo esc_attr($supply); ?>"/>
-            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'parskala' ); ?></p>
+            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'vira' ); ?></p>
           </td>
      </tr>
 
      <!-- تعهد ارسال -->
      <tr>
-        <th><?php esc_html_e( 'تعهد ارسال', 'parskala' ); ?></th>
+        <th><?php esc_html_e( 'تعهد ارسال', 'vira' ); ?></th>
           <td>
             <input type="number" name="Commitment" max="100" class="regular-text" value="<?php echo esc_attr($Commitmentـsend); ?>"/>
-            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'parskala' ); ?></p>
+            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'vira' ); ?></p>
           </td>
      </tr>
 
      <!-- بدون مرجوعی -->
      <tr>
-        <th><?php esc_html_e( 'بدون مرجوعی', 'parskala' ); ?></th>
+        <th><?php esc_html_e( 'بدون مرجوعی', 'vira' ); ?></th>
           <td>
             <input type="number" name="reference" max="100" class="regular-text" value="<?php echo esc_attr($Noـreference); ?>"/>
-            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'parskala' ); ?></p>
+            <p class="description"><?php esc_html_e( 'از ۱ تا ۱۰۰ یک امتیاز درج کنید.', 'vira' ); ?></p>
           </td>
      </tr>
 
      <!-- عملکرد فروشنده -->
      <tr>
-       <th><?php esc_html_e( 'عملکرد فروشنده', 'parskala' ); ?></th>
+       <th><?php esc_html_e( 'عملکرد فروشنده', 'vira' ); ?></th>
         <td>
           <select id="stills_types" name="stills_types">
               <?php foreach ( dokan_stills_types() as $key => $value ) : ?>
                 <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $stills_types, $key ); ?>> <?php echo esc_attr( $value ); ?></option>
               <?php endforeach; ?>
           </select>
-          <p class="description"><?php esc_html_e( 'عملکرد فروشنده را تعیین کنید', 'parskala' ); ?></p>
+          <p class="description"><?php esc_html_e( 'عملکرد فروشنده را تعیین کنید', 'vira' ); ?></p>
        </td>
     </tr>
 
     <!-- متن ارسال فروشنده -->
     <tr>
-       <th><?php esc_html_e( 'متن ارسال فروشنده ', 'parskala' ); ?></th>
+       <th><?php esc_html_e( 'متن ارسال فروشنده ', 'vira' ); ?></th>
          <td>
            <textarea rows="5" cols="30" name="textsender" class="regular-text"><?php echo esc_attr($text_sends); ?></textarea>
-             <p class="description"><?php esc_html_e( 'متن ارسال فروشنده را درج کنید.', 'parskala' ); ?></p>
+             <p class="description"><?php esc_html_e( 'متن ارسال فروشنده را درج کنید.', 'vira' ); ?></p>
          </td>
     </tr>
   <?php
@@ -114,11 +114,11 @@ update_usermeta( $user_id, 'dokan_text_sends', $_POST['textsender'] );
 function dokan_stills_types() {
     return apply_filters(
         'dokan_stills_types', [
-            'great'       => __( 'عالی', 'parskala' ),
-            'very_good' => __( 'خیلی خوب', 'parskala' ),
-            'good' => __( 'خوب', 'parskala' ),
-            'medium' => __( 'متوسط', 'parskala' ),
-            'baad' => __( 'ضعیف', 'parskala' ),
+            'great'       => __( 'عالی', 'vira' ),
+            'very_good' => __( 'خیلی خوب', 'vira' ),
+            'good' => __( 'خوب', 'vira' ),
+            'medium' => __( 'متوسط', 'vira' ),
+            'baad' => __( 'ضعیف', 'vira' ),
         ]
     );
 }

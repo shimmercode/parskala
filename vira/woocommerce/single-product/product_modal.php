@@ -73,8 +73,8 @@ if ($active_dokan) {
       <div class="close-btns-pro">
          <button data-micromodal-close="modalshare" class="close-box"></button>
       </div>
-      <span class="title-share-pro"><?php _e('share' , 'parskala');?></span>
-      <span class="text-share-pro"><?php _e('You can share this page with your friends using the methods below.' , 'parskala');?></span>
+      <span class="title-share-pro"><?php _e('share' , 'vira');?></span>
+      <span class="text-share-pro"><?php _e('You can share this page with your friends using the methods below.' , 'vira');?></span>
       <div class="social-share-pro">
         <span> <a href="https://twitter.com/intent/tweet?url=<?php the_permalink();?>"><i class="fab fa-twitter" style="background:#4DCCEB;"></i></a> </span>
         <span> <a href="https://www.facebook.com/sharer/sharer.php?m2w&s=100&p[url]=<?php the_permalink();?>"><i class="fab fa-facebook-f" style="background: #4D8DEB;"></i></a> </span>

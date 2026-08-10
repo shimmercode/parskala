@@ -176,7 +176,7 @@ else :
 ?>
 
 <div class="cart-empty">
-    <img src="<?= parskala_IMG ?>empty-cart.svg" width="84" height="133" alt="empty-cart">        <p>هیچ محصولی در سبد خرید نیست.</p>
+    <img src="<?= vira_IMG ?>empty-cart.svg" width="84" height="133" alt="empty-cart">        <p>هیچ محصولی در سبد خرید نیست.</p>
     <div>جهت مشاهده محصولات بیشتر به صفحات زیر مراجعه نمایید.</div>
     <ul>
         <li>

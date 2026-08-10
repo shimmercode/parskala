@@ -10,9 +10,9 @@
 		$user_id = get_current_user_id();
 		$seller_id = $user_id;
 	  ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo parskala_URI; ?>/assets/css/prk-dashboard-dokan.css">
-	<link type="text/css" rel="stylesheet" href="<?php echo parskala_URI; ?>/assets/css/persianDatepicker-default.css" />
-	<script type="text/javascript" src="<?php echo parskala_URI; ?>/assets/js/persianDatepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo vira_URI; ?>/assets/css/prk-dashboard-dokan.css">
+	<link type="text/css" rel="stylesheet" href="<?php echo vira_URI; ?>/assets/css/persianDatepicker-default.css" />
+	<script type="text/javascript" src="<?php echo vira_URI; ?>/assets/js/persianDatepicker.min.js"></script>
 </head>
 <?php
 global $wp;
@@ -55,13 +55,13 @@ if ($factor_logo) {
      <div class="sp_Contents">
        <div class="sp_icon_humber">
        <a id="icon_menu_bar" href="#">
-		   <img src="<?php echo parskala_IMG; ?>icon_humber.svg">
+		   <img src="<?php echo vira_IMG; ?>icon_humber.svg">
        </a>
        </div>
         <div class="sp_navbar">
           <ul class="sp_List_members">
             <li class="sp_first_list">
-              <a href="<?php echo home_url(); ?>"> <?php _e('صفحه اصلی', 'parskala'); ?></a>
+              <a href="<?php echo home_url(); ?>"> <?php _e('صفحه اصلی', 'vira'); ?></a>
             </li>
 		 <?php
         global $wp;
@@ -112,7 +112,7 @@ if ($factor_logo) {
         <div class="sp_navbar">
            <ul class="sp_List_members1">
              <li class="sp_right_product">
-                <a href="#"><?php echo get_user_meta( $user_id, 'dokan_store_name', true); ?> <?php _e('خوش آمدید ...', 'parskala'); ?>
+                <a href="#"><?php echo get_user_meta( $user_id, 'dokan_store_name', true); ?> <?php _e('خوش آمدید ...', 'vira'); ?>
                   <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
                 <div class="sp_Products_list1">

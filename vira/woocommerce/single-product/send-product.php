@@ -16,12 +16,12 @@ function product_sendes(){
       echo '<span class="date-send-pro">';
       echo '<cite>';
       echo '<i>';
-      echo _e('Ready to send' , 'parskala');
+      echo _e('Ready to send' , 'vira');
       echo '</i>';
       echo '<span class="sends-date">';
-      echo _e(' تحویل تا ' , 'parskala');
+      echo _e(' تحویل تا ' , 'vira');
       echo  $date_send_pro;
-      echo _e(' روز کاری ' , 'parskala');
+      echo _e(' روز کاری ' , 'vira');
       echo '</span>';
       echo '</cite>';
       echo '<div class="send-img"><img src="'.$send_img.'" alt="date send" width="132" height="77"></div>';

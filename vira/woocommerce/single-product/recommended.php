@@ -10,8 +10,8 @@ function count_recommended(){
     ?>
      <div class="guaranteed_product">
        <i class="ri-thumb-up-fill"></i>
-       <p><?php echo __('بیش از', 'parskala') ?> <?php echo $count_recommended; ?> <?php echo __('نفر از خریداران این', 'parskala') ?>
-          <?php echo __('محصول را پیشنهاد داده‌اند.', 'parskala') ?>
+       <p><?php echo __('بیش از', 'vira') ?> <?php echo $count_recommended; ?> <?php echo __('نفر از خریداران این', 'vira') ?>
+          <?php echo __('محصول را پیشنهاد داده‌اند.', 'vira') ?>
        </p>
        <div class="ri-information-line toplips-icon">
         <span class="tooltiptext">خریداران کالا با انتخاب یکی از گزینه‌های پیشنهاد یا عدم پیشنهاد، تجربه خرید خود را با کاربران به اشتراک می‌گذارند.</span>

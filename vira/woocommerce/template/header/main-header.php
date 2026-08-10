@@ -99,7 +99,7 @@ if (gust_home_top()) {
 
           <?php
 
-          $placeholder =  __('جستجو در محصولات ....', 'parskala' );
+          $placeholder =  __('جستجو در محصولات ....', 'vira' );
           echo do_shortcode('[prk_search placeholder="'.$placeholder.'" ]');
 
           ?>
@@ -155,7 +155,7 @@ if (gust_home_top()) {
                 </i>
 
                 <i class="account-name"><?php echo $current_user->display_name;?></i>
-                <a href="<?php echo $myaccount_page_id; ?>"><?php _e('View account' , 'parskala');?></a>
+                <a href="<?php echo $myaccount_page_id; ?>"><?php _e('View account' , 'vira');?></a>
               </li>
 
               <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
@@ -225,8 +225,8 @@ if (gust_home_top()) {
                 <div class="mini-cart-user">
 
                   <span class="head-mini">
-                    <i class="count-mini"><?php PRK_cart_count(); ?><?php _e('products' , 'parskala');?></i>
-                    <a class="cart-mini" href="<?php echo wc_get_cart_url(); ?>"><?php _e('View cart' , 'parskala');?><i class="ri-arrow-drop-left-line"></i></a>
+                    <i class="count-mini"><?php PRK_cart_count(); ?><?php _e('products' , 'vira');?></i>
+                    <a class="cart-mini" href="<?php echo wc_get_cart_url(); ?>"><?php _e('View cart' , 'vira');?><i class="ri-arrow-drop-left-line"></i></a>
                   </span>
 
                 </div>

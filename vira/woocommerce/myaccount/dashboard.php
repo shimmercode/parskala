@@ -98,7 +98,7 @@ if ( empty($current_user->user_email) || empty($current_user->user_firstname) ||
 
      <a class="my-orders-summary__status processing" href="<?php echo get_bloginfo('url');?>/my-account/orders/">
        <div class="order-status-icon">
-         <img src="<?php echo esc_url(parskala_IMG.'status-processing.svg');?>" alt="order-processing">
+         <img src="<?php echo esc_url(vira_IMG.'status-processing.svg');?>" alt="order-processing">
        </div>
        <div class="order-status-info">
          <div class="order-status-count"><?= count($processing_orders); ?> سفارش</div>
@@ -108,7 +108,7 @@ if ( empty($current_user->user_email) || empty($current_user->user_firstname) ||
 
      <a class="my-orders-summary__status completed" href="<?php echo get_bloginfo('url');?>/my-account/orders/">
        <div class="order-status-icon">
-       <img src="<?php echo esc_url(parskala_IMG.'status-delivered.svg');?>" alt="order-processing">
+       <img src="<?php echo esc_url(vira_IMG.'status-delivered.svg');?>" alt="order-processing">
        </div>
        <div class="order-status-info">
          <div class="order-status-count"><?= count($completed_orders) ?> سفارش</div>
@@ -118,7 +118,7 @@ if ( empty($current_user->user_email) || empty($current_user->user_firstname) ||
 
      <a class="my-orders-summary__status cancelled" href="<?php echo get_bloginfo('url');?>/my-account/orders/">
        <div class="order-status-icon">
-         <img src="<?php echo esc_url(parskala_IMG.'status-returned.svg');?>" alt="order-processing">
+         <img src="<?php echo esc_url(vira_IMG.'status-returned.svg');?>" alt="order-processing">
        </div>
        <div class="order-status-info">
          <div class="order-status-count"><?= count($canceled_orders) ?> سفارش</div>

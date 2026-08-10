@@ -62,7 +62,7 @@ $pd_query = new WP_Query( $arms ); ?>
 					<?php the_post_thumbnail('shop_catalog'); ?>
 					<h2><?php echo wp_trim_words(get_the_title(),8,'...') ;?></h2>
 					<?php echo wc_price( $product->get_price() ); ?>
-					<a class="compare_permalink_product" href="<?php the_permalink(); ?>"><?php esc_html_e( 'مشاهده و خرید محصول', 'parskala' ); ?></a>
+					<a class="compare_permalink_product" href="<?php the_permalink(); ?>"><?php esc_html_e( 'مشاهده و خرید محصول', 'vira' ); ?></a>
 
 					<?php
 
@@ -92,8 +92,8 @@ $pd_query = new WP_Query( $arms ); ?>
 		if ( $counter < $counter_num ){ ?>
 
 			<li class="add_product_to_compare" data-remodal-target="prk-add-compare" >
-				<button><?php esc_html_e( 'برای افزودن کالا به لیست مقایسه کلیک کنید', 'parskala' ); ?></button>
-				<span class="add_to_compare"><?php esc_html_e( 'افزودن کالا به مقایسه', 'parskala' ); ?></span>
+				<button><?php esc_html_e( 'برای افزودن کالا به لیست مقایسه کلیک کنید', 'vira' ); ?></button>
+				<span class="add_to_compare"><?php esc_html_e( 'افزودن کالا به مقایسه', 'vira' ); ?></span>
 			</li>
 
 
@@ -185,7 +185,7 @@ $pd_query = new WP_Query( $arms ); ?>
 												<div class="searchpartdiv">
 													<i class="prk-search-normal-1"></i>
 													<input id="text_search_compare" class="input_field searchcity-input" type="text" name="s" oninput="ajax_compare_search();" value="" autocomplete="off" placeholder="جستجو در محصولات">
-													<!-- <input class="search-submit" type="submit" value="<?php echo __('جستجو','parskala') ?>"> -->
+													<!-- <input class="search-submit" type="submit" value="<?php echo __('جستجو','vira') ?>"> -->
 												</div>
 											</form>
 										</div>
@@ -222,13 +222,13 @@ $pd_query = new WP_Query( $arms ); ?>
 
 								if (  $query->max_num_pages > 1 ){ ?>
 
-									<div class="misha_loadmore"><?php esc_html_e( 'محصولات بیشتر', 'parskala' ); ?></div>
+									<div class="misha_loadmore"><?php esc_html_e( 'محصولات بیشتر', 'vira' ); ?></div>
 								<?php }
                  echo '</div>';
 								wp_reset_postdata();
 
 							else :
-								echo '<p>'. __('محصول دیگری برای مقایسه وجود ندارد.', 'parskala') .'</p>';
+								echo '<p>'. __('محصول دیگری برای مقایسه وجود ندارد.', 'vira') .'</p>';
 							endif;
 
 
@@ -246,7 +246,7 @@ $pd_query = new WP_Query( $arms ); ?>
 														access_do_ajaxs_ask_compare = false;
 															jQuery.ajax({
 																type: "GET",
-																url: parskala_values.ajax_url ,
+																url: vira_values.ajax_url ,
 																data:  {
 																	action: 'prk_ajax_compare_search',
 																	s: jQuery('#text_search_compare').val(),
@@ -299,11 +299,11 @@ $pd_query = new WP_Query( $arms ); ?>
 														data : data,
 														type : 'POST',
 														beforeSend : function ( xhr ) {
-															button.text('<?php esc_html_e( 'در حال بارگذاری...', 'parskala' ); ?>'); // change the button text, you can also add a preloader image
+															button.text('<?php esc_html_e( 'در حال بارگذاری...', 'vira' ); ?>'); // change the button text, you can also add a preloader image
 														},
 														success : function( data ){
 															if( data ) {
-																button.text( '<?php esc_html_e( 'محصولات بیشتر', 'parskala' ); ?>' );
+																button.text( '<?php esc_html_e( 'محصولات بیشتر', 'vira' ); ?>' );
 																$('.list_products_add_to_compare').append(data); // insert new posts
 																current_page++;
 
@@ -337,7 +337,7 @@ $pd_query = new WP_Query( $arms ); ?>
 		*/
 		?>
 
-		<div class="empty_compare"><?php _e('محصولی برای مقایسه وجود ندارد.', 'parskala'); ?></div>
+		<div class="empty_compare"><?php _e('محصولی برای مقایسه وجود ندارد.', 'vira'); ?></div>
 
 		<?php } ?>
 </div>

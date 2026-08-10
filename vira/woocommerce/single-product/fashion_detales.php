@@ -81,7 +81,7 @@ function prk_fashion_detales(){
         <a data-remodal-target="modalvidoe">
           <div class="btns-pro">
             <i class="<?php echo $video_icon;?> btns"></i>
-            <span class="tooltiptext"><?php esc_html_e('video','parskala');?></span>
+            <span class="tooltiptext"><?php esc_html_e('video','vira');?></span>
           </div>
         </a>
       <?php endif;?>

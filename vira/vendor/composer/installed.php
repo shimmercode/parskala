@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'masirwp/parskala',
+        'name' => 'virateam/vira',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -28,7 +28,7 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'masirwp/parskala' => array(
+        'virateam/vira' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => null,

@@ -105,18 +105,18 @@ function prk_get_other_reseller_vendors( $product_id ) {
 												    $Noـreference = ! empty( get_user_meta( $vendor_id, 'dokan_reference', true ) ) ? get_user_meta( $vendor_id, 'dokan_reference', true ) : 87;
 												    $stills =     get_user_meta( $vendor_id, 'stills_types', true );
 
-													$stills_name = __('great','parskala');
+													$stills_name = __('great','vira');
 													if ($stills == 'great'){
-													 $stills_name = __('great','parskala');
+													 $stills_name = __('great','vira');
 													 $stills_color = '#00a049';
 													}elseif($stills == 'very_good'){
-													 $stills_name = __('very good','parskala');
+													 $stills_name = __('very good','vira');
 													$stills_color = '#b1b64d';
 													}elseif($stills == 'good'){
-													 $stills_name = __('good','parskala');
+													 $stills_name = __('good','vira');
 													 $stills_color = '#b1b64d';
 													}elseif($stills == 'medium'){
-													 $stills_name = __('medium','parskala');
+													 $stills_name = __('medium','vira');
 													 $stills_color = '#b1b64d';
 													}
 
@@ -147,7 +147,7 @@ function prk_get_other_reseller_vendors( $product_id ) {
 									 <?php echo $seller_info['store_name'];
 
 									 if( get_user_meta( $vendor_id, 'dokan_feature_seller', true) == 'yes' ) {
-										 echo ' <span class="good-seller">' .__('Chosen','parskala'). '</span>';
+										 echo ' <span class="good-seller">' .__('Chosen','vira'). '</span>';
 									 }
 
 									  ?>
@@ -155,9 +155,9 @@ function prk_get_other_reseller_vendors( $product_id ) {
 
 					          <span class="seller-rate-container">
 					             <span class="seller-rate fa-num"><?php echo $stills_count;?>%</span>
-					             <span class="label"><?= _e ('Buyer satisfaction','parskala');?></span>
+					             <span class="label"><?= _e ('Buyer satisfaction','vira');?></span>
 					             <span class="divider"></span>
-					             <span class="label"><?php _e ('Function','parskala');?></span>
+					             <span class="label"><?php _e ('Function','vira');?></span>
 					             <span style="color:<?php echo $stills_color;?>" class="seller-final-score <?php echo $good_class;?>"><?php echo $stills_name;?></span>
 					           </span>
 
@@ -277,18 +277,18 @@ function prk_get_other_reseller_vendors( $product_id ) {
 													    $Noـreference = ! empty( get_user_meta( $vendor_id, 'dokan_reference', true ) ) ? get_user_meta( $vendor_id, 'dokan_reference', true ) : 87;
 													    $stills =     get_user_meta( $vendor_id, 'stills_types', true );
 
-													    $stills_name = __('great','parskala');
+													    $stills_name = __('great','vira');
 													    if ($stills == 'great'){
-													     $stills_name = __('great','parskala');
+													     $stills_name = __('great','vira');
 													     $stills_color = '#00a049';
 													    }elseif($stills == 'very_good'){
-													     $stills_name = __('very good','parskala');
+													     $stills_name = __('very good','vira');
 													    $stills_color = '#b1b64d';
 													    }elseif($stills == 'good'){
-													     $stills_name = __('good','parskala');
+													     $stills_name = __('good','vira');
 													     $stills_color = '#b1b64d';
 													    }elseif($stills == 'medium'){
-													     $stills_name = __('medium','parskala');
+													     $stills_name = __('medium','vira');
 													     $stills_color = '#b1b64d';
 													    }
 
@@ -319,7 +319,7 @@ function prk_get_other_reseller_vendors( $product_id ) {
 										 <?php echo $seller_info['store_name'];
 
 										 if( get_user_meta( $vendor_id, 'dokan_feature_seller', true) == 'yes' ) {
-											 echo ' <span class="good-seller">' .__('Chosen','parskala'). '</span>';
+											 echo ' <span class="good-seller">' .__('Chosen','vira'). '</span>';
 										 }
 
 										  ?>

@@ -20,7 +20,7 @@
 				 <div class="info-feed">
         <p class="form-better show">
       <label for="better_price">این کالا را با چه قیمتی دیده‌اید؟</label>
-      <input type="text" name="better_price" id="better_price" placeholder="<?= _e('For example, 42,000','parskala') ?>">
+      <input type="text" name="better_price" id="better_price" placeholder="<?= _e('For example, 42,000','vira') ?>">
       <span class="input_better">تومان</span>
         </p>
        <div class="flex_right swicher">
@@ -64,12 +64,12 @@
 	        $('.insert-better').click(function(){
             var button_replay = $(this);
              if ( button_replay.parent().parent().find('#better_price').val() == '' ) {
-                 alert('<?php _e('لطفا قیمت را وارد کنید.', 'parskala'); ?>');
+                 alert('<?php _e('لطفا قیمت را وارد کنید.', 'vira'); ?>');
                  return;
              }
 	            $('.cover-loading-replay').show(0);
 
-	            $.post(parskala_values.ajax_url,
+	            $.post(vira_values.ajax_url,
 	            {
 	                action: "inset_better_product",
 	                product_id: "<?php echo $product->get_id(); ?>",

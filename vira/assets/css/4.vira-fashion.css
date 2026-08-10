@@ -1,9 +1,9 @@
 @font-face {
-	font-family: parskala;
-	src: url('../fonts/parskala/parskala.eot');
-	src: url('../fonts/parskala/parskala.woff2') format('woff2');
-	src:url('../fonts/parskala/parskala.woff') format('woff');
-	src:url('../fonts/parskala/parskala.ttf') format('truetype');
+	font-family: vira;
+	src: url('../fonts/vira/vira.eot');
+	src: url('../fonts/vira/vira.woff2') format('woff2');
+	src:url('../fonts/vira/vira.woff') format('woff');
+	src:url('../fonts/vira/vira.ttf') format('truetype');
 }
 
 /* woocomerce style min */
@@ -1528,7 +1528,7 @@ input[type="submit"].dokan-btn-danger,a.dokan-btn-danger,.dokan-btn-danger
   font-size: .8751em;
 }
 .price_slider_wrapper .price_slider_amount .button::before {
-  font-family: parskala;
+  font-family: vira;
   content: "\E118\00FE0E";
   color: #FFF;
   margin-left: 5px;
@@ -1562,7 +1562,7 @@ input[type="submit"].dokan-btn-danger,a.dokan-btn-danger,.dokan-btn-danger
   transition: .2s all;
 }
 .wc-block-product-categories-list-item::before {
-  font-family: "parskala";
+  font-family: "vira";
   content: "\E0B3\00FE0E";
   font-size: 10px;
   color: #a0a0a0;
@@ -1611,7 +1611,7 @@ input[type="submit"].dokan-btn-danger,a.dokan-btn-danger,.dokan-btn-danger
   font-size: unset !important;
 }
 .ui-slider-handle:nth-of-type(1)::before {
-  font-family: "parskala";
+  font-family: "vira";
   content: "\E08C\00FE0E";
   color: #535353;
   font-size: 10px;
@@ -1619,7 +1619,7 @@ input[type="submit"].dokan-btn-danger,a.dokan-btn-danger,.dokan-btn-danger
   font-weight: 700;
 }
 .ui-slider-handle:nth-of-type(2)::before {
-  font-family: "parskala";
+  font-family: "vira";
   content: "\E08B\00FE0E";
   color: #535353;
   font-size: 10px;
@@ -2115,7 +2115,7 @@ body.product-single #NavMenu,body.product-single .right-product{
 }
 .dokan-dash-sidebar .user-edit::before{
 	content: "\E07A\00FE0E";
-	font-family: parskala;
+	font-family: vira;
 	color: #535353;
 }
 .left-posts{
@@ -2161,7 +2161,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   color: #afb6bc;
   font-size: 35px;
   font-weight: 400;
-	font-family: parskala;
+	font-family: vira;
 	content: "\E131\00FE0E";
 }
 
@@ -2427,7 +2427,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   font-weight: 120;
 }
 .info-author .icon-author::before{
-	font-family: parskala;
+	font-family: vira;
 	content: '\E0DD\00FE0E';
 }
 
@@ -2905,7 +2905,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   align-items: center;
 }
 .faqs-mobile:before {
-    font-family: parskala;
+    font-family: vira;
     content: "\E18C\00FE0E";
     font-size: 26px;
     color: #808086;
@@ -2925,7 +2925,7 @@ body.product-single #NavMenu,body.product-single .right-product{
 	line-height: 18px;
 }
 .account_mobile .loged::after{
-	font-family: parskala;
+	font-family: vira;
 	content: '\E0D4\00FE0E';
 	font-size: 5px;
 	color: #fff;
@@ -3505,11 +3505,11 @@ body.product-single #NavMenu,body.product-single .right-product{
   transition: 0.2s all
 }
 .shopping-cart::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E0CC\00FE0E";
 }
 .account-user::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E188\00FE0E";
 }
 .mini-cart-user{
@@ -3561,7 +3561,7 @@ body.product-single #NavMenu,body.product-single .right-product{
 }
 
 .mini-cart-user .head-mini .cart-mini::after{
-	font-family: 'parskala';
+	font-family: 'vira';
 	font-weight: bold;
 	content: '\203A';
 	padding-right: 5px;
@@ -3587,7 +3587,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   font-size: 0;
 }
 .mini-cart-user .mini_cart_item .remove_from_cart_button::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E1D3\00FE0E";
   font-size: 17px;
   color: #A1A3A8;
@@ -3672,7 +3672,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   border-radius: 8px;
 }
 .dashboard-menu li::before{
- font-family: parskala;
+ font-family: vira;
  float: right;
  font-size: 18;
  font-weight: bold;
@@ -3755,7 +3755,7 @@ body.product-single #NavMenu,body.product-single .right-product{
   background: #F0F0F1;
 }
 .dashboard-menu ul .frist-li a::after{
-	font-family: 'parskala';
+	font-family: 'vira';
 	padding-right: 8px;
 	font-weight: bold;
 	content: '\203A';
@@ -3837,7 +3837,7 @@ body.product-single #NavMenu,body.product-single .right-product{
 }
 .off-canvas-main .menu .chevron-down::before{
   content: "\E179\00FE0E";
-  font-family: parskala;
+  font-family: vira;
 }
 .off-canvas-main .sub-menu-arrow{
   position: absolute;
@@ -3934,7 +3934,7 @@ body .error-404 h2{
 /* moblie */
 .head-index .order-icon-mobile::before,.head-index .side-icon-mobile::before{
  content: "\E042\00FE0E";
- font-family: parskala;
+ font-family: vira;
 }
 .head-index .side-icon-mobile::before{
   content: "\E024\00FE0E";
@@ -3994,7 +3994,7 @@ body .error-404 h2{
   cursor: pointer;
 }
 .close-mobile::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E08D\00FE0E";
   font-size: 26px;
 }
@@ -4137,7 +4137,7 @@ body .error-404 h2{
   line-height: 2;
 }
 .dn-app-closes::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E08D\00FE0E";
   font-size: 26px;
 }
@@ -4188,7 +4188,7 @@ body .error-404 h2{
 }
 .item-navbar a .icon-navbar .home-icon::before{
     content: "\E028\00FE0E";
-    font-family: parskala;
+    font-family: vira;
 }
 .item-navbar a .icon-navbar.has-sale::before{
   content: '';
@@ -4213,15 +4213,15 @@ body .error-404 h2{
   border: 2px solid #fff;
 }
 .item-navbar a .icon-navbar .shop-icon::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E1C1\00FE0E";
 }
 .item-navbar a .icon-navbar .cart-icon::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E013\00FE0E";
 }
 .item-navbar a .icon-navbar .user-icon::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E1DE\00FE0E";
 }
 .item-navbar a .name-navbar{
@@ -4322,14 +4322,14 @@ nav.navbar2 {
   content: "\E1DE\00FE0E";
 }
 .navbar2 .items a .svg-icon::before{
-  font-family: parskala;
+  font-family: vira;
   font-size: 40px;
   color: #fff;
   position: relative;
   top: 4px;
 }
 .navbar2 .items.active a .svg-icon::before{
-  font-family: parskala;
+  font-family: vira;
   font-size: 32px;
   color: #fff;
   position: relative;
@@ -4460,19 +4460,19 @@ elm_t-cart.is_middle .toolbar_item #toolbox_cart {
     box-shadow: 0 0 0 2px hsl(0deg 0% 100% / 28%);
 }
 .toolbar_item i.fa-store::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E1C1\00FE0E";
 	font-size: 26px;
 }
 .toolbar_item i.fa-folder-tree::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\F06A2";
 }
 .toolbar_item i.mdi-message-minus{
  font-size: 26px;
 }
 .toolbar_item.login_btn .fa-user::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E1DE\00FE0E";
 }
 .elm_t-cart .toolbar_item #toolbox_cart {
@@ -5412,7 +5412,7 @@ body .slider-right.ver1 .owl-nav .owl-prev::before,body .slider-right.ver1 .owl-
 	top: 3px;
 }
 .add-to-cart.offer a i::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E0FC\00FE0E";
 }
 
@@ -5667,7 +5667,7 @@ position: relative;
 }
 .order-icon::before{
   content: "\E1B9\00FE0E";
-  font-family: parskala;
+  font-family: vira;
 }
 .head-index .order-title{
 	font-size: 16px;
@@ -6483,7 +6483,7 @@ margin-top: 45px
 }
 .btn-panelver4::before{
 	position: absolute;
-	font-family: parskala;
+	font-family: vira;
 	content: "\E0B3\00FE0E";
 	left: 25px;
 	font-size: 13px;
@@ -6691,7 +6691,7 @@ margin-top: 45px
 }
 .support-tab .support-btn::before{
   content: "\E0EA\00FE0E";
-  font-family: parskala;
+  font-family: vira;
   transition: 0.2s all;
 }
 .support-tab .support-btn.closes-btn{
@@ -6699,7 +6699,7 @@ margin-top: 45px
 }
 .support-tab .support-btn.closes-btn::before{
   content: "\E0C9\00FE0E";
-  font-family: parskala;
+  font-family: vira;
   transform: rotate(360deg);
   transition: 0.3s all;
   font-size: 17px;
@@ -6744,7 +6744,7 @@ margin-top: 45px
 }
 .ques-cansel::before{
   content: "\E0C9\00FE0E";
-  font-family: parskala;
+  font-family: vira;
 }
 .ques-tabs{
   position: relative;
@@ -6794,7 +6794,7 @@ margin-top: 45px
   color: #7f7f8f;
   top: 25px;
   content: "\E0B1\00FE0E";
-  font-family: 'parskala';
+  font-family: 'vira';
 }
 
 .accardion-lists {
@@ -6823,7 +6823,7 @@ margin-top: 45px
   color: #7f7f8f;
   top: 25px;
   content: "\E0B1\00FE0E";
-  font-family: 'parskala';
+  font-family: 'vira';
   transform: rotate(180deg);
 }
 
@@ -6866,7 +6866,7 @@ margin-top: 45px
 	border-radius: 3px;
 }
 .topbar-close i::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E08D\00FE0E";
 	font-size: 1.2rem;
 	align-items: center;
@@ -7159,7 +7159,7 @@ body .woocommerce div.product .cart-pro ins .woocommerce-Price-currencySymbol{
 .cart-pro .chevrons-left::before{
   margin-left: 8px;
 	content: "\E08C\00FE0E";
-	font-family: parskala;
+	font-family: vira;
 	font-size: 18px;
 	position: relative;
 	top: 5px;
@@ -7269,7 +7269,7 @@ body.single-product .woocommerce div.product div.images.woocommerce-product-gall
 .woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab a::before{
   content: "\eb13";
 }
-.woocommerce div.product .woocommerce-tabs ul.tabs li.parskala-faq_tab a::before{
+.woocommerce div.product .woocommerce-tabs ul.tabs li.vira-faq_tab a::before{
   content: "\eac9";
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.seller_tab a::before{
@@ -7688,19 +7688,19 @@ body div.summary .des-info .back_holder{
   opacity: 26.6%;
 }
 .seller-store::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E1C1\00FE0E";
 }
 .share-square{
   display: block;
 }
 .share-square::before{
-  font-family: parskala;
+  font-family: vira;
   content: "\E06E\00FE0E";
   color: #00bfd6;
 }
 .exclamation-triangle::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E1E6\00FE0E";
 	padding-left: 5px;
 	position: relative;
@@ -7715,7 +7715,7 @@ body div.summary .des-info .back_holder{
 	position: absolute;
 	left: 0;
 	top: 0%;
-	font-family: parskala;
+	font-family: vira;
 	content: '\E08B\00FE0E';
 }
 
@@ -7846,7 +7846,7 @@ body div.summary .des-info .back_holder{
 	font-weight: 600;
 }
 .price_slider_wrapper .price_slider_amount .button::before{
-	font-family: parskala;
+	font-family: vira;
 	content: "\E118\00FE0E";
 	color: #FFF;
 	margin-left: 5px;
@@ -7892,11 +7892,11 @@ body div.summary .des-info .back_holder{
 
 
 .bbloomer-plus::before{
- font-family: parskala;
+ font-family: vira;
  content: "\E179\00FE0E";
 }
 .bbloomer-minus::before{
- font-family: parskala;
+ font-family: vira;
 content: "\E14F\00FE0E";
 }
 .vidoe-models, .share-models{
@@ -7993,12 +7993,12 @@ content: "\E14F\00FE0E";
 }
 .close-model i::before{
 	content: "\E0C9\00FE0E";
-	font-family: parskala;
+	font-family: vira;
 	font-size: 13px;
 	font-weight: bold;
 }
 .social-share-pro span a i::before{
-	font-family: parskala;
+	font-family: vira;
 	font-size: 26px;
 }
 .social-share-pro span a i.fab.fa-twitter::before{
@@ -8046,22 +8046,22 @@ body.product-single .continer, body.product-archive .continer, body.product-sing
 }
 .share-alt::before{
   content: "\E041\00FE0E";
-  font-family: parskala;
+  font-family: vira;
 }
 .single-play-circle::before{
   content: "\E177\00FE0E";
-  font-family: parskala;
+  font-family: vira;
 }
 .compre-btn .woocommerce a.button::after{
   content: "\E018\00FE0E";
-  font-family: parskala;
+  font-family: vira;
   font-size: 18px;
 	color: #9B9B9B;
 
 }
 .compre-btn .woocommerce a.button.added::after{
   content: "\E018\00FE0E";
-  font-family: parskala;
+  font-family: vira;
   font-size: 18px;
   color: #ef394e;
   margin: 0;
@@ -8156,11 +8156,11 @@ body.product-single .continer, body.product-archive .continer, body.product-sing
     background-color: #d32f2f;
 }
 .product-positive-points ul li i::before{
-		font-family: parskala;
+		font-family: vira;
 		content: "\E179\00FE0E";
 }
 .product-negative-points ul li i::before{
-		font-family: parskala;
+		font-family: vira;
 		content: "\E14F\00FE0E";
 }
 .progress-bar-product{
@@ -9070,7 +9070,7 @@ input:checked {
 	margin-left: 5px;
 }
 .nav-user-dashboard .user-edit::before{
-	font-family: parskala;
+	font-family: vira;
 	color: #535353;
 	float: left;
 	content: "\E07A\00FE0E";
@@ -9719,7 +9719,7 @@ ul.dokan-account-migration-lists li .right-conten{
  float: right;
  font-size: 24px;
  color: #9BA4AB;
- font-family: parskala;
+ font-family: vira;
  content: "\E0F6\00FE0E";
  padding-left: 5px;
 }
@@ -10183,7 +10183,7 @@ span.multiplied-modals::before{
     font-size: 107px;
     display: block;
     margin-bottom: 0;
-    font-family: parskala;
+    font-family: vira;
 }
 .prk_compare_page .title_attribiut {
     line-height: 1.692;
@@ -10263,7 +10263,7 @@ span.multiplied-modals::before{
 
 .compare-button::after {
     content: "\E018\00FE0E";
-    font-family: parskala;
+    font-family: vira;
 
 }
 .close-box{
@@ -10280,7 +10280,7 @@ span.multiplied-modals::before{
 }
 .close-box::before {
     content: "\E0C9\00FE0E";
-    font-family: parskala;
+    font-family: vira;
     font-size: 13px;
     font-weight: bold;
 		position: relative;
@@ -10909,7 +10909,7 @@ body.single-product #commentform {
 	border-radius: 11px;
 	padding: 17px 60px !important;
 }
-p.parskala-input-comment-form label {
+p.vira-input-comment-form label {
     display: flex;
     align-items: center;
 }
@@ -10924,7 +10924,7 @@ p.parskala-input-comment-form label {
 	border-bottom: 1px dashed;
 	padding-bottom: 3px;
 }
-p.parskala-input-comment-form input {
+p.vira-input-comment-form input {
     border-radius: 11px;
     background: #fff;
     border: 1px solid #c8c8c8;
@@ -10938,11 +10938,11 @@ p.parskala-input-comment-form input {
     box-sizing: border-box;
 }
 
-div.parskala-half-input {
+div.vira-half-input {
     display: flex;
     justify-content: space-between;
 }
-div.parskala-half-input p.parskala-input-comment-form {
+div.vira-half-input p.vira-input-comment-form {
     width: 49% !important;
 }
 .woocommerce #review_form #respond textarea {
@@ -10951,20 +10951,20 @@ div.parskala-half-input p.parskala-input-comment-form {
 		resize: vertical;
     min-height: 100px;
 }
-.parskala-input-comment-form.comment-form-advantages label:before, .parskala-input-comment-form.comment-form-disadvantage label:before {
+.vira-input-comment-form.comment-form-advantages label:before, .vira-input-comment-form.comment-form-disadvantage label:before {
     content: ' ';
     width: 8px;
     height: 8px;
     border-radius: 50%;
     margin-left: 10px;
 }
-.parskala-input-comment-form.comment-form-disadvantage label:before {
+.vira-input-comment-form.comment-form-disadvantage label:before {
     background: #fb3449;
 }
-.parskala-input-comment-form.comment-form-advantages label:before {
+.vira-input-comment-form.comment-form-advantages label:before {
     background: #00bfd6;
 }
-.parskala-input-comment-form.comment-form-advantages span.add_text_to_field, .parskala-input-comment-form.comment-form-disadvantage span.add_text_to_field {
+.vira-input-comment-form.comment-form-advantages span.add_text_to_field, .vira-input-comment-form.comment-form-disadvantage span.add_text_to_field {
 	position: absolute;
 	top: 34px;
 	left: 7px;
@@ -10978,7 +10978,7 @@ div.parskala-half-input p.parskala-input-comment-form {
 	z-index: 7;
 	padding: 0px 11px;
 }
-.parskala-recommend-product-reveiw {
+.vira-recommend-product-reveiw {
     padding: 26px 36px;
     border-radius: 11px;
     background-color: #fbfbfb;
@@ -10986,13 +10986,13 @@ div.parskala-half-input p.parskala-input-comment-form {
 		font-size: 14px;
     font-weight: bold;
 }
-.parskala-recommend-product-reveiw label {
+.vira-recommend-product-reveiw label {
     display: flex;
     align-items: center;
     cursor: pointer;
 		font-weight: 400;
 }
-.parskala-recommend-product-reveiw label input {
+.vira-recommend-product-reveiw label input {
     margin: 0 0 0 5px;
 }
 .categoryser ul li.active .sub-menu{
@@ -11175,7 +11175,7 @@ div.parskala-half-input p.parskala-input-comment-form {
 	margin-top: 10px;
 }
 .see-more-pside::after{
-	font-family: parskala;
+	font-family: vira;
 	content: '\203A';
 	font-size: 15px;
 	position: relative;
@@ -11625,7 +11625,7 @@ body .btns-pro .tooltiptext{
   }
   .account-icon-arrow .icon-logged::after{
     position: absolute;
-    font-family: parskala;
+    font-family: vira;
     content: '\E0D4\00FE0E';
     color: #FFF;
     font-size: 8px;
@@ -12425,7 +12425,7 @@ body .woocommerce div.product .cart-pro ins,body .woocommerce div.product .cart-
      width: 100%;
      padding: 0;
    }
-   .parskala-recommend-product-reveiw{
+   .vira-recommend-product-reveiw{
      padding: 5px;
      font-size: 13px;
    }

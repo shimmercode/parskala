@@ -24,7 +24,7 @@ if ($opnened_miny_cart) {
 
 <?php if ( prk_option('prk_show_prod_up_date') == '1' || prk_option('prk_show_prod_up_date') == '' ):?>
 
-	<span class="parskala-update-price"><?php _e('Date Updated:', 'parskala') ?>
+	<span class="vira-update-price"><?php _e('Date Updated:', 'vira') ?>
 		<span class="product-update-date"><?php echo get_the_modified_time('j F Y');  ?></span>
 	</span>
 

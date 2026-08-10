@@ -39,7 +39,7 @@ $vendor = new WP_User($vendor_id);
 
     <div class="head-archie-pro">
 
-    <span class="onsale prs"><?php _e('special offer !' , 'parskala');?></span>
+    <span class="onsale prs"><?php _e('special offer !' , 'vira');?></span>
 
       <?php if($regular_price):?>
 
@@ -67,7 +67,7 @@ $vendor = new WP_User($vendor_id);
   <?php elseif($product->is_on_sale()):?>
 
   <div class="head-archie-pro">
-     <span class="onsale prs"><?php _e('onsale !' , 'parskala');?></span>
+     <span class="onsale prs"><?php _e('onsale !' , 'vira');?></span>
      <p id="sales_timer_display" class="timer-pros2-<?php echo $timer_id;?>"></p>
      <script type="text/javascript">
        var dateEnd = new Date((<?php echo $regular_price; ?>) * 1000);
@@ -116,12 +116,12 @@ $vendor = new WP_User($vendor_id);
 <?php if (wc_get_stock_html( $product )):?>
 <span class="stockon"><?php global $product; echo wc_get_stock_html( $product ); ?></span>
 <?php else:?>
-<span class="in-stock"><?php _e('in stock' , 'parskala');?></span>
+<span class="in-stock"><?php _e('in stock' , 'vira');?></span>
 <?php endif;?>
 
 <?php else:?>
   <i class="share-square"></i>
-  <span class="in-stock"><?php _e('Not available in stock' , 'parskala');?></span>
+  <span class="in-stock"><?php _e('Not available in stock' , 'vira');?></span>
 <?php endif;?>
 </span>
 <?php endif;?>
@@ -134,7 +134,7 @@ $vendor = new WP_User($vendor_id);
        <?php if ($price|| $product->is_type( 'variable' )) {
          echo $product->get_price_html();
        }else{
-         echo '<p class="call_pro">', _e('call' , 'parskala'). '</p>';}
+         echo '<p class="call_pro">', _e('call' , 'vira'). '</p>';}
        ?>
 
   </div>
@@ -144,11 +144,11 @@ $vendor = new WP_User($vendor_id);
 <div class="author-Original">
   <?php if ($product_orginal):?>
   <?php if($Original_pro):?>
-  <span class="no-Original"><?php _e('non original' , 'parskala');?></span>
+  <span class="no-Original"><?php _e('non original' , 'vira');?></span>
 <?php endif;?>
 <?php endif;?>
 <?php if ($seller_name):?>
-<span class="author-ar"><i class="seller-store"></i><?php _e('Seller' , 'parskala');?>
+<span class="author-ar"><i class="seller-store"></i><?php _e('Seller' , 'vira');?>
   <?php if($active_dokan):?>
   <span class="authours-ar"><?php echo $store_name;?></span>
 <?php else:?>

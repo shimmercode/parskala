@@ -9,10 +9,10 @@ if(isset($logo_uploaded['url']) && $logo_uploaded['url'] != '') { $logo = $logo_
 <div class="tabs-account">
   <ul class="tabs-form">
     <li class="active">
-      <a href=""><?php _e('login' , 'parskala');?></a>
+      <a href=""><?php _e('login' , 'vira');?></a>
     </li>
     <li>
-      <a href=""><?php _e('register' , 'parskala');?></a>
+      <a href=""><?php _e('register' , 'vira');?></a>
     </li>
 
   </ul>

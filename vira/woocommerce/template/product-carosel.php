@@ -23,7 +23,7 @@ $price = get_post_meta( get_the_ID(), '_regular_price', true);
            <?php if ($price|| $product->is_type( 'variable' )) {
              echo $product->get_price_html();
            }else{
-             echo '<p class="call_pro">', _e('call' , 'parskala'). '</p>';}
+             echo '<p class="call_pro">', _e('call' , 'vira'). '</p>';}
            ?>
 
       </div>

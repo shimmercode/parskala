@@ -128,7 +128,7 @@ if ( $related_products ) :
 											} elseif ( $related_product->is_in_stock() ) {
 												echo '<p class="call_pro">' . esc_html($call_text) . '</p>';
 											} else {
-												echo '<p class="call_pro">' . esc_html__('ناموجود', 'parskala') . '</p>';
+												echo '<p class="call_pro">' . esc_html__('ناموجود', 'vira') . '</p>';
 											}
 											?>
 										</div>

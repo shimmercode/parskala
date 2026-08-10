@@ -17,11 +17,11 @@ function ratings_counters(){
      <i class="ri-star-fill star"></i>
      <span class="average_rating"><?php echo $product->get_average_rating(); ?></span>
    </div>
-   <span class="rating_count"> <?php echo _e( 'from', 'parskala' ); ?> <?php  echo $product->get_rating_count();  ?> <?php echo _e( 'vote', 'parskala' ); ?></span>
+   <span class="rating_count"> <?php echo _e( 'from', 'vira' ); ?> <?php  echo $product->get_rating_count();  ?> <?php echo _e( 'vote', 'vira' ); ?></span>
  </div>
    <div class="comments_number">
      <i class="ri-checkbox-blank-circle-fill"></i>
-     <p><span><?php echo $product->get_rating_count(); ?></span><?php echo _e( 'comments', 'parskala' ); ?></p>
+     <p><span><?php echo $product->get_rating_count(); ?></span><?php echo _e( 'comments', 'vira' ); ?></p>
    </div>
 
    <div class="comments_number">
@@ -38,7 +38,7 @@ function ratings_counters(){
        $get_count_faq = $counter;
        $counter++;
        }
-     echo '<p><span>'.$counter.'</span>'.__('question','parskala').'</p>';
+     echo '<p><span>'.$counter.'</span>'.__('question','vira').'</p>';
     wp_reset_postdata();
      }
    ?>

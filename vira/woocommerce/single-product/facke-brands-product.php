@@ -10,7 +10,7 @@ function product_facke_brands(){
       if ($general_show && $product_facke_show == 'yes' ){
       		echo '<span class="info-other">';
       		echo '<i class="exclamation-triangle"></i>';
-          echo  _e($product_facke_text , 'parskala');
+          echo  _e($product_facke_text , 'vira');
       		echo '</span>';
       }
     return $facke_pro;

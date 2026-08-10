@@ -17,7 +17,7 @@ function ajax_search(){
         // var productCat = jQuery('.form_search #productcat');
         jQuery.ajax({
             type: "GET",
-            url: parskala_values.ajax_url ,
+            url: vira_values.ajax_url ,
             data:  {
             action: 'ajax_search_onliner',
             product_cat: jQuery('.form_search #searchform_cat').find(":selected").val(),

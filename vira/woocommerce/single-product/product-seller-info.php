@@ -20,7 +20,7 @@ function seller_info(){
     $store_profile  = dokan_get_store_info( $vendor_id );
     $udata = get_userdata( $vendor_id );
 
-    $operation_stillses = __('Overall performance of the seller','parskala');
+    $operation_stillses = __('Overall performance of the seller','vira');
     // stills variations
     $user_registered = human_time_diff( strtotime( $udata->user_registered ) , current_time( 'timestamp' ) );
     $stills_count = ! empty( get_user_meta( $vendor_id, 'dokan_consent', true ) ) ? prk_option('dokan_consent') : 96;
@@ -29,18 +29,18 @@ function seller_info(){
     $Noـreference = ! empty( get_user_meta( $vendor_id, 'dokan_reference', true ) ) ? prk_option('dokan_reference') : 87;
     $stills =     get_user_meta( $vendor_id, 'stills_types', true );
 
-    $stills_name = __('great','parskala');
+    $stills_name = __('great','vira');
     if ($stills == 'great'){
-     $stills_name = __('great','parskala');
+     $stills_name = __('great','vira');
      $stills_color = '#00a049';
     }elseif($stills == 'very_good'){
-     $stills_name = __('very good','parskala');
+     $stills_name = __('very good','vira');
     $stills_color = '#b1b64d';
     }elseif($stills == 'good'){
-     $stills_name = __('good','parskala');
+     $stills_name = __('good','vira');
      $stills_color = '#b1b64d';
     }elseif($stills == 'medium'){
-     $stills_name = __('medium','parskala');
+     $stills_name = __('medium','vira');
      $stills_color = '#b1b64d';
     }
     if ($dokan_good) {
@@ -66,18 +66,18 @@ function seller_info(){
     $user_registered = prk_option('shop_registered');
 
     
-    $stills_name = __('great','parskala');
+    $stills_name = __('great','vira');
     if ($stills == 'great'){
-     $stills_name = __('great','parskala');
+     $stills_name = __('great','vira');
      $stills_color = '#00a049';
     }elseif($stills == 'very_good'){
-     $stills_name = __('very good','parskala');
+     $stills_name = __('very good','vira');
     $stills_color = '#b1b64d';
     }elseif($stills == 'good'){
-     $stills_name = __('good','parskala');
+     $stills_name = __('good','vira');
      $stills_color = '#b1b64d';
     }elseif($stills == 'medium'){
-     $stills_name = __('medium','parskala');
+     $stills_name = __('medium','vira');
      $stills_color = '#b1b64d';
     }
     
@@ -167,18 +167,18 @@ function seller_info(){
       
      $lists = (new Dokan_SPMV_Products)->get_other_reseller_vendors( $product->get_id() );
 
-     echo '<span class="label">'._e ('seller','parskala').'</span>';
+     echo '<span class="label">'._e ('seller','vira').'</span>';
 
      if ( mobile_cheker() || tablet_cheker() ) {
 
        if ( $lists ) { ?>
-          <a href="#" data-remodal-target="modal-more-seller" class="anchor-link"><?php echo count($lists);?> <?php _e ('فروشنده دیگر','parskala');?></a>
+          <a href="#" data-remodal-target="modal-more-seller" class="anchor-link"><?php echo count($lists);?> <?php _e ('فروشنده دیگر','vira');?></a>
       <?php }
 
     }else {
 
       if ( $lists ) { ?>
-         <a href="#servesis-single" id="vendors-count-link" class="anchor-link"><?php echo count($lists);?> <?php _e ('فروشنده دیگر','parskala');?></a>
+         <a href="#servesis-single" id="vendors-count-link" class="anchor-link"><?php echo count($lists);?> <?php _e ('فروشنده دیگر','vira');?></a>
      <?php }
 
       }
@@ -199,18 +199,18 @@ function seller_info(){
         <!-- seller name -->
        <div class="product-seller-name mb-8">
 
-          <?php _e($seller_name , 'parskala');?>
+          <?php _e($seller_name , 'vira');?>
 
        </div>
 
-       <?php if($dokan_good){echo '<dpan class="good-seller">' .__('Chosen','parskala'). '</dpan>';}?>
+       <?php if($dokan_good){echo '<dpan class="good-seller">' .__('Chosen','vira'). '</dpan>';}?>
 
       <?php if ($active_dokan || prk_option('is_featured_shop') == '1' ):?>
        <div id="template_stills" style="display: none;" class="data-content">
           <div class="stills_contienr">
             <div class="shop_names">
-              <span class="name"><?= _e('Store','parskala') ?> <?php echo $seller_name;?></span>
-              <p class="register_seller"><?php echo __('Membership from', 'parskala');?> <?php echo $user_registered; ?> <?= _e('Before','parskala') ?></p>
+              <span class="name"><?= _e('Store','vira') ?> <?php echo $seller_name;?></span>
+              <p class="register_seller"><?php echo __('Membership from', 'vira');?> <?php echo $user_registered; ?> <?= _e('Before','vira') ?></p>
             </div>
 
             <div class="seller_stillses">
@@ -230,7 +230,7 @@ function seller_info(){
                   <span class="progress-right"><span class="progress-bar"></span></span>
                   <div class="progress-value"><div><?php echo $supply;?>%</div></div>
                </div>
-               <span><?= _e('No return','parskala') ?></span>
+               <span><?= _e('No return','vira') ?></span>
 
                </div>
 
@@ -241,7 +241,7 @@ function seller_info(){
                    <span class="progress-right"><span class="progress-bar"></span></span>
                    <div class="progress-value"><div><?php echo $Commitmentـsend;?>%</div></div>
                 </div>
-                <span><?= _e('Obligation to send','parskala') ?></span>
+                <span><?= _e('Obligation to send','vira') ?></span>
  
                 </div>
 
@@ -253,7 +253,7 @@ function seller_info(){
                    <span class="progress-right"><span class="progress-bar"></span></span>
                    <div class="progress-value"><div><?php echo $Noـreference;?>%</div></div>
                 </div>
-                <span><?= _e('timely supply','parskala') ?></span>
+                <span><?= _e('timely supply','vira') ?></span>
  
                 </div>
 
@@ -280,9 +280,9 @@ function seller_info(){
        <div class="seller-final-score-container">
          <div class="seller-rate-container">
             <span class="seller-rate fa-num"><?php echo $stills_count;?>%</span>
-            <span class="label"><?= _e('Official','parskala') ?></span>
+            <span class="label"><?= _e('Official','vira') ?></span>
             <span class="divider"></span>
-            <span class="label"><?= _e('Function','parskala') ?></span>
+            <span class="label"><?= _e('Function','vira') ?></span>
             <span style="color:<?php echo $stills_color;?>" class="seller-final-score <?php echo $good_class;?>"><?php echo $stills_name;?></span>
           </div>
        </div>
@@ -303,7 +303,7 @@ function seller_info(){
    <div class="product-seller-row-detail">
      <div class="product-seller-row-detail-title">
 
-             <?php _e( $granti_text , 'parskala');?>
+             <?php _e( $granti_text , 'vira');?>
      </div>
    </div>
   </div>

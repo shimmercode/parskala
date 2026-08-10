@@ -58,7 +58,7 @@ if ($get_location) {
   if ( $theme_style == 'prk-plus' || $theme_style == 'prk-fashion' ) {
     $classes = 'prk-plus';
   }else {
-    $classes = 'parskala';
+    $classes = 'vira';
   }
 
 
@@ -154,7 +154,7 @@ if ($get_location) {
 
             echo '<div class="search-box">';
 
-               $placeholder =  __('جستجو در محصولات ....', 'parskala' );
+               $placeholder =  __('جستجو در محصولات ....', 'vira' );
             	 echo do_shortcode('[prk_search placeholder="'.$placeholder.'" ]');
 
             echo '</div>';

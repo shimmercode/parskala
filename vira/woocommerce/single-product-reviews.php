@@ -44,12 +44,12 @@ $display_advanced_review = prk_option( "display_advanced_review");
 
      <?php if (prk_option('sub_title_show_product') == '1' ): ?>
 			 <div class="title-commenter">
- 		    <h2><?php _e('Users score to:', 'parskala');?></h2>
+ 		    <h2><?php _e('Users score to:', 'vira');?></h2>
  		    <div class="counter">
 
  			  	<span class="title-desctop"><?php echo get_the_title();?></span>
 
- 			   	<span class="countes">(<?php echo $count;?><?php _e('person', 'parskala');?>)</span>
+ 			   	<span class="countes">(<?php echo $count;?><?php _e('person', 'vira');?>)</span>
  				</div>
  		  </div>
      <?php endif; ?>
@@ -93,11 +93,11 @@ $display_advanced_review = prk_option( "display_advanced_review");
       <?php } ?>
 			<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 				<div class="go-insert-comment">
-					<span class="title-insert"><?php _e('Express your opinion about this product', 'parskala');?></span>
+					<span class="title-insert"><?php _e('Express your opinion about this product', 'vira');?></span>
 					<span class="dec-insert">
-						<?php _e('To post a comment, you must first log in to your account. If you have already bought this product from this store, your comment will be registered as the owner of the product.', 'parskala');?>
+						<?php _e('To post a comment, you must first log in to your account. If you have already bought this product from this store, your comment will be registered as the owner of the product.', 'vira');?>
 					</span>
-					<a rel="nofollow" href="<?php echo add_query_arg( 'insert-comment', '', get_the_permalink() ); ?>"><?php _e('Add comment', 'parskala');?></a>
+					<a rel="nofollow" href="<?php echo add_query_arg( 'insert-comment', '', get_the_permalink() ); ?>"><?php _e('Add comment', 'vira');?></a>
 				</div>
 			<?php else : ?>
 				<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
@@ -106,7 +106,7 @@ $display_advanced_review = prk_option( "display_advanced_review");
 
   </div>
 
-	<span class="commnet-lister"><?php _e('User comments', 'parskala');?></span>
+	<span class="commnet-lister"><?php _e('User comments', 'vira');?></span>
 	<div id="comments">
 		<?php if ( have_comments() ) : ?>
 
@@ -147,7 +147,7 @@ $display_advanced_review = prk_option( "display_advanced_review");
 			?>
 
 			<?php if ( mobile_cheker() || tablet_cheker() ): ?>
-		   	<span data-remodal-target="mob_tab_reviews" class="view_comment_mobiles">مشاهده همه <?php echo $count ;?> <?php _e('User comments', 'parskala');?></span>
+		   	<span data-remodal-target="mob_tab_reviews" class="view_comment_mobiles">مشاهده همه <?php echo $count ;?> <?php _e('User comments', 'vira');?></span>
       <?php endif; ?>
 
 		<?php else : ?>

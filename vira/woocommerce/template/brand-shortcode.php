@@ -72,7 +72,7 @@ function ajax_brands_search(){
       access_do_ajaxs_ask_brand = false;
         jQuery.ajax({
           type: "GET",
-          url: parskala_values.ajax_url ,
+          url: vira_values.ajax_url ,
           data:  {
             action: 'prk_ajax_compare_brands',
             s: jQuery('#text_search_brands').val(),

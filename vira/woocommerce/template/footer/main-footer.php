@@ -36,7 +36,7 @@ if ( is_front_page() ) {
 
           <a href="#tops">
 
-            <span><?php _e('Back to top' , 'parskala');?></span>
+            <span><?php _e('Back to top' , 'vira');?></span>
             <i class="prk-arrow-down-1"></i>
 
           </a>
@@ -65,7 +65,7 @@ if ( is_front_page() ) {
         <?php if (prk_footer_email()):?>
 
           <span class="boxer-tells">
-            <span class="text-number"><?php _e('email address:' , 'parskala');?></span>
+            <span class="text-number"><?php _e('email address:' , 'vira');?></span>
             <span class="tow-number"><?php echo prk_footer_email();?></span>
           </span>
 

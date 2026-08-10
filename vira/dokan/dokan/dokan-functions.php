@@ -141,17 +141,17 @@ function prk_dokan_report_sales_overview( $start_date, $end_date ) {
     $average_sales = $total_sales / ( 30 + 1 );
 
     $legend =  array(
-        __('فروش در این ماه', 'parskala') =>  wc_price( $total_sales ) ,
+        __('فروش در این ماه', 'vira') =>  wc_price( $total_sales ) ,
 
-        __('میانگین فروش روزانه', 'parskala') =>  wc_price( $average_sales ) ,
+        __('میانگین فروش روزانه', 'vira') =>  wc_price( $average_sales ) ,
 
-        __('سفارشات ثبت شده', 'parskala') =>  $total_orders ,
+        __('سفارشات ثبت شده', 'vira') =>  $total_orders ,
 
-        __('تعداد کالای خریداری شده', 'parskala') =>  $total_items ,
+        __('تعداد کالای خریداری شده', 'vira') =>  $total_items ,
 
-        __('هزینه حمل و نقل', 'parskala') =>  wc_price( $total_shipping ) ,
+        __('هزینه حمل و نقل', 'vira') =>  wc_price( $total_shipping ) ,
 
-        __('جمع کوپن های استفاده شده', 'parskala') =>  wc_price( $total_coupons )
+        __('جمع کوپن های استفاده شده', 'vira') =>  wc_price( $total_coupons )
         ) ;
     return $legend;
 }
@@ -175,7 +175,7 @@ function dokan_customization() {
             <script>
                 jQuery(document).ready(function($) {
                     // add profile widget
-                    var user_profile_widget = '<div class="c-profile-box"><div class="c-profile-box__header"><div class="c-profile-box__avatar js-user-avatar"></div><button class="c-profile-box__btn-edit js-change-avatar"></button></div><div class="c-profile-box__username"><?php _e('سلام','parskala'); ?> ، <?php echo $current_user->data->display_name; ?></div><div class="c-profile-box__tabs"><a href="<?php echo dokan_get_store_url($current_user_id) ?>" class="c-profile-box__tab c-profile-box__tab--access"><?php _e('مشاهده فروشگاه','parskala'); ?></a><a href="<?php echo wp_logout_url(); ?>" class="c-profile-box__tab c-profile-box__tab--sign-out"><?php _e('خروج از حساب','parskala') ?></a></div></div>';
+                    var user_profile_widget = '<div class="c-profile-box"><div class="c-profile-box__header"><div class="c-profile-box__avatar js-user-avatar"></div><button class="c-profile-box__btn-edit js-change-avatar"></button></div><div class="c-profile-box__username"><?php _e('سلام','vira'); ?> ، <?php echo $current_user->data->display_name; ?></div><div class="c-profile-box__tabs"><a href="<?php echo dokan_get_store_url($current_user_id) ?>" class="c-profile-box__tab c-profile-box__tab--access"><?php _e('مشاهده فروشگاه','vira'); ?></a><a href="<?php echo wp_logout_url(); ?>" class="c-profile-box__tab c-profile-box__tab--sign-out"><?php _e('خروج از حساب','vira') ?></a></div></div>';
                     $('.dokan-dashboard-menu').before(user_profile_widget);
                     // change position of titles
                     $(".widget-title").each(function() {
@@ -184,7 +184,7 @@ function dokan_customization() {
                     // fix avatar url
                     $('.c-profile-box__avatar').css('background-image','url(<?php echo $current_user_avatare; ?>)');
                     // change tab name
-                    $('#tab-title-more_seller_product a').text("<?php _e('محصولات بیشتر این فروشنده','parskala'); ?>");
+                    $('#tab-title-more_seller_product a').text("<?php _e('محصولات بیشتر این فروشنده','vira'); ?>");
                     // fix height in store list
                     var heights = jQuery("#dokan-seller-listing-wrap ul.dokan-seller-wrap li .store-content .store-info").map(function () {
                         return jQuery(this).height();
@@ -209,17 +209,17 @@ add_action('dokan_product_edit_after_product_tags', function($post, $post_id){
 	?>
 
 <div class="dokan-form-group">
-	<label for="garrantie" class="form-label"><?php _e('گارانتی محصول', 'parskala'); ?></label>
+	<label for="garrantie" class="form-label"><?php _e('گارانتی محصول', 'vira'); ?></label>
 	<input type="text" name="product_granti_text" id="product_granti_text" value="<?php echo get_post_meta($post_id, 'product_granti_text', true); ?>" class="dokan-form-control" placeholder="">
 </div>
 
 <div class="dokan-form-group">
-	<label for="send_by" class="form-label"><?php _e('بسته بندی و ارسال توسط:', 'parskala'); ?></label>
+	<label for="send_by" class="form-label"><?php _e('بسته بندی و ارسال توسط:', 'vira'); ?></label>
 	<input type="text" name="send_by" id="send_by" value="<?php echo get_post_meta($post_id, 'send_by', true); ?>" class="dokan-form-control" placeholder="">
 </div>
 
 <div class="dokan-form-group">
-	<label for="stock_name" class="form-label"><?php _e('آماده ارسال از انبار:', 'parskala'); ?></label>
+	<label for="stock_name" class="form-label"><?php _e('آماده ارسال از انبار:', 'vira'); ?></label>
 	<input type="text" name="stock_name" id="stock_name" value="<?php echo get_post_meta($post_id, 'stock_name', true); ?>" class="dokan-form-control" placeholder="">
 </div>
 
@@ -255,7 +255,7 @@ add_action('dokan_product_edit_after_title', function($post, $post_id){
 	?>
 
 <div class="dokan-form-group">
-	<label for="parskala_subtitle_product" class="form-label"><?php _e('تیتر انگلیسی محصول', 'parskala'); ?></label>
+	<label for="vira_subtitle_product" class="form-label"><?php _e('تیتر انگلیسی محصول', 'vira'); ?></label>
 	<input dir="ltr" type="text" name="en_pro_name" id="en_pro_name" value="<?php echo get_post_meta($post_id, 'en_pro_name', true); ?>" class="dokan-form-control" placeholder="">
 </div>
 

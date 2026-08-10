@@ -24,7 +24,7 @@ var ssss=getCookie('prskalaSearchCity');
     else
 	   var sc=[];
     jQuery.ajax({
-        url: parskala_values.ajax_url,
+        url: vira_values.ajax_url,
         type: 'POST',
         contentType: false,
         processData: false,
@@ -66,7 +66,7 @@ jQuery(document).on('click', '#tekecablSearchcityModal .citieslists .allcity', f
     form_data.append('action', 'prskala_search_getCities');
    // form_data.append('nonce', my_ajax_object.nonce);
     jQuery.ajax({
-         url: parskala_values.ajax_url,
+         url: vira_values.ajax_url,
         type: 'POST',
         contentType: false,
         processData: false,
@@ -218,7 +218,7 @@ jQuery(document).on('keyup', '#tekecablSearchcityModal .searchpartdiv .searchcit
         //     ++c;
         // });
         jQuery.ajax({
-            url: parskala_values.ajax_url,
+            url: vira_values.ajax_url,
             type: 'POST',
             contentType: false,
             processData: false,
@@ -247,7 +247,7 @@ jQuery(document).on('keyup', '#tekecablSearchcityModal .searchpartdiv .searchcit
         //form_data.append('nonce', my_ajax_object.nonce);
         html='';
         jQuery.ajax({
-            url: parskala_values.ajax_url,
+            url: vira_values.ajax_url,
             type: 'POST',
             contentType: false,
             processData: false,

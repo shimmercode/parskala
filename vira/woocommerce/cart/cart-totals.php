@@ -29,7 +29,7 @@ if (prk_option('modern_mobile_toolbar_blur')) {
 	<table cellspacing="0" class="shop_table shop_table_responsive table-shop-cart-user">
 
 		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'commodity prices', 'parskala' ); ?></th>
+			<th><?php esc_html_e( 'commodity prices', 'vira' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 

@@ -49,7 +49,7 @@ if ( $product -> is_type( 'variable' ) ) {
   <?php if ($onsales_round == 'yes' ):?>
 
    <div class="head-pros">
-   <span class="onsale prs"><?php _e('special offer !' , 'parskala');?></span>
+   <span class="onsale prs"><?php _e('special offer !' , 'vira');?></span>
    <?php if($date):?>
    		<p id="sales_timer_display" class="timer-pros"></p>
       <script type="text/javascript">
@@ -71,7 +71,7 @@ if ( $product -> is_type( 'variable' ) ) {
   <?php else:?>
 
     <div class="head-pros">
-      <span class="onsale prs"><?php _e('فروش ویژه !' , 'parskala');?></span>
+      <span class="onsale prs"><?php _e('فروش ویژه !' , 'vira');?></span>
     	<?php if($date) {
         echo '<p id="sales_timer_display" class="timer-pros" data-date=" '.date('Y-m-d',$date).'"></p>';?>
         <script type="text/javascript">

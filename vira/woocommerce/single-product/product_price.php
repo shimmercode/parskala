@@ -31,7 +31,7 @@ function products_price(){
   <?php else:?>
   <span class="tab-pro unavailable">
   <div class="stock-pros single-stock">
-  <span class=""><?php _e('unavailable' , 'parskala');?></span>
+  <span class=""><?php _e('unavailable' , 'vira');?></span>
   </div>
   </span>
   <?php endif;?>

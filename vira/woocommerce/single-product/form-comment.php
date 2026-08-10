@@ -218,10 +218,10 @@ $comment_text = prk_option('comment_text');
 
 				$comment_form['fields'] = array();
 
-				$comment_form['fields']['start-main-defaults-fields'] = '<div class="parskala-half-input">';
+				$comment_form['fields']['start-main-defaults-fields'] = '<div class="vira-half-input">';
 
 				foreach ( $fields as $key => $field ) {
-					$field_html  = '<p class="parskala-input-comment-form comment-form-' . esc_attr( $key ) . '">';
+					$field_html  = '<p class="vira-input-comment-form comment-form-' . esc_attr( $key ) . '">';
 					$field_html .= '<label for="' . esc_attr( $key ) . '">' . esc_html( $field['label'] );
 
 					if ( $field['required'] ) {
@@ -244,20 +244,20 @@ $comment_text = prk_option('comment_text');
 
 			if ( $display_advanced_review == 'on'  ){
 
-				$comment_form['comment_field'] .= '<p class="parskala-input-comment-form comment-form-title">';
-				$comment_form['comment_field'] .= '<label for="comment-form-title">' . __( 'Title of your comment (required)', 'parskala' );
+				$comment_form['comment_field'] .= '<p class="vira-input-comment-form comment-form-title">';
+				$comment_form['comment_field'] .= '<label for="comment-form-title">' . __( 'Title of your comment (required)', 'vira' );
 				$comment_form['comment_field'] .= '&nbsp;<span class="required">*</span>';
 				$comment_form['comment_field'] .= '</label><input id="comment-form-title" name="comment-form-title" type="text" value="" size="30" required /></p>';
 
 
-				$comment_form['comment_field'] .= '<div class="parskala-half-input">';
+				$comment_form['comment_field'] .= '<div class="vira-half-input">';
 
-				$comment_form['comment_field'] .= '<p class="parskala-input-comment-form comment-form-advantages"><span class="add_text_to_field add_text_to_field_advantages">+</span>';
-				$comment_form['comment_field'] .= '<label for="comment-form-advantages">' . __( 'Strengths', 'parskala' );
+				$comment_form['comment_field'] .= '<p class="vira-input-comment-form comment-form-advantages"><span class="add_text_to_field add_text_to_field_advantages">+</span>';
+				$comment_form['comment_field'] .= '<label for="comment-form-advantages">' . __( 'Strengths', 'vira' );
 				$comment_form['comment_field'] .= '</label><input id="comment-form-advantages" type="text" value="" size="30" /></p>';
 
-				$comment_form['comment_field'] .= '<p class="parskala-input-comment-form comment-form-disadvantage"><span class="add_text_to_field add_text_to_field_disadvantage">+</span>';
-				$comment_form['comment_field'] .= '<label for="comment-form-disadvantage">' . __( 'weak points', 'parskala' );
+				$comment_form['comment_field'] .= '<p class="vira-input-comment-form comment-form-disadvantage"><span class="add_text_to_field add_text_to_field_disadvantage">+</span>';
+				$comment_form['comment_field'] .= '<label for="comment-form-disadvantage">' . __( 'weak points', 'vira' );
 				$comment_form['comment_field'] .= '</label><input id="comment-form-disadvantage" type="text" value="" size="30" /></p>';
 
 				$comment_form['comment_field'] .= '</div>';
@@ -278,16 +278,16 @@ $comment_text = prk_option('comment_text');
 
 
 
-			$comment_form['comment_field'] .= '<p class="parskala-input-comment-form comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label></div><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
+			$comment_form['comment_field'] .= '<p class="vira-input-comment-form comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label></div><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
 
 
 			if ( $display_advanced_review == 'on' && $comment_recommend == '1' ){
 
-				$comment_form['comment_field'] .= '<div class="parskala-recommend-product-reveiw">';
-				$comment_form['comment_field'] .= '<span>' . esc_html__( 'آیا خرید این محصول را به دوستانتان پیشنهاد می کنید؟', 'parskala' ) . '</span>';
-				$comment_form['comment_field'] .= '<label for="recommended"><input id="recommended" type="radio" value="recommended" name="recommend" > ' . esc_html__( 'پیشنهاد می‌کنم', 'parskala' ) . '</label>';
-				$comment_form['comment_field'] .= '<label for="not_recommended"><input id="not_recommended" type="radio" value="not_recommended" name="recommend" > ' . esc_html__( 'خیر ، پیشنهاد نمی‌کنم', 'parskala' ) . '</label>';
-				$comment_form['comment_field'] .= '<label for="no_idea"><input id="no_idea" type="radio" value="no_idea" name="recommend" > ' . esc_html__( 'نظری ندارم', 'parskala' ) . '</label>';
+				$comment_form['comment_field'] .= '<div class="vira-recommend-product-reveiw">';
+				$comment_form['comment_field'] .= '<span>' . esc_html__( 'آیا خرید این محصول را به دوستانتان پیشنهاد می کنید؟', 'vira' ) . '</span>';
+				$comment_form['comment_field'] .= '<label for="recommended"><input id="recommended" type="radio" value="recommended" name="recommend" > ' . esc_html__( 'پیشنهاد می‌کنم', 'vira' ) . '</label>';
+				$comment_form['comment_field'] .= '<label for="not_recommended"><input id="not_recommended" type="radio" value="not_recommended" name="recommend" > ' . esc_html__( 'خیر ، پیشنهاد نمی‌کنم', 'vira' ) . '</label>';
+				$comment_form['comment_field'] .= '<label for="no_idea"><input id="no_idea" type="radio" value="no_idea" name="recommend" > ' . esc_html__( 'نظری ندارم', 'vira' ) . '</label>';
 
 				$comment_form['comment_field'] .= '</div>';
 			}
@@ -313,7 +313,7 @@ $comment_text = prk_option('comment_text');
 
 			</div>
 		<span class="go-back">
-    <a href="<?php the_permalink();?>"><?php _e('Cancellation and return', 'parskala');?></a>
+    <a href="<?php the_permalink();?>"><?php _e('Cancellation and return', 'vira');?></a>
 		</span>
 		</div>
 

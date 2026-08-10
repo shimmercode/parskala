@@ -14,15 +14,15 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
        <li class="<?php echo $status = $selling == 'yes' ? 'active' : 'reject_doc' ?>" >
          <a href="javascript:void()">
         <p>
-          <?php echo __('وضعیت حساب', 'parskala'); ?>
+          <?php echo __('وضعیت حساب', 'vira'); ?>
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </p>
-        <span><?php echo $status = $selling == 'yes' ? __('فعال شده', 'parskala') : __('غیره فعال', 'parskala') ?></span>
+        <span><?php echo $status = $selling == 'yes' ? __('فعال شده', 'vira') : __('غیره فعال', 'vira') ?></span>
          </a>
          <div class="sp_interactive_status_message">
            <div class="sp_interactive_status_message-fade"></div>
              <div class="sp_interactive-status__message-description">
-                 <?php  __( 'شما در صف انتظار تایید توسط مدیر سایت هستید. پس از تایید اطلاع رسانی خواهد شد.', 'parskala' ); ?>
+                 <?php  __( 'شما در صف انتظار تایید توسط مدیر سایت هستید. پس از تایید اطلاع رسانی خواهد شد.', 'vira' ); ?>
                  <?= prk_option('message_disable_seller') ?>
 				 <h2>
                    <a href="<?= prk_option('des_more_disable_seller') ?>" >
@@ -41,10 +41,10 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
        <li class="<?php if ( $has_methods ) echo 'active'; ?>" >
          <a href="<?php echo dokan_get_navigation_url( 'settings/payment' ); ?>">
         <p>
-          <?php echo __('تنظیمات پرداخت', 'parskala')?>
+          <?php echo __('تنظیمات پرداخت', 'vira')?>
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </p>
-        <span><?php echo $status = $has_methods ? __('درج شده', 'parskala') : __('درج نشده', 'parskala') ?></span>
+        <span><?php echo $status = $has_methods ? __('درج شده', 'vira') : __('درج نشده', 'vira') ?></span>
         </a>
 		<!--
         <div class="sp_interactive_status_message sp_interactive1">
@@ -87,7 +87,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
     <ul>
       <li>
         <a <?php echo $link = $selling == 'yes' ? 'href="'.dokan_get_navigation_url( 'new-product' ).'"' : '' ; ?> >
-        <p><?php echo __('افزودن محصول جدید', 'parskala'); ?> <?php echo $link = $selling == 'yes' ? '' : '<span style="color:red;margin-right: 7px;"> '.__('(غیره فعال)', 'parskala').' </span>' ; ?></p>
+        <p><?php echo __('افزودن محصول جدید', 'vira'); ?> <?php echo $link = $selling == 'yes' ? '' : '<span style="color:red;margin-right: 7px;"> '.__('(غیره فعال)', 'vira').' </span>' ; ?></p>
         <div class="sp_plus">
           <svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
           		<path d="m492 236h-216v-216c0-11.046-8.954-20-20-20s-20 8.954-20 20v216h-216c-11.046 0-20 8.954-20 20s8.954 20 20 20h216v216c0 11.046 8.954 20 20 20s20-8.954 20-20v-216h216c11.046 0 20-8.954 20-20s-8.954-20-20-20z"/>
@@ -97,7 +97,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
       </li>
       <li>
         <a href="<?php echo dokan_get_navigation_url( 'orders' ); ?>?order_status=wc-processing">
-        <p><?php echo __('سفارشات در حال انجام', 'parskala'); ?>
+        <p><?php echo __('سفارشات در حال انجام', 'vira'); ?>
         </p>
         <span>
           <p><?php
@@ -121,7 +121,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
       <li>
         <a href="<?php echo dokan_get_navigation_url( 'withdraw' ); ?>">
         <p>
-          <?php echo __('موجودی', 'parskala'); ?>
+          <?php echo __('موجودی', 'vira'); ?>
           <small><?php echo dokan_get_seller_balance($user_id , true); ?></small>
         </p>
         <div class="sp_plus">  <i class="prk-wallet-check"></i> </div>
@@ -133,13 +133,13 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
   <div class="sp_body_Management">
      <div class="sp_Inventory_stock">
         <div class="sp_header_Inventory_stock">
-          <?php echo __('مدیریت موجودی انبار', 'parskala'); ?>
+          <?php echo __('مدیریت موجودی انبار', 'vira'); ?>
         </div>
         <ul class="sp_body_Inventory_stock">
           <li>
             <a href="#">
               <p>
-                <?php echo __('محصولات ناموجود', 'parskala'); ?>
+                <?php echo __('محصولات ناموجود', 'vira'); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
 			  <?php
@@ -164,7 +164,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="#">
               <p>
-                <?php echo __('محصولات در حال اتمام', 'parskala'); ?>
+                <?php echo __('محصولات در حال اتمام', 'vira'); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
 			  <?php
@@ -194,13 +194,13 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
 
 
 <div class="sp_header_Inventory_stock">
-          <?php echo __('وضعیت کلی از ابتدای فعالیت', 'parskala'); ?>
+          <?php echo __('وضعیت کلی از ابتدای فعالیت', 'vira'); ?>
         </div>
         <ul class="sp_body_Inventory_stock">
           <li>
             <a href="#">
               <p>
-                <?php esc_html_e( 'فروش کلی شما', 'parskala' ); ?>
+                <?php esc_html_e( 'فروش کلی شما', 'vira' ); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
 
@@ -210,7 +210,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="#">
               <p>
-                <?php esc_html_e( 'درآمد شما', 'parskala' ); ?>
+                <?php esc_html_e( 'درآمد شما', 'vira' ); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo wp_kses_post( dokan_get_seller_earnings( $user_id ) ); ?></strong>
@@ -219,7 +219,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="#">
               <p>
-                <?php esc_html_e( 'صفحات نمایش داده شده', 'parskala' ); ?>
+                <?php esc_html_e( 'صفحات نمایش داده شده', 'vira' ); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
 
@@ -229,7 +229,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="#">
               <p>
-                <?php esc_html_e( 'سفارشات معتبر', 'parskala' ); ?>
+                <?php esc_html_e( 'سفارشات معتبر', 'vira' ); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php
@@ -249,14 +249,14 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
      </div>
      <div class="sp_Inventory_stock">
         <div class="sp_header_Inventory_stock">
-        <?php echo __('مدیریت سفارشات', 'parskala'); ?>
+        <?php echo __('مدیریت سفارشات', 'vira'); ?>
         </div>
 		<?php $orders_url = dokan_get_navigation_url( 'orders' ); ?>
         <ul class="sp_body_Inventory_stock">
           <li>
             <a href="<?php echo $orders_url; ?>">
               <p>
-                <?php echo __('همه سفارشات', 'parskala'); ?>
+                <?php echo __('همه سفارشات', 'vira'); ?>
 				<i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->total; ?></strong>
@@ -265,7 +265,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-completed' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('تکمیل شده', 'parskala'); ?>
+                <?php echo __('تکمیل شده', 'vira'); ?>
 				<i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-completed'}; ?></strong>
@@ -274,7 +274,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-on-hold' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('در انتظار پرداخت', 'parskala'); ?> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <?php echo __('در انتظار پرداخت', 'vira'); ?> <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-on-hold'}; ?></strong>
             </a>
@@ -282,7 +282,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-pending' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('در انتظار بررسی', 'parskala'); ?>
+                <?php echo __('در انتظار بررسی', 'vira'); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-pending'}; ?></strong>
@@ -291,7 +291,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-cancelled' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('لغو شده', 'parskala'); ?>
+                <?php echo __('لغو شده', 'vira'); ?>
 				<i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-cancelled'}; ?></strong>
@@ -301,7 +301,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-refunded' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('سفارشات مرجوعی', 'parskala'); ?>
+                <?php echo __('سفارشات مرجوعی', 'vira'); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-refunded'}; ?></strong>
@@ -310,7 +310,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
           <li>
             <a href="<?php echo esc_url( add_query_arg( array( 'order_status' => 'wc-failed' ), $orders_url ) ); ?>">
               <p>
-                <?php echo __('سفارشات ناموفق', 'parskala'); ?>
+                <?php echo __('سفارشات ناموفق', 'vira'); ?>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </p>
             <strong><?php echo  $orders_counts->{'wc-failed'}; ?></strong>
@@ -320,7 +320,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
      </div>
      <div class="sp_Inventory_stock">
         <div class="sp_header_Inventory_stock">
-        <?php echo __('وضعیت فروش ماه', 'parskala'); ?> <?php echo date_i18n( 'F', false, false ); ?>
+        <?php echo __('وضعیت فروش ماه', 'vira'); ?> <?php echo date_i18n( 'F', false, false ); ?>
         </div>
         <ul class="sp_body_Inventory_stock">
 		<?php
@@ -366,7 +366,7 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
 
     <div class="sp_Product_management">
         <div class="sp_header_Inventory_stock">
-          <?php echo __('مدیریت محصولات', 'parskala'); ?>
+          <?php echo __('مدیریت محصولات', 'vira'); ?>
         </div>
         <div class="sp_body_Product_management">
             <ul>
@@ -374,26 +374,26 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
               <a href="<?php echo esc_url( $products_url ); ?>">
               <li>
                 <strong><?php echo $products->total ; ?></strong>
-                <?php echo __('کالا های درج شده', 'parskala'); ?>
+                <?php echo __('کالا های درج شده', 'vira'); ?>
               </li>
               </a>
               <a href="<?php echo esc_url( add_query_arg( array( 'post_status' => 'publish' ), $products_url ) ); ?>">
               <li>
                 <strong><?php echo $products->publish ; ?></strong>
-              <?php echo __('کالاهای تأیید شده', 'parskala'); ?>
+              <?php echo __('کالاهای تأیید شده', 'vira'); ?>
               </li>
               </a>
 
               <a href="<?php echo esc_url( add_query_arg( array( 'post_status' => 'pending' ), $products_url ) ); ?>">
               <li>
                 <strong><?php echo $products->pending ; ?></strong>
-              <?php echo __('کالاهای در انتظار تأیید', 'parskala'); ?>
+              <?php echo __('کالاهای در انتظار تأیید', 'vira'); ?>
               </li>
               </a>
               <a href="<?php echo esc_url( add_query_arg( array( 'post_status' => 'draft' ), $products_url ) ); ?>">
               <li>
                 <strong><?php echo $products->draft ; ?></strong>
-              <?php echo __('پیش نویس', 'parskala'); ?>
+              <?php echo __('پیش نویس', 'vira'); ?>
               </li>
               </a>
               </div>
@@ -410,9 +410,9 @@ $selling = get_user_meta( $user_id, 'dokan_enable_selling', true );
 <div class="sp_panel_body2">
        <div class="sp_Records">
           <div class="sp_header_Records">
-            <?php echo __('سوابق فروش', 'parskala'); ?>
+            <?php echo __('سوابق فروش', 'vira'); ?>
             <a href="#">
-          <span><?php echo __('روزانه', 'parskala'); ?>
+          <span><?php echo __('روزانه', 'vira'); ?>
             <i class="fa fa-angle-down" aria-hidden="true"></i>
           </span>
           </a>

@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
         let userlogin = document.location.href +  '/my-account'//jQuery('#redirect-to-url').text(); //
         jQuery.ajax({
             type: 'POST',
-            url: parskala_values.ajax_url, // where to submit the data
+            url: vira_values.ajax_url, // where to submit the data
             data: {
                 action     : 'prk_add_to_next_shopping_action', // load function hooked to: "wp_ajax_*" action hook
                 product_id : product_id,           // PHP: $_POST['product_id']
@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
         let product_id = jQuery(this).data('product_id');
         jQuery.ajax({
             type: 'POST',
-            url: parskala_values.ajax_url, // where to submit the data
+            url: vira_values.ajax_url, // where to submit the data
             data: {
                 action     : 'prk_add_to_next_shopping_action', // load function hooked to: "wp_ajax_*" action hook
                 product_id : product_id,           // PHP: $_POST['product_id']
@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
         let product_id = jQuery(this).data('product_id');
         jQuery.ajax({
             type: 'POST',
-            url: parskala_values.ajax_url, // where to submit the data
+            url: vira_values.ajax_url, // where to submit the data
             data: {
                 action     : 'prk_add_to_next_shopping_action', // load function hooked to: "wp_ajax_*" action hook
                 product_id : product_id,           // PHP: $_POST['product_id']
@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
         // let product_id = jQuery(this).data('product_id');
         jQuery.ajax({
             type: 'POST',
-            url: parskala_values.ajax_url, // where to submit the data
+            url: vira_values.ajax_url, // where to submit the data
             data: {
                 action     : 'prk_add_to_next_shopping_action', // load function hooked to: "wp_ajax_*" action hook
                 type : 'add_all_product',

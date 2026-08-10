@@ -71,7 +71,7 @@ return $array;
 			$current_user = wp_get_current_user();
 			$roles = $current_user->roles;
 
-			if (! in_array("seller", $roles)  ) $items['selling'] = __( 'فروشنده شو','parskala');
+			if (! in_array("seller", $roles)  ) $items['selling'] = __( 'فروشنده شو','vira');
 		}
 
 

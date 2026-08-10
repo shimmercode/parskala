@@ -32,12 +32,12 @@ if (!function_exists('is_woocommerce_active')){
 	// F:\xampp\htdocs\newkala44\wp-content\plugins\product-variation-swatches-for-woocommerce\product-variation-swatches-for-woocommerce.php
 
 	//!defined('THWVSF_PATH') && define('THWVSF_PATH', plugin_dir_path( __FILE__ ));
-	!defined('THWVSF_PATH') && define('THWVSF_PATH', parskala_TEMPLATEPATH.'/woocommerce/product-variation-swatches-for-woocommerce/');
+	!defined('THWVSF_PATH') && define('THWVSF_PATH', vira_TEMPLATEPATH.'/woocommerce/product-variation-swatches-for-woocommerce/');
 	// F:\xampp\htdocs\newkala44\wp-content\plugins\product-variation-swatches-for-woocommerce/
 
 
 	//!defined('THWVSF_URL') && define('THWVSF_URL', plugins_url( '/', __FILE__ ));
-	!defined('THWVSF_URL') && define('THWVSF_URL', parskala_URI.'/woocommerce/product-variation-swatches-for-woocommerce/');
+	!defined('THWVSF_URL') && define('THWVSF_URL', vira_URI.'/woocommerce/product-variation-swatches-for-woocommerce/');
 	// http://newkala-dev.me/wp-content/plugins/product-variation-swatches-for-woocommerce/
 
 

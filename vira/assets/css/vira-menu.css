@@ -67,12 +67,12 @@
 }
 .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul.prk-level-0 > li.menu-item-has-children::after{
 	content: "\203A";
-	font-family: "parskala";
+	font-family: "vira";
 	color: #535353c2;
 	padding-left: 5px;
 	float: left;
 	content: "\203A";
-    font-family: "parskala";
+    font-family: "vira";
     padding-left: 15px;
     float: left;
     color: rgba(82,82,82,.45);

@@ -8,7 +8,7 @@ $redirect = false;
     <div  class="modal__container" style="width: 31%;max-width: 500px;">
       <!-- دکمه بستن مدال -->
       <div class="header-login">
-        <span><?php esc_html_e( 'sign in to site', 'parskala' ); ?></span>
+        <span><?php esc_html_e( 'sign in to site', 'vira' ); ?></span>
         <button data-micromodal-close="modalvidoe" class="close-box"></button>
      </div>
       <div class="continer-login">
@@ -16,13 +16,13 @@ $redirect = false;
           <form class="woocommerce-form woocommerce-form-login login" method="post" action="<?php echo esc_url( $account_link ); ?>" >
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-               <label class="users" for="username"><?php esc_html_e( 'user name', 'parskala' ); ?>&nbsp;<span class="required">*</span></label>
-               <input placeholder="<?php esc_html_e( 'Enter your username.', 'parskala' ); ?>" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+               <label class="users" for="username"><?php esc_html_e( 'user name', 'vira' ); ?>&nbsp;<span class="required">*</span></label>
+               <input placeholder="<?php esc_html_e( 'Enter your username.', 'vira' ); ?>" type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
             </p>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-               <label class="passwords" for="password"><?php esc_html_e( 'password', 'parskala' ); ?>&nbsp;<span class="required">*</span></label>
+               <label class="passwords" for="password"><?php esc_html_e( 'password', 'vira' ); ?>&nbsp;<span class="required">*</span></label>
                <a class="forgat" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
-               <input placeholder="<?php esc_html_e( 'Enter your password.', 'parskala' ); ?>"  class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+               <input placeholder="<?php esc_html_e( 'Enter your password.', 'vira' ); ?>"  class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
             </p>
 
             <p class="form-row">
@@ -35,7 +35,7 @@ $redirect = false;
               <?php if ( $redirect ): ?>
                  <input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
               <?php endif ?>
-              <input type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_html_e( 'sign in to site', 'parskala' ); ?>" />
+              <input type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_html_e( 'sign in to site', 'vira' ); ?>" />
             </p>
 
           </form>
@@ -43,8 +43,8 @@ $redirect = false;
       </div>
 
       <div class="footer-login">
-        <span><?php esc_html_e( 'Havent registered on the site before?', 'parskala' ); ?></span>
-        <a href="<?php echo $account_url;?>"> <?php esc_html_e( 'Register on the site', 'parskala' ); ?> </a>
+        <span><?php esc_html_e( 'Havent registered on the site before?', 'vira' ); ?></span>
+        <a href="<?php echo $account_url;?>"> <?php esc_html_e( 'Register on the site', 'vira' ); ?> </a>
       </div>
     </div>
   </div>
