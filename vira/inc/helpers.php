@@ -10,6 +10,59 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Direct access not allowed.
 }
 
+if ( ! function_exists( 'is_plugin_active' ) ) {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+
+if ( ! function_exists( 'prk_option' ) ) {
+    /**
+     * Core theme option getter with sensible out-of-the-box defaults for Vira E-Commerce theme.
+     *
+     * @param string $option  Option key.
+     * @param mixed  $default Fallback default value.
+     * @return mixed
+     */
+    function prk_option( $option = '', $default = null ) {
+        $options = get_option( 'prk_option', array() );
+        if ( isset( $options[ $option ] ) && '' !== $options[ $option ] ) {
+            return $options[ $option ];
+        }
+        $defaults = array(
+            'header_style_type'       => 'default',
+            'footer_style_type'       => 'default',
+            'theme-style'             => 'digikala', // Loads 3.vira-classic.css (Digikala Iranian storefront style)
+            'prk_topbar_true'         => true,
+            'prk_topbar_stikey'       => true,
+            'header_search_true'      => true,
+            'supports_true'           => true,
+            'header_account'          => true,
+            'header_minicart'         => true,
+            'call_true'               => true,
+            'call_page'               => '#support',
+            'prk_shop_ajax_add'       => true,
+            'ajax_add'                => '1',
+            'post_archive_name'       => true,
+            'post_archive_bio'        => true,
+            'post_archive_pcontent'   => true,
+            'post_archive_author'     => true,
+            'post_archive_date'       => true,
+            'footer_logo'             => true,
+            'free_shipping_effect'    => true,
+            'prk_filter_location'     => true,
+        );
+        if ( isset( $defaults[ $option ] ) ) {
+            return $defaults[ $option ];
+        }
+        return $default;
+    }
+}
+
+if ( ! function_exists( 'vira_option' ) ) {
+    function vira_option( $option = '', $default = null ) {
+        return prk_option( $option, $default );
+    }
+}
+
 if ( ! function_exists( 'vira_to_persian_num' ) ) {
     /**
      * Convert English and Arabic numbers to Persian digits.
