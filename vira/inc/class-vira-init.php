@@ -45,7 +45,7 @@ class Init {
     private function __construct() {
         add_action( 'after_setup_theme', array( $this, 'load_core_files' ), 10 );
         add_action( 'init', array( $this, 'register_modules' ), 20 );
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ), 30 );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ), 5 );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ), 20 );
     }
 
@@ -136,19 +136,47 @@ class Init {
     }
 
     /**
-     * Enqueue conditional frontend styles & scripts (Rule #14 & #15).
+     * Enqueue complete frontend styles & scripts (Base E-Commerce Engine + Vira Custom).
      */
     public function enqueue_frontend_assets() {
         $uri = get_template_directory_uri();
         $ver = '1.0.0';
 
-        // Core RTL tokens & base
-        wp_enqueue_style( 'vira-core-css', $uri . '/assets/css/vira-core.css', array(), $ver );
+        // 1. Icon & Font Stylesheets
+        wp_enqueue_style( 'vira-remixicon', $uri . '/assets/fonts/ri-fonts/remixicon.css', array(), $ver );
+        wp_enqueue_style( 'vira-flaticon', $uri . '/assets/fonts/font/flaticon.css', array(), $ver );
+        wp_enqueue_style( 'vira-iconsax', $uri . '/assets/fonts/parsfont/style.css', array(), $ver );
+
+        // 2. Main E-Commerce Engine & Layout Stylesheets
+        wp_enqueue_style( 'vira-general', $uri . '/assets/css/general.css', array(), $ver );
+        wp_enqueue_style( 'vira-menu', $uri . '/assets/css/vira-menu.css', array( 'vira-general' ), $ver );
+        wp_enqueue_style( 'vira-account-header', $uri . '/assets/css/vira-account-header.css', array( 'vira-general' ), $ver );
+        wp_enqueue_style( 'vira-classic-style', $uri . '/assets/css/3.vira-classic.css', array( 'vira-general' ), $ver );
+        wp_enqueue_style( 'vira-mobile-style', $uri . '/assets/css/vira-mobile.css', array( 'vira-general' ), $ver );
+
+        // 3. Carousel & Slider Stylesheets
+        wp_enqueue_style( 'vira-swiper', $uri . '/assets/css/lunches/swiper.css', array(), $ver );
+        wp_enqueue_style( 'vira-swiper-slider', $uri . '/assets/css/lunches/swiper-slider.css', array( 'vira-swiper' ), $ver );
+        wp_enqueue_style( 'vira-owl-carousel', $uri . '/assets/css/carousels/owl.carousel.min.css', array(), $ver );
+        wp_enqueue_style( 'vira-owl-items', $uri . '/assets/css/carousels/owl.carousel-items.css', array( 'vira-owl-carousel' ), $ver );
+        wp_enqueue_style( 'vira-modal-engine', $uri . '/assets/css/lunches/modal.css', array(), $ver );
+
+        // 4. Vira Next-Gen Custom Component Stylesheets
+        wp_enqueue_style( 'vira-core-css', $uri . '/assets/css/vira-core.css', array( 'vira-classic-style' ), $ver );
         wp_enqueue_style( 'vira-card-css', $uri . '/assets/css/vira-card.css', array( 'vira-core-css' ), $ver );
-        wp_enqueue_style( 'vira-bottom-nav', $uri . '/assets/css/vira-bottom-nav.css', array( 'vira-core-css' ), $ver );
+        wp_enqueue_style( 'vira-bottom-nav-css', $uri . '/assets/css/vira-bottom-nav.css', array( 'vira-core-css' ), $ver );
         wp_enqueue_style( 'vira-modals-css', $uri . '/assets/css/vira-modals.css', array( 'vira-core-css' ), $ver );
 
-        // Core JS handlers
+        // 5. Core E-Commerce JavaScript Libraries & Scripts
+        wp_enqueue_script( 'vira-popper', $uri . '/assets/js/popper.min.js', array( 'jquery' ), $ver, true );
+        wp_enqueue_script( 'vira-owl-js', $uri . '/assets/js/owl.carousel.min.js', array( 'jquery' ), $ver, true );
+        wp_enqueue_script( 'vira-swiper-js', $uri . '/assets/js/swiper.js', array( 'jquery' ), $ver, true );
+        wp_enqueue_script( 'vira-simplebar', $uri . '/assets/js/simplebar.min.js', array( 'jquery' ), $ver, true );
+        if ( file_exists( get_template_directory() . '/assets/js/custom.js' ) ) {
+            wp_enqueue_script( 'vira-custom-engine-js', $uri . '/assets/js/custom.js', array( 'jquery', 'vira-owl-js' ), $ver, true );
+        }
+
+        // 6. Vira Custom Handlers
         wp_enqueue_script( 'vira-core-js', $uri . '/assets/js/vira-core.js', array( 'jquery' ), $ver, true );
         wp_enqueue_script( 'vira-modals-js', $uri . '/assets/js/vira-modals.js', array( 'vira-core-js' ), $ver, true );
         wp_enqueue_script( 'vira-checkout-js', $uri . '/assets/js/vira-checkout.js', array( 'vira-core-js' ), $ver, true );
@@ -183,5 +211,3 @@ class Init {
 }
 
 Init::get_instance();
-
-
