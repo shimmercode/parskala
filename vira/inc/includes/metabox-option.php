@@ -10,8 +10,10 @@
 
 $productSideMeta = 'product_side_meta';
 
+if(!class_exists("CSF")){ return; }
 CSF::createMetabox($productSideMeta, [
 	'title'     => __('تنظیمات محصول', 'parskala'),
+if ( ! class_exists( "CSF" ) ) { return; }
 	'post_type' => 'product',
 	'data_type' => 'unserialize',
 	'context'   => 'side',
@@ -20,6 +22,7 @@ CSF::createMetabox($productSideMeta, [
 
 
 
+if(!class_exists("CSF")){ return; }
 CSF::createSection($productSideMeta, [
 	'title'  => __('ویژگی های سفارشی', 'parskala'),
   'description'     => __('ویژگی سفارشی کوتاه (درصورت اضافه نکردن ویژگی کوتاه سفارشی،ویژگی های محصول درج خواهند شد)', 'parskala'),
@@ -48,6 +51,7 @@ CSF::createSection($productSideMeta, [
 ]);
 
 
+if(!class_exists("CSF")){ return; }
 CSF::createSection($productSideMeta, [
 	'title'  => __('تحویل', 'parskala'),
 	'icon'   => 'fas fa-box',
@@ -67,13 +71,15 @@ CSF::createSection($productSideMeta, [
   $prefix = 'prk_product_options';
 
   // Create a metabox
-  CSF::createMetabox( $prefix, array(
+  if(!class_exists("CSF")){ return; }
+CSF::createMetabox( $prefix, array(
     'title'     => 'بخش اختصاصی محصول',
     'post_type' => 'product',
   ) );
 
   // Create a section
-  CSF::createSection( $prefix, array(
+  if(!class_exists("CSF")){ return; }
+CSF::createSection( $prefix, array(
     'title'  => 'اکاردئون',
     'fields' => array(
 
@@ -103,7 +109,8 @@ CSF::createSection($productSideMeta, [
 
   //
   // Create a section
-  CSF::createSection( $prefix, array(
+  if(!class_exists("CSF")){ return; }
+CSF::createSection( $prefix, array(
     'title'  => 'نقات ظعف و قوت',
     'fields' => array(
 
@@ -138,7 +145,8 @@ CSF::createSection($productSideMeta, [
     )
   ) );
 
-  CSF::createSection( $prefix, array(
+  if(!class_exists("CSF")){ return; }
+CSF::createSection( $prefix, array(
     'title'  => 'اپلود مدیا',
     'fields' => array(
 
@@ -155,6 +163,7 @@ CSF::createSection($productSideMeta, [
     ),
     )
 ));
+if(!class_exists("CSF")){ return; }
 CSF::createSection( $prefix, array(
   'title'  => 'امتیازدهی',
   'fields' => array(
@@ -186,6 +195,7 @@ CSF::createSection( $prefix, array(
 )
 ));
 // بخش نظرات
+if(!class_exists("CSF")){ return; }
 CSF::createSection( $prefix, array(
   'title'  => 'بخش نظرات',
   'fields' => array(
@@ -225,6 +235,7 @@ CSF::createSection( $prefix, array(
 
 $postSideMeta = 'post_side_meta';
 
+if(!class_exists("CSF")){ return; }
 CSF::createMetabox($postSideMeta, [
 	'title'     => __('تنظیمات نوشته', 'parskala'),
 	'post_type' => 'post',
@@ -242,6 +253,7 @@ CSF::createMetabox($postSideMeta, [
  * @since      1.0.0
  */
 
+if(!class_exists("CSF")){ return; }
 CSF::createSection($postSideMeta, [
 	'title'  => __('تنظیمات سفارشی', 'parskala'),
   // 'description'     => __('نمایش تصویرشاخص نوشته', 'parskala'),
