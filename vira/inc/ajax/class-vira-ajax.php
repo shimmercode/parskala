@@ -327,5 +327,5 @@ class Ajax_Controller {
 }
 
 Ajax_Controller::get_instance();
-```
+
 

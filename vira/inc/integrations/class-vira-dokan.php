@@ -65,5 +65,5 @@ class Dokan_Integration {
 }
 
 Dokan_Integration::get_instance();
-```
+
 

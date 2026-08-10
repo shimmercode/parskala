@@ -154,5 +154,5 @@ class Admin_Dashboard {
 }
 
 Admin_Dashboard::get_instance();
-```
+
 

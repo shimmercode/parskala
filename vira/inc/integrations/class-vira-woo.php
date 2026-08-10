@@ -173,5 +173,5 @@ class Woo_Integration {
 }
 
 Woo_Integration::get_instance();
-```
+
 
