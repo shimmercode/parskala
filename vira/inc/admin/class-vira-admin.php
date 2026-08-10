@@ -51,7 +51,7 @@ class Admin_Dashboard {
     public function get_modules_catalog() {
         return array(
             'exclusive' => array(
-                'title' => '۲۰ ماژول اختصاصی قالب ویرا (Vira Exclusive Modules)',
+                'title' => '۲۰ ماژول پیشرفته و انحصاری ویرا (Vira Exclusive Next-Gen Modules)',
                 'items' => array(
                     '01-smart-search'     => 'جستجوی هوشمند ایجکسی و پیشنهاددهنده زنده ([VIRA-01])',
                     '02-bottom-nav'       => 'ناوبری شناور پایینی موبایل و هدر چسبان ([VIRA-02])',
@@ -75,18 +75,18 @@ class Admin_Dashboard {
                     '20-otp-sms'          => 'سیستم ورود و ثبت‌نام پیامکی (OTP) ([VIRA-20])',
                 ),
             ),
-            'parskala' => array(
-                'title' => 'ماژول‌های انتقالی و بومی پارس‌کالا (ParsKala Integrations)',
+            'base_modules' => array(
+                'title' => 'ماژول‌های پایه‌ای و ساختاری ویرا (Vira Base E-Commerce Modules)',
                 'items' => array(
-                    'parskala-location'    => 'انتخاب‌گر استان و شهر با ذخیره‌سازی کوکی (Location Cookie)',
-                    'parskala-invoice'     => 'صدور فاکتور رسمی و غیررسمی مالیاتی (Tax Invoice)',
-                    'parskala-price-chart' => 'نمودار تاریخچه تغییرات قیمت محصول (Price History Chart)',
-                    'parskala-stories'     => 'استوری‌های فروشگاهی دیجی‌کالا/اینستاگرام (Product Stories)',
-                    'parskala-trust'       => 'گزارش قیمت بهتر و نادرستی مشخصات (Better Price Report)',
-                    'parskala-tracking'    => 'پیگیری سفارش مهمان با شماره موبایل (Guest Order Tracking)',
-                    'parskala-loyalty'     => 'تبدیل امتیاز به کد تخفیف در حساب کاربری (Loyalty Rewards)',
-                    'parskala-next-shop'   => 'لیست خرید بعدی / انتقال از سبد خرید (Save for Later)',
-                    'parskala-size-guide'  => 'راهنمای سایز اختصاصی پوشاک و کفش (Size Guide Modal)',
+                    'vira-location-selector' => 'انتخاب‌گر استان و شهر با ذخیره‌سازی کوکی (Location Cookie)',
+                    'vira-tax-invoice'       => 'صدور فاکتور رسمی و غیررسمی مالیاتی (Tax Invoice)',
+                    'vira-price-chart'       => 'نمودار تاریخچه تغییرات قیمت محصول (Price History Chart)',
+                    'vira-product-stories'   => 'استوری‌های فروشگاهی دیجی‌کالا/اینستاگرام (Product Stories)',
+                    'vira-trust-modals'      => 'گزارش قیمت بهتر و نادرستی مشخصات (Better Price Report)',
+                    'vira-guest-tracking'    => 'پیگیری سفارش مهمان با شماره موبایل (Guest Order Tracking)',
+                    'vira-loyalty-rewards'   => 'تبدیل امتیاز به کد تخفیف در حساب کاربری (Loyalty Rewards)',
+                    'vira-next-shopping'     => 'لیست خرید بعدی / انتقال از سبد خرید (Save for Later)',
+                    'vira-size-guide'        => 'راهنمای سایز اختصاصی پوشاک و کفش (Size Guide Modal)',
                 ),
             ),
         );
@@ -104,7 +104,7 @@ class Admin_Dashboard {
             <div class="vira-admin-header" style="background: #ef394e; color: #fff; padding: 20px; border-radius: 12px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <h1 style="color: #fff; margin: 0; font-size: 24px; font-weight: bold;">پلتفرم فروشگاهی ویرا (Vira E-Commerce Framework)</h1>
-                    <p style="margin: 5px 0 0 0; opacity: 0.9;">مرکز فرماندهی ماژول‌های اختصاصی ویرا و قابلیت‌های بومی پارس‌کالا — ساختار ماژولار مبتنی بر وودمارت</p>
+                    <p style="margin: 5px 0 0 0; opacity: 0.9;">مرکز فرماندهی ماژول‌های اختصاصی ویرا — طراحی انحصاری برای بازار ایران</p>
                 </div>
                 <div>
                     <span style="background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; font-size: 13px;">نسخه ۱.۰.۰ (Vira Core)</span>

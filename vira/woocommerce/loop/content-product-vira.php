@@ -18,10 +18,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     return;
 }
 
-$brand_name = '';
-if ( function_exists( 'woodmart_get_product_brand_name' ) ) {
-    $brand_name = woodmart_get_product_brand_name( $product->get_id() );
-}
+$brand_name = vira_get_product_brand_name( $product->get_id() );
 if ( empty( $brand_name ) ) {
     $brand_name = 'برند رسمی';
 }
@@ -55,8 +52,8 @@ if ( $product->is_on_sale() && $product->get_regular_price() > 0 ) {
 
         <!-- Quick actions -->
         <div class="card-quick-actions" style="position: absolute; bottom: 10px; left: 10px; display: flex; gap: 4px; opacity: 0; transition: opacity 0.2s;">
-            <?php if ( function_exists( 'woodmart_add_to_wishlist_button' ) ) { woodmart_add_to_wishlist_button(); } ?>
-            <?php if ( function_exists( 'woodmart_add_to_compare_button' ) ) { woodmart_add_to_compare_button(); } ?>
+            <?php vira_add_to_wishlist_button(); ?>
+            <?php vira_add_to_compare_button(); ?>
         </div>
     </div>
 
@@ -77,7 +74,7 @@ if ( $product->is_on_sale() && $product->get_regular_price() > 0 ) {
 
         <!-- Swatches placeholder -->
         <div class="product-swatches-mini" style="margin: 6px 0;">
-            <?php if ( function_exists( 'woodmart_swatches_list' ) ) { woodmart_swatches_list(); } ?>
+            <?php vira_swatches_list(); ?>
         </div>
 
         <!-- Transparent Iranian Pricing -->

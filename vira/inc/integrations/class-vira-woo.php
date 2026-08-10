@@ -37,7 +37,7 @@ class Woo_Integration {
         add_action( 'woocommerce_widget_shopping_cart_before_buttons', array( $this, 'render_free_shipping_progress_bar' ), 10 );
         add_action( 'woocommerce_before_cart_table', array( $this, 'render_free_shipping_progress_bar' ), 10 );
 
-        // Iranian Tax Invoice button in My Account -> Orders (ParsKala Invoice)
+        // Iranian Tax Invoice button in My Account -> Orders (Vira Tax Invoice)
         add_action( 'woocommerce_my_account_my_orders_actions', array( $this, 'add_invoice_order_action' ), 10, 2 );
 
         // Sticky Bar on single product footer ([VIRA-07])
@@ -69,7 +69,7 @@ class Woo_Integration {
     }
 
     public function render_price_chart_button() {
-        if ( ! vira_is_module_enabled( 'parskala-price-chart' ) ) {
+        if ( ! vira_is_module_enabled( 'vira-price-chart' ) ) {
             return;
         }
         global $product;
@@ -87,7 +87,7 @@ class Woo_Integration {
     }
 
     public function render_trust_modals_buttons() {
-        if ( ! vira_is_module_enabled( 'parskala-trust' ) ) {
+        if ( ! vira_is_module_enabled( 'vira-trust-modals' ) ) {
             return;
         }
         global $product;
@@ -112,7 +112,7 @@ class Woo_Integration {
         if ( ! vira_is_module_enabled( '05-free-shipping' ) || ! WC()->cart ) {
             return;
         }
-        $threshold = 1500000; // 1,500,000 Tomans free shipping threshold
+        $threshold = 1500000;
         $subtotal  = WC()->cart->get_subtotal();
         $percent   = min( 100, intval( ( $subtotal / $threshold ) * 100 ) );
         $remain    = max( 0, $threshold - $subtotal );
@@ -135,7 +135,7 @@ class Woo_Integration {
     }
 
     public function add_invoice_order_action( $actions, $order ) {
-        if ( ! vira_is_module_enabled( 'parskala-invoice' ) ) {
+        if ( ! vira_is_module_enabled( 'vira-tax-invoice' ) ) {
             return $actions;
         }
         $actions['vira_invoice'] = array(

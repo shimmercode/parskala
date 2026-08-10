@@ -3,20 +3,19 @@ Theme Name: Vira (ویرا)
 Theme URI: https://vira-theme.ir/
 Author: Vira Theme Architect Team
 Author URI: https://vira-theme.ir/
-Description: پلتفرم فروشگاهی نسل جدید ویرا (Vira E-Commerce Framework) مبتنی بر معماری وودمارت و قابلیت‌های بومی پارس‌کالا همراه با ۲۰ ماژول اختصاصی و طراحی کاملاً راست‌چین و مدرن برای بازار ایران.
+Description: پلتفرم جامع و انحصاری فروشگاهی نسل جدید ایران (Vira E-Commerce Framework) همراه با ۲۹ ماژول اختصاصی، کارت محصول مدرن، خرید فوری، پنل مدیریت ماژول‌ها و طراحی کاملاً راست‌چین.
 Version: 1.0.0
 Tested up to: 6.7
 Requires PHP: 7.4
 Text Domain: vira
-Template: woodmart
-Tags: e-commerce, rtl, persian, woodmart, woocommerce, vira, iranian-store
+Tags: e-commerce, rtl, persian, woocommerce, vira, iranian-store, modern-store
 License: GNU General Public License v3.0
 */
 
 @charset "UTF-8";
 
 /* ==========================================================================
-   VIRA DESIGN SYSTEM TOKENS — متغیرهای طراحی فارسی و پالت رنگی ویرا
+   VIRA DESIGN SYSTEM TOKENS — متغیرهای طراحی فارسی و پالت رنگی اختصاصی ویرا
    ========================================================================== */
 :root {
     --vira-primary: #ef394e;

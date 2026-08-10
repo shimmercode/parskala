@@ -23,18 +23,18 @@ class Ajax_Controller {
     }
 
     private function __construct() {
-        // [VIRA-20] & ParsKala OTP SMS
+        // [VIRA-20] OTP SMS Login/Register
         $this->add_ajax( 'vira_send_otp', 'handle_send_otp', true );
         $this->add_ajax( 'vira_verify_otp', 'handle_verify_otp', true );
 
-        // ParsKala Location Selector
+        // Vira Location Selector (Cookie)
         $this->add_ajax( 'vira_get_cities', 'handle_get_cities', true );
         $this->add_ajax( 'vira_save_location', 'handle_save_location', true );
 
-        // ParsKala Price Chart
+        // Vira Price History Chart
         $this->add_ajax( 'vira_get_price_chart', 'handle_get_price_chart', true );
 
-        // ParsKala Trust Modals (Better Price / Problem Report)
+        // Vira Trust Modals (Better Price / Problem Report)
         $this->add_ajax( 'vira_submit_trust_report', 'handle_submit_trust_report', true );
 
         // [VIRA-06] Installment Calculator
@@ -43,10 +43,10 @@ class Ajax_Controller {
         // [VIRA-08] Instant Buy Express
         $this->add_ajax( 'vira_instant_buy', 'handle_instant_buy', true );
 
-        // ParsKala Guest Order Tracking
+        // Vira Guest Order Tracking
         $this->add_ajax( 'vira_guest_track_order', 'handle_guest_track_order', true );
 
-        // ParsKala Loyalty Reward Points to Coupon
+        // Vira Loyalty Reward Points to Coupon
         $this->add_ajax( 'vira_convert_points_coupon', 'handle_convert_points_coupon', false );
     }
 
@@ -100,7 +100,6 @@ class Ajax_Controller {
 
         delete_transient( 'vira_otp_' . md5( $mobile ) );
 
-        // Login or Register WordPress User by mobile
         $user_query = get_users( array(
             'meta_key'   => 'vira_mobile',
             'meta_value' => $mobile,
@@ -111,7 +110,6 @@ class Ajax_Controller {
         if ( ! empty( $user_query ) ) {
             $user_id = $user_query[0]->ID;
         } else {
-            // Create user
             $username = 'user_' . substr( $mobile, 3 );
             $user_id  = wp_create_user( $username, wp_generate_password(), $mobile . '@vira-store.ir' );
             if ( ! is_wp_error( $user_id ) ) {
@@ -181,7 +179,6 @@ class Ajax_Controller {
 
         $history = get_post_meta( $product_id, '_vira_price_history', true );
         if ( ! is_array( $history ) || empty( $history ) ) {
-            // Generate realistic fallback data for presentation
             $current_price = intval( get_post_meta( $product_id, '_price', true ) );
             if ( ! $current_price ) {
                 $current_price = 1250000;
@@ -215,7 +212,6 @@ class Ajax_Controller {
             wp_send_json_error( array( 'message' => 'لطفاً تمامی فیلدهای ضروری را پر کنید.' ) );
         }
 
-        // Save report as post meta or custom comment
         add_post_meta( $product_id, '_vira_trust_report_' . time(), array(
             'type'    => $type,
             'content' => $content,
@@ -309,9 +305,8 @@ class Ajax_Controller {
             wp_send_json_error( array( 'message' => 'حداقل امتیاز لازم برای دریافت کد تخفیف ۱۰۰ امتیاز است.' ) );
         }
 
-        // Create coupon
         $coupon_code = 'VIRA-' . strtoupper( wp_generate_password( 6, false ) );
-        $amount      = $points * 1000; // Each point = 1,000 Tomans
+        $amount      = $points * 1000;
 
         $coupon = new \WC_Coupon();
         $coupon->set_code( $coupon_code );

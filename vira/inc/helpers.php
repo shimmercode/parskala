@@ -45,7 +45,7 @@ if ( ! function_exists( 'vira_format_toman' ) ) {
 
 if ( ! function_exists( 'vira_is_module_enabled' ) ) {
     /**
-     * Check whether a specific Vira or ParsKala module is enabled in Vira Admin Control Center.
+     * Check whether a specific Vira module is enabled in Vira Admin Control Center.
      *
      * @param string $module_id Module identifier slug.
      * @param bool   $default   Default status if not saved.
@@ -90,7 +90,7 @@ if ( ! function_exists( 'vira_get_user_location' ) ) {
 
 if ( ! function_exists( 'vira_send_sms' ) ) {
     /**
-     * Unified Persian SMS Sender wrapper supporting Kavenegar, Melipayamak, FarazSMS, and PRK-SMS.
+     * Unified Persian SMS Sender wrapper supporting Kavenegar, Melipayamak, FarazSMS, and integrated SMS engines.
      *
      * @param string $mobile    Recipient phone number.
      * @param string $message   Text message or OTP code.
@@ -103,17 +103,14 @@ if ( ! function_exists( 'vira_send_sms' ) ) {
         $api_key = get_option( 'vira_sms_api_key', '' );
 
         if ( empty( $api_key ) ) {
-            // Log warning: API key not set
             return false;
         }
 
-        // Hook for custom SMS integrations (compatible with ParsKala PRKSMSApp)
         $result = apply_filters( 'vira_custom_send_sms', false, $mobile, $message, $pattern, $params );
         if ( false !== $result ) {
             return $result;
         }
 
-        // Default mock success in dry-run or demo mode
         return array(
             'success' => true,
             'mobile'  => $mobile,
@@ -142,5 +139,42 @@ if ( ! function_exists( 'vira_get_iran_provinces_cities' ) ) {
             'گیلان' => array( 'رشت', 'بندر انزلی', 'لاهیجان', 'لنگرود', 'تالش' ),
             'مازندران' => array( 'ساری', 'بابل', 'آمل', 'قائم‌شهر', 'تنکابن' ),
         );
+    }
+}
+
+/* ==========================================================================
+   VIRA BRANDED WRAPPERS FOR CORE ENGINE HOOKS & TEMPLATE TAGS
+   ========================================================================== */
+
+if ( ! function_exists( 'vira_get_product_brand_name' ) ) {
+    function vira_get_product_brand_name( $product_id ) {
+        if ( function_exists( 'woodmart_get_product_brand_name' ) ) {
+            return woodmart_get_product_brand_name( $product_id );
+        }
+        return 'برند رسمی';
+    }
+}
+
+if ( ! function_exists( 'vira_add_to_wishlist_button' ) ) {
+    function vira_add_to_wishlist_button() {
+        if ( function_exists( 'woodmart_add_to_wishlist_button' ) ) {
+            woodmart_add_to_wishlist_button();
+        }
+    }
+}
+
+if ( ! function_exists( 'vira_add_to_compare_button' ) ) {
+    function vira_add_to_compare_button() {
+        if ( function_exists( 'woodmart_add_to_compare_button' ) ) {
+            woodmart_add_to_compare_button();
+        }
+    }
+}
+
+if ( ! function_exists( 'vira_swatches_list' ) ) {
+    function vira_swatches_list() {
+        if ( function_exists( 'woodmart_swatches_list' ) ) {
+            woodmart_swatches_list();
+        }
     }
 }
