@@ -16,7 +16,7 @@ define( 'VIRA_THEME_VERSION', '1.0.0' );
 define( 'VIRA_THEME_DIR', get_template_directory() );
 define( 'VIRA_THEME_URI', get_template_directory_uri() );
 
-// 2. Define Compatibility Constants (prevents broken relative URLs in legacy templates)
+// 2. Define Compatibility Constants (prevents broken relative URLs and undefined constant warnings)
 if ( ! defined( 'parskala_URI' ) ) {
     define( 'parskala_URI', get_template_directory_uri() );
 }
@@ -31,6 +31,15 @@ if ( ! defined( 'PRK_VERSION' ) ) {
 }
 if ( ! defined( 'THEME_TEXTDOMAIN' ) ) {
     define( 'THEME_TEXTDOMAIN', 'vira' );
+}
+if ( ! defined( 'PRK_SIZEGUIDE_DIR' ) ) {
+    define( 'PRK_SIZEGUIDE_DIR', get_template_directory() . '/inc/prk-size-guide' );
+}
+if ( ! defined( 'PRK_SIZEGUIDE_URI' ) ) {
+    define( 'PRK_SIZEGUIDE_URI', get_template_directory_uri() . '/inc/prk-size-guide' );
+}
+if ( ! defined( 'PRK_SIZEGUIDE_ASSETS' ) ) {
+    define( 'PRK_SIZEGUIDE_ASSETS', PRK_SIZEGUIDE_URI . '/assets/' );
 }
 
 // 3. Load Vira Central Initialization & Dependency Engine
