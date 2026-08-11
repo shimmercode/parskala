@@ -16,7 +16,13 @@ if ( file_exists( $vira_csf_file ) ) {
     require_once $vira_csf_file;
 }
 
-// 2. Load Size Guide Plugin safely
+// 2. Load Custom CSS selector arrays BEFORE settings-opt.php so gradient_general_selector() is defined
+$vira_css_selectors = parskala_TEMPLATEPATH . '/inc/vira-custom-css.php';
+if ( file_exists( $vira_css_selectors ) ) {
+    require_once $vira_css_selectors;
+}
+
+// 3. Load Size Guide Plugin safely
 $vira_size_guide_file = parskala_TEMPLATEPATH . '/inc/prk-size-guide/prkSizeGuidePlugin.php';
 if ( file_exists( $vira_size_guide_file ) ) {
     include_once $vira_size_guide_file;
@@ -24,13 +30,13 @@ if ( file_exists( $vira_size_guide_file ) ) {
     include_once parskala_TEMPLATEPATH . '/inc/modules/vira-size-guide/prkSizeGuidePlugin.php';
 }
 
-// 3. Load Theme Settings Options (CSF Options) safely
+// 4. Load Theme Settings Options (CSF Options) safely
 $vira_settings_file = parskala_TEMPLATEPATH . '/inc/settings-opt.php';
 if ( file_exists( $vira_settings_file ) && class_exists( 'CSF' ) ) {
     require_once $vira_settings_file;
 }
 
-// 4. Load Core Option Menus & Metaboxes safely
+// 5. Load Core Option Menus & Metaboxes safely
 $vira_menu_opts = parskala_TEMPLATEPATH . '/inc/includes/menu-options.php';
 if ( file_exists( $vira_menu_opts ) ) {
     include_once $vira_menu_opts;
