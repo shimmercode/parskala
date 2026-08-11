@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 $prefix = "prk_option";
 
 
@@ -12,7 +13,6 @@ CSF::createSection( $prefix, array(
             'id'       => 'enable',
             'type'     => 'switcher',
             'title'    => __( 'فعال سازی', 'parskala' ),
-if ( ! class_exists( "CSF" ) ) { return; }
             'subtitle' => __( 'فعال سازی گروه بندی ویژگی ها.', 'parskala' ),
             'default' => 1
         ),

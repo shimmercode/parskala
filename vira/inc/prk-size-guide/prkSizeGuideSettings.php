@@ -1,20 +1,18 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 
 
 
 #attributes settings
-if(!class_exists("CSF")){ return; }
 CSF::createSection($prefix, array(
 	'title' => esc_html__('پیکربندی راهنمای سایزبندی تصاویر', 'prk'),
 	'id' => 'sizeguide_settings',
 	'icon' => 'ri-questionnaire-line',
   ));
 
-  if(!class_exists("CSF")){ return; }
-CSF::createSection( $prefix, array(
+  CSF::createSection( $prefix, array(
 	  'title'      => __( 'عمومی', 'parskala' ),
 	  // 'desc'       => __( '', 'woocommerce-pdf-catalog' ),
-if ( ! class_exists( "CSF" ) ) { return; }
 	  'id'         => 'general-settings',
 	  'parent' => 'sizeguide_settings', // The slug id of the parent section
 	  'fields'     => array(

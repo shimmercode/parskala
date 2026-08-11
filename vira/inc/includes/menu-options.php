@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 // Control core classes for avoid errors
 if( class_exists( 'CSF' ) ) {
 
@@ -6,16 +7,13 @@ if( class_exists( 'CSF' ) ) {
   // Set a unique slug-like ID
   $prefix = 'prk_menu_options';
 
-  if(!class_exists("CSF")){ return; }
-CSF::createNavMenuOptions( $prefix, array(
+  CSF::createNavMenuOptions( $prefix, array(
     'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
   ) );
 
   //
   // Create a section
-if ( ! class_exists( "CSF" ) ) { return; }
-  if(!class_exists("CSF")){ return; }
-CSF::createSection( $prefix, array(
+  CSF::createSection( $prefix, array(
     'fields' => array(
       array(
         'id'    => 'menu-icon',

@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 /**
  * Story item metaboxes.
  *
@@ -12,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $prefix = 'prk-story-metabox';
 
 CSF::createMetabox(
-if ( ! class_exists( "CSF" ) ) { return; }
 	$prefix,
 	array(
 		'title'     => esc_html__( 'آیتم های استوری', 'parskala' ),

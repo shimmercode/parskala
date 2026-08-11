@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 
 function dina_product_attributes_array() {
 
@@ -66,7 +67,6 @@ foreach ($footer_posts as $key => $value) {
 
 
 // Create options
-if(!class_exists("CSF")){ return; }
 CSF::createOptions($prefix, array(
 
     // framework title

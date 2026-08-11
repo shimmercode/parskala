@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 
 
   // Set a unique slug-like ID
@@ -6,17 +7,14 @@
 
   //
   // Create taxonomy options
-  if(!class_exists("CSF")){ return; }
-CSF::createTaxonomyOptions( $prefix, array(
+  CSF::createTaxonomyOptions( $prefix, array(
     'taxonomy'  => 'product_cat',
     'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
   ) );
 
   //
-if ( ! class_exists( "CSF" ) ) { return; }
   // Create a section
-  if(!class_exists("CSF")){ return; }
-CSF::createSection( $prefix, array(
+  CSF::createSection( $prefix, array(
     'fields' => array(
       array(
     'id'    => 'catchild-true',
@@ -69,7 +67,6 @@ CSF::createSection( $prefix, array(
 $prefix_brand = 'product_brand_options';
 $brand_slug = prk_option('product_brand_slug') ? prk_option('product_brand_slug') : 'brand';
 // Create taxonomy options
-if(!class_exists("CSF")){ return; }
 CSF::createTaxonomyOptions( $prefix_brand, array(
   'taxonomy'  => $brand_slug,
   'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
@@ -77,7 +74,6 @@ CSF::createTaxonomyOptions( $prefix_brand, array(
 
 
 // Create a section
-if(!class_exists("CSF")){ return; }
 CSF::createSection( $prefix_brand, array(
   'fields' => array(
     array(
@@ -97,14 +93,12 @@ $prefix_faq_cat = 'prk_faq_cat_taxonomy_options';
 
 //
 // Create faq_cat options
-if(!class_exists("CSF")){ return; }
 CSF::createTaxonomyOptions( $prefix_faq_cat, array(
   'taxonomy'  => 'faq_cat',
   'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
 ) );
 
 // Create a section
-if(!class_exists("CSF")){ return; }
 CSF::createSection( $prefix_faq_cat, array(
 
   'fields' => array(

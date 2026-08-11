@@ -1,4 +1,5 @@
 <?php
+if ( ! class_exists( "CSF" ) ) { return; }
 /**
  * Register theme options.
  *
@@ -12,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $prefix = "prk_option";
 
-if ( ! class_exists( "CSF" ) ) { return; }
 
 CSF::createSection(
 	$prefix,
