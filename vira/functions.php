@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VIRA_THEME_VERSION', '1.4.1' );
+define( 'VIRA_THEME_VERSION', '1.4.2' );
 define( 'VIRA_THEME_DIR', get_template_directory() );
 define( 'VIRA_THEME_URI', get_template_directory_uri() );
 
@@ -30,6 +30,7 @@ if ( ! defined( 'THEME_TEXTDOMAIN' ) ) {
 	define( 'THEME_TEXTDOMAIN', 'vira' );
 }
 
+require_once VIRA_THEME_DIR . '/inc/class-vira-loader.php';
 require_once VIRA_THEME_DIR . '/inc/class-vira-init.php';
 
 /**

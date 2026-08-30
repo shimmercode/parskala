@@ -35,7 +35,7 @@ class Controller {
 		if ( get_transient( $lock ) ) {
 			wp_send_json_error( array( 'message' => 'لطفاً کمی صبر کنید.' ) );
 		}
-		if ( class_exists( 'PRK_OTP_Firewall' ) && ! PRK_OTP_Firewall::allow( $mobile . $ip ) ) {
+		if ( class_exists( '\\PRK_OTP_Firewall', false ) && ! \PRK_OTP_Firewall::allow( $mobile . $ip ) ) {
 			wp_send_json_error( array( 'message' => 'محدودیت تعداد درخواست.' ) );
 		}
 		if ( ! get_option( 'vira_sms_api_key', '' ) ) {
@@ -46,7 +46,7 @@ class Controller {
 		set_transient( 'vira_otp_att_' . md5( $mobile ), 0, 5 * MINUTE_IN_SECONDS );
 		set_transient( $lock, 1, 45 );
 		require_once get_template_directory() . '/inc/sms/class-vira-sms.php';
-		$sent = Vira_Sms::send( $mobile, 'Vira OTP: ' . $code );
+		$sent = \Vira_Sms::send( $mobile, 'Vira OTP: ' . $code );
 		if ( true !== $sent ) {
 			$msg = is_wp_error( $sent ) ? $sent->get_error_message() : 'ارسال پیامک ناموفق';
 			wp_send_json_error( array( 'message' => $msg ) );

@@ -30,39 +30,28 @@ class Init {
 	}
 
 	public function load_core_files() {
-		$dir = get_template_directory();
-		require_once $dir . '/inc/helpers.php';
-		require_once $dir . '/inc/sms/class-vira-sms.php';
-		require_once $dir . '/inc/class-vira-pdf.php';
-		require_once $dir . '/inc/auth/auth.php';
-		$qv = $dir . '/inc/woo-quick-view/classes/class.backend.php';
-		if ( file_exists( $qv ) ) {
-			require_once $qv;
+		$files = array(
+			'/inc/helpers.php',
+			'/inc/sms/class-vira-sms.php',
+			'/inc/class-vira-pdf.php',
+			'/inc/auth/auth.php',
+			'/inc/auth/PRK_OTP_Firewall.php',
+			'/inc/woo-quick-view/classes/class.backend.php',
+			'/inc/woocommerce-group-attributes/includes/class-woocommerce-group-attributes.php',
+			'/inc/prkwoocfem/includes/class-prkwoocfem-front-end.php',
+			'/inc/notify-product-activity/notify-product-activity.php',
+			'/inc/admin/class-vira-checkout-fields.php',
+			'/inc/admin/class-vira-admin.php',
+			'/inc/ajax/class-vira-ajax.php',
+			'/inc/integrations/class-vira-core-engine.php',
+			'/inc/integrations/class-vira-woo.php',
+			'/inc/includes/set-location-Cookie.php',
+		);
+		foreach ( $files as $rel ) {
+			Loader::require_file( $rel );
 		}
-		$ga = $dir . '/inc/woocommerce-group-attributes/includes/class-woocommerce-group-attributes.php';
-		if ( file_exists( $ga ) ) {
-			require_once $ga;
-		}
-		$cf = $dir . '/inc/prkwoocfem/includes/class-prkwoocfem-front-end.php';
-		if ( file_exists( $cf ) ) {
-			require_once $cf;
-		}
-		$nt = $dir . '/inc/notify-product-activity/notify-product-activity.php';
-		if ( file_exists( $nt ) ) {
-			require_once $nt;
-		}
-		$cfadm = $dir . '/inc/admin/class-vira-checkout-fields.php';
-		if ( file_exists( $cfadm ) ) {
-			require_once $cfadm;
-			if ( class_exists( 'Vira_Checkout_Fields_Admin' ) ) {
-				Vira_Checkout_Fields_Admin::init();
-			}
-		}
-		require_once $dir . '/inc/admin/class-vira-admin.php';
-		require_once $dir . '/inc/ajax/class-vira-ajax.php';
-		require_once $dir . '/inc/integrations/class-vira-core-engine.php';
-		require_once $dir . '/inc/integrations/class-vira-woo.php';
-		require_once $dir . '/inc/includes/set-location-Cookie.php';
+		// Global class (no namespace) — must use leading backslash from this namespace.
+		Loader::boot( '\\Vira_Checkout_Fields_Admin', 'init' );
 	}
 
 	public function register_modules() {
