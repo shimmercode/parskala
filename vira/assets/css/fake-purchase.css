@@ -1,0 +1,157 @@
+.nasa-rtl .ns-sale-notification {
+    right: 10px;
+    left: auto;
+}
+.ns-sale-notification {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 366px;
+    max-width: 100%;
+    z-index: 399;
+    height: auto;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #efefef;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+    border-radius: 8px;
+}
+.ns-sale-notification.tip-right{
+    right: 20px;
+    left: unset;
+}
+.ns-sale-notification.nasa-active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+.ns-sale-notification .wrapper-noti {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.ns-sale-notification .product-image {
+    width: 70px;
+}
+.ns-sale-notification .product-image img {
+    width: 100%;
+    height: auto;
+}
+.ns-sale-notification .theme-bg {
+    width: 1px;
+    border-left: 1px solid #efefef;
+    margin: 5px 10px;
+}
+.nasa-rtl .ns-sale-notification .wrapper-theme {
+    padding: 5px 0 22px 25px;
+}
+.ns-sale-notification .wrapper-theme {
+    align-self: stretch;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    position: relative;
+    padding: 5px 25px 22px 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.ns-sale-notification .noti-title {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    word-break: break-word;
+    font-size: 12px;
+    line-height: 14px;
+    word-break: break-word;
+    margin: 0;
+    color: #55586c;
+}
+.ns-sale-notification .noti-body {
+    -webkit-box-flex: 9;
+    -ms-flex-positive: 9;
+    flex-grow: 9;
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    height: auto;
+    margin: 10px 0 10px 0;
+    color: #55586c;
+}
+.nasa-rtl .ns-sale-notification .noti-time {
+    right: 0;
+    left: auto;
+}
+.ns-sale-notification .noti-time {
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    color: #c1c1c1;
+}
+body.nasa-rtl .rtl-margin-right-10 {
+    margin-right: 10px !important;
+}
+body.nasa-rtl .rtl-margin-left-0 {
+    margin-left: 0px !important;
+}
+.ns-sale-notification .verify{
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-right: 10px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #55586c;
+}
+.ns-sale-notification .verify svg {
+    color: #0ca940;
+    margin: 0 5px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.ns-sale-notification .wrapper-theme:after {
+    content: '';
+    clear: both;
+    display: table;
+}

@@ -1,0 +1,7 @@
+.line-account{
+    background: rgba(228, 228, 228, 1);
+    height: 18px;
+    display: flex;
+    width: 1px;
+    margin: 0 10px;
+}

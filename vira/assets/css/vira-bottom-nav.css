@@ -1,0 +1,99 @@
+/* ==========================================================================
+   VIRA MOBILE BOTTOM APPLICATION NAVIGATION ([VIRA-02] & [VIRA-07])
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    /* Mobile App Bottom Navigation Bar */
+    .vira-mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background: #ffffff;
+        border-top: 1px solid #e2e8f0;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 9998;
+        direction: rtl;
+    }
+
+    .vira-mobile-bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        font-size: 11px;
+        gap: 4px;
+        position: relative;
+    }
+
+    .vira-mobile-bottom-nav .nav-item.active {
+        color: #ef394e;
+        font-weight: bold;
+    }
+
+    .vira-mobile-bottom-nav .nav-item .cart-badge {
+        position: absolute;
+        top: -4px;
+        right: 12px;
+        background: #ef394e;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 1px 5px;
+        border-radius: 10px;
+    }
+}
+
+/* Sticky Purchase Bar for Single Product Page */
+.vira-sticky-purchase-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    direction: rtl;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.vira-sticky-purchase-bar.visible {
+    transform: translateY(0);
+}
+
+.vira-sticky-purchase-bar .sticky-product-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vira-sticky-purchase-bar .sticky-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.vira-sticky-purchase-bar .sticky-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    display: block;
+}
+
+.vira-sticky-purchase-bar .sticky-price {
+    font-size: 15px;
+    color: #ef394e;
+    font-weight: bold;
+}

@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+.toggler-wrapper {
+	display: block;
+	width: 45px;
+	height: 25px;
+	cursor: pointer;
+	position: relative;
+}
+
+#prk_woocot section.buttons-wrapper{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.toggler-wrapper input[type="checkbox"] {
+	display: none;
+}
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
+	background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+	background-color: #e2e8f0;
+	position: absolute;
+	border-radius: 100px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+	position: absolute;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+
+/*--------------------------------------------------------------
+3.0 Effects Styles 
+--------------------------------------------------------------*/
+
+
+
+
+
+/*Style 11*/
+
+.toggler-wrapper.style-11 input[type="checkbox"]:checked+.toggler-slider:after {
+	content: 'بله';
+}
+
+.toggler-wrapper.style-11 input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+	left: calc(100% - 19px - 3px);
+}
+
+.toggler-wrapper.style-11 .toggler-slider:after {
+	content: 'خیر';
+	position: absolute;
+	top: 50%;
+	right: -20px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 100%;
+	text-transform: uppercase;
+	font-weight: 500;
+	opacity: 0.7;
+}
+
+.toggler-wrapper.style-11 .toggler-knob {
+	width: calc(25px - 6px);
+	height: calc(25px - 6px);
+	border-radius: 50%;
+	left: 3px;
+	top: 3px;
+	background-color: #fff;
+}
+.prk_woocot_wrapper{
+	display: none;
+}
+.prk_woocot_active{
+	display: block !important;
+}
+
+.prk_woocot-order-picked-up-label{
+	position: relative;
+	top: 4px;
+}
+
+
+#prksmsapp-settings-form-save-result{
+	position: absolute;
+    top: 0;
+    left: 160px;
+    color: #fff;
+    margin: 20px 15px !important;
+	font-size: 12px;
+    padding: 0 10px;
+}
+.prksmsapp-settings-form-success-save-result{
+    background-color: #46b450 !important;
+}
+
+.prksmsapp-settings-form-error-save-result{
+    background-color: #e4412c !important;
+}

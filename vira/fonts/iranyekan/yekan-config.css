@@ -1,0 +1,82 @@
+/* @font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 500;
+	src: url('woff/IRANYekanX-Mediumfanum.woff') format('woff'),
+	url('woff2/IRANYekanX-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 600;
+	src: url('woff/IRANYekanX-DemiBoldfanum.woff') format('woff'),
+	url('woff2/IRANYekanX-DemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: bold;
+	src: url('woff/IRANYekanX-ExtraBoldfanum.woff') format('woff'),
+	url('woff2/IRANYekanX-ExtraBold.woff2') format('woff2');
+}
+
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 800;
+	src: url('woff/IRANYekanX-Boldfanum.woff') format('woff'),
+	url('woff2/IRANYekanX-Bold.woff2') format('woff2');
+} */
+
+/* font box */
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 500;
+	src: url('woff/IRANYekanX-Medium.woff') format('woff'),   
+	url('woff2/IRANYekanX-Medium.woff2') format('woff2');		 
+}
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 600;
+	src: url('woff/IRANYekanX-DemiBold.woff') format('woff'),   
+	url('woff2/IRANYekanX-DemiBold.woff2') format('woff2');	 
+}
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: 800;
+	src: url('woff/IRANYekanX-ExtraBold.woff') format('woff'),   
+	url('woff2/IRANYekanX-ExtraBold.woff2') format('woff2');		 
+}
+
+
+@font-face {
+	font-family: prk-font;
+	font-style: normal;
+	font-weight: bold;
+	src: url('woff/IRANYekanX-Bold.woff') format('woff'),   
+	url('woff2/IRANYekanX-Bold.woff2') format('woff2');	 
+}
+
+@font-face {
+	font-family: prk-font;
+	font-style: 300;
+	font-weight: normal;
+	src: url('woff/IRANYekanX-Regular.woff') format('woff'),   
+	url('woff2/IRANYekanX-Regular.woff2') format('woff2');	
+}
+
+
+*{
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+}
