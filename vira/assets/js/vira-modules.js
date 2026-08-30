@@ -144,7 +144,8 @@
 				return;
 			}
 			var items = (res.data.items || []).join('، ');
-			$f.find('.vira-track-result').text('وضعیت: ' + res.data.status + ' — ' + res.data.total + ' — ' + items);
+			var tr = res.data.tracking ? ' — کد: ' + res.data.tracking : '';
+			$f.find('.vira-track-result').text('وضعیت: ' + res.data.status + ' — ' + res.data.total + ' — ' + items + tr);
 		});
 	});
 
@@ -168,13 +169,15 @@
 		$res.removeAttr('hidden').text('...');
 		searchTimer = setTimeout(function () {
 			$.get(viraVars.ajaxUrl, { action: 'vira_smart_search', security: viraVars.nonce, q: q }).done(function (res) {
-				if (!res.success || !res.data.length) {
+				var d = res.data || {};
+				var list = Array.isArray(d) ? d : [].concat(d.products || [], d.cats || [], d.brands || []);
+				if (!res.success || !list.length) {
 					$res.html('<div class="empty">نتیجه‌ای نیست</div>');
 					return;
 				}
 				var html = '<ul>';
-				res.data.forEach(function (item) {
-					html += '<li><a href="' + item.url + '">' + item.title + '</a></li>';
+				list.forEach(function (item) {
+					html += '<li><a href="' + item.url + '">' + (item.type && item.type !== 'product' ? '[' + item.type + '] ' : '') + item.title + '</a></li>';
 				});
 				html += '</ul>';
 				$res.html(html);
@@ -211,6 +214,37 @@
 					$('body').append($m);
 				}
 				$m.addClass('active').find('.vira-modal-body').html(res.data.html);
+			}
+		});
+	});
+	$(document).on('click', '.vira-qv-add', function () {
+		var $q = $('.vira-qv');
+		var attrs = {};
+		$q.find('.vira-qv-attr').each(function () {
+			attrs[$(this).attr('name')] = $(this).val();
+		});
+		var vid = 0;
+		var $json = $q.find('.vira-qv-vars');
+		if ($json.length) {
+			try {
+				JSON.parse($json.text()).forEach(function (v) {
+					var ok = true;
+					Object.keys(v.attrs).forEach(function (k) {
+						if (v.attrs[k] && attrs[k] !== v.attrs[k]) {
+							ok = false;
+						}
+					});
+					if (ok) {
+						vid = v.id;
+					}
+				});
+			} catch (e) {}
+		}
+		ajax({ action: 'vira_qv_add', product_id: $q.data('id'), variation_id: vid, qty: $q.find('.vira-qv-qty').val() || 1 }).done(function (res) {
+			if (res.success) {
+				window.location.href = res.data.cart;
+			} else {
+				alert(res.data && res.data.message ? res.data.message : 'خطا');
 			}
 		});
 	});
@@ -258,6 +292,12 @@
 	$(document).on('click', '.vira-story-close', function () {
 		clearTimeout(storyTimer);
 		$('#vira-story-player').attr('hidden', true);
+	});
+	$(document).on('click', '.vira-story-mute', function () {
+		var v = $('#vira-story-player video')[0];
+		if (v) {
+			v.muted = !v.muted;
+		}
 	});
 	$(document).on('click', '#vira-story-player .vira-story-media', function (e) {
 		if (e.clientX > window.innerWidth / 2) {

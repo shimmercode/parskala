@@ -36,15 +36,52 @@ class Controller {
 				'posts_per_page' => 8,
 			)
 		);
-		$out = array();
+		$out = array( 'products' => array(), 'cats' => array(), 'brands' => array() );
 		foreach ( $query->posts as $p ) {
 			$prod = wc_get_product( $p->ID );
-			$out[] = array(
+			$out['products'][] = array(
 				'id'    => $p->ID,
 				'title' => $p->post_title,
 				'url'   => get_permalink( $p ),
 				'price' => $prod ? $prod->get_price_html() : '',
+				'type'  => 'product',
 			);
+		}
+		$cats = get_terms(
+			array(
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => true,
+				'number'     => 4,
+				'search'     => $q,
+			)
+		);
+		if ( ! is_wp_error( $cats ) ) {
+			foreach ( $cats as $t ) {
+				$out['cats'][] = array(
+					'title' => $t->name,
+					'url'   => get_term_link( $t ),
+					'type'  => 'cat',
+				);
+			}
+		}
+		if ( taxonomy_exists( 'product_brand' ) ) {
+			$brands = get_terms(
+				array(
+					'taxonomy'   => 'product_brand',
+					'hide_empty' => true,
+					'number'     => 4,
+					'search'     => $q,
+				)
+			);
+			if ( ! is_wp_error( $brands ) ) {
+				foreach ( $brands as $t ) {
+					$out['brands'][] = array(
+						'title' => $t->name,
+						'url'   => get_term_link( $t ),
+						'type'  => 'brand',
+					);
+				}
+			}
 		}
 		set_transient( $cache_key, $out, 2 * MINUTE_IN_SECONDS );
 		wp_send_json_success( $out );

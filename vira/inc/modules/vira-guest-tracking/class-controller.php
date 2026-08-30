@@ -12,6 +12,27 @@ class Controller {
 		}
 		add_shortcode( 'vira_track_order', array( __CLASS__, 'shortcode' ) );
 		add_action( 'init', array( __CLASS__, 'ensure_page' ) );
+		add_action( 'add_meta_boxes', array( __CLASS__, 'box' ) );
+		add_action( 'woocommerce_process_shop_order_meta', array( __CLASS__, 'save' ) );
+	}
+
+	public static function box() {
+		add_meta_box( 'vira_track', 'کد پیگیری', array( __CLASS__, 'render_box' ), 'shop_order', 'side' );
+		add_meta_box( 'vira_track', 'کد پیگیری', array( __CLASS__, 'render_box' ), wc_get_page_screen_id( 'shop-order' ), 'side' );
+	}
+
+	public static function render_box( $post ) {
+		$order = $post instanceof \WC_Order ? $post : wc_get_order( $post->ID );
+		$val   = $order ? $order->get_meta( '_vira_tracking' ) : '';
+		echo '<input name="vira_tracking" style="width:100%" value="' . esc_attr( $val ) . '" placeholder="کد مرسوله">';
+	}
+
+	public static function save( $order_id ) {
+		$order = wc_get_order( $order_id );
+		if ( $order && isset( $_POST['vira_tracking'] ) ) {
+			$order->update_meta_data( '_vira_tracking', sanitize_text_field( wp_unslash( $_POST['vira_tracking'] ) ) );
+			$order->save();
+		}
 	}
 
 	public static function ensure_page() {

@@ -51,6 +51,13 @@ class Init {
 		if ( file_exists( $nt ) ) {
 			require_once $nt;
 		}
+		$cfadm = $dir . '/inc/admin/class-vira-checkout-fields.php';
+		if ( file_exists( $cfadm ) ) {
+			require_once $cfadm;
+			if ( class_exists( 'Vira_Checkout_Fields_Admin' ) ) {
+				Vira_Checkout_Fields_Admin::init();
+			}
+		}
 		require_once $dir . '/inc/admin/class-vira-admin.php';
 		require_once $dir . '/inc/ajax/class-vira-ajax.php';
 		require_once $dir . '/inc/integrations/class-vira-core-engine.php';

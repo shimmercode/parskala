@@ -28,10 +28,12 @@ class Controller {
 		if ( ! is_array( $rows ) ) {
 			$rows = array( array( 'min' => 1, 'max' => 4, 'value' => 0 ) );
 		}
+		$type = get_post_meta( $post->ID, '_vira_b2b_type', true );
+		echo '<p>نوع <select name="vira_b2b_type"><option value="percent"' . selected( $type, 'percent', false ) . '>درصد</option><option value="fixed"' . selected( $type, 'fixed', false ) . '>قیمت ثابت</option></select></p>';
 		foreach ( $rows as $i => $r ) {
 			echo '<p><input name="vira_b2b[' . esc_attr( $i ) . '][min]" type="number" value="' . esc_attr( $r['min'] ) . '" style="width:70px">';
 			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][max]" type="number" value="' . esc_attr( $r['max'] ) . '" style="width:70px">';
-			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][value]" type="number" value="' . esc_attr( $r['value'] ) . '" style="width:70px"> %</p>';
+			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][value]" type="number" value="' . esc_attr( $r['value'] ) . '" style="width:90px"></p>';
 		}
 	}
 
@@ -51,6 +53,7 @@ class Controller {
 			);
 		}
 		update_post_meta( $post_id, '_vira_b2b_tiers', $out );
+		update_post_meta( $post_id, '_vira_b2b_type', isset( $_POST['vira_b2b_type'] ) ? sanitize_key( wp_unslash( $_POST['vira_b2b_type'] ) ) : 'percent' );
 	}
 
 	public static function cat_field( $term ) {
@@ -76,7 +79,7 @@ class Controller {
 		return $qty;
 	}
 
-	public static function apply_tiers( $price, $tiers, $qty ) {
+	public static function apply_tiers( $price, $tiers, $qty, $type = 'percent' ) {
 		if ( ! is_array( $tiers ) ) {
 			return $price;
 		}
@@ -84,23 +87,39 @@ class Controller {
 			$min = (int) $t['min'];
 			$max = (int) $t['max'];
 			if ( $qty >= $min && ( 0 === $max || $qty <= $max ) ) {
-				$pct = (int) $t['value'];
-				if ( $pct > 0 && $pct < 100 ) {
-					return (float) $price * ( 1 - ( $pct / 100 ) );
+				$val = (float) $t['value'];
+				if ( 'fixed' === $type && $val > 0 ) {
+					return $val;
+				}
+				if ( $val > 0 && $val < 100 ) {
+					return (float) $price * ( 1 - ( $val / 100 ) );
 				}
 			}
 		}
 		return $price;
 	}
 
+	public static function user_ok() {
+		$role = get_option( 'vira_b2b_role', '' );
+		if ( ! $role ) {
+			return true;
+		}
+		$user = wp_get_current_user();
+		return $user && in_array( $role, (array) $user->roles, true );
+	}
+
 	public static function price( $price, $product ) {
 		if ( ( is_admin() && ! wp_doing_ajax() ) || ! $product || $price === '' ) {
 			return $price;
 		}
+		if ( ! self::user_ok() ) {
+			return $price;
+		}
 		$qty   = self::qty_for( $product );
 		$tiers = get_post_meta( $product->get_id(), '_vira_b2b_tiers', true );
+		$type  = get_post_meta( $product->get_id(), '_vira_b2b_type', true );
 		if ( is_array( $tiers ) && ! empty( $tiers ) ) {
-			return self::apply_tiers( $price, $tiers, $qty );
+			return self::apply_tiers( $price, $tiers, $qty, $type ? $type : 'percent' );
 		}
 		$cats = wc_get_product_term_ids( $product->get_id(), 'product_cat' );
 		foreach ( $cats as $cid ) {

@@ -44,6 +44,10 @@ class Controller {
 		echo '<p>نوع <select name="vira_story_type"><option value="image"' . selected( $type, 'image', false ) . '>image</option><option value="video"' . selected( $type, 'video', false ) . '>video</option></select></p>';
 		echo '<p>مدت ثانیه <input name="vira_story_duration" type="number" value="' . esc_attr( $dur ? $dur : 5 ) . '"></p>';
 		echo '<p>CTA URL <input name="vira_story_cta" style="width:100%" value="' . esc_attr( $cta ) . '"></p>';
+		$start = get_post_meta( $post->ID, '_vira_story_start', true );
+		$end   = get_post_meta( $post->ID, '_vira_story_end', true );
+		echo '<p>شروع (Y-m-d H:i) <input name="vira_story_start" value="' . esc_attr( $start ) . '"></p>';
+		echo '<p>پایان <input name="vira_story_end" value="' . esc_attr( $end ) . '"></p>';
 	}
 
 	public static function save( $post_id ) {
@@ -54,12 +58,23 @@ class Controller {
 		update_post_meta( $post_id, '_vira_story_type', sanitize_key( wp_unslash( $_POST['vira_story_type'] ) ) );
 		update_post_meta( $post_id, '_vira_story_duration', absint( $_POST['vira_story_duration'] ) );
 		update_post_meta( $post_id, '_vira_story_cta', esc_url_raw( wp_unslash( $_POST['vira_story_cta'] ) ) );
+		update_post_meta( $post_id, '_vira_story_start', sanitize_text_field( wp_unslash( $_POST['vira_story_start'] ) ) );
+		update_post_meta( $post_id, '_vira_story_end', sanitize_text_field( wp_unslash( $_POST['vira_story_end'] ) ) );
 	}
 
 	public static function items() {
-		$posts = get_posts( array( 'post_type' => 'vira_story', 'numberposts' => 12, 'post_status' => 'publish' ) );
+		$posts = get_posts( array( 'post_type' => 'vira_story', 'numberposts' => 20, 'post_status' => 'publish' ) );
 		$out   = array();
+		$now   = current_time( 'timestamp' );
 		foreach ( $posts as $s ) {
+			$start = get_post_meta( $s->ID, '_vira_story_start', true );
+			$end   = get_post_meta( $s->ID, '_vira_story_end', true );
+			if ( $start && strtotime( $start ) > $now ) {
+				continue;
+			}
+			if ( $end && strtotime( $end ) < $now ) {
+				continue;
+			}
 			$media = get_post_meta( $s->ID, '_vira_story_media', true );
 			if ( ! $media && has_post_thumbnail( $s->ID ) ) {
 				$media = get_the_post_thumbnail_url( $s->ID, 'large' );
@@ -104,6 +119,6 @@ class Controller {
 	}
 
 	public static function player() {
-		echo '<div id="vira-story-player" class="vira-story-player" hidden><div class="vira-story-progress"></div><button type="button" class="vira-story-close">&times;</button><div class="vira-story-media"></div><a class="vira-story-cta button" href="#">مشاهده</a></div>';
+		echo '<div id="vira-story-player" class="vira-story-player" hidden><div class="vira-story-progress"></div><button type="button" class="vira-story-close">&times;</button><button type="button" class="vira-story-mute">صدا</button><div class="vira-story-media"></div><a class="vira-story-cta button" href="#">مشاهده</a></div>';
 	}
 }

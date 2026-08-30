@@ -55,6 +55,7 @@ class Admin_Dashboard {
         register_setting( 'vira_admin_modules_group', 'vira_store_verified' );
         register_setting( 'vira_admin_modules_group', 'vira_store_trust_score' );
         register_setting( 'vira_admin_modules_group', 'vira_b2b_global_percent' );
+        register_setting( 'vira_admin_modules_group', 'vira_b2b_role' );
     }
 
     public function get_modules_catalog() {
@@ -175,6 +176,7 @@ class Admin_Dashboard {
                     <p><label><input type="checkbox" name="vira_store_verified" value="1" <?php checked( get_option( 'vira_store_verified' ), '1' ); ?>> فروشگاه تأییدشده ویرا</label></p>
                     <p><label>امتیاز اعتماد فروشگاه <input type="number" name="vira_store_trust_score" value="<?php echo esc_attr( get_option( 'vira_store_trust_score', 0 ) ); ?>"></label></p>
                     <p><label>تخفیف سراسری B2B % از ۱۰ عدد <input type="number" name="vira_b2b_global_percent" value="<?php echo esc_attr( get_option( 'vira_b2b_global_percent', 0 ) ); ?>"></label></p>
+                    <p><label>نقش B2B (خالی = همه)<input type="text" name="vira_b2b_role" value="<?php echo esc_attr( get_option( 'vira_b2b_role', '' ) ); ?>" placeholder="wholesale"></label></p>
                 </div>
                 <div style="margin-top: 24px;">
                     <?php submit_button( 'ذخیره تنظیمات ماژول‌های ویرا', 'primary large', 'submit', false, array( 'style' => 'background: #ef394e; border-color: #d62d41; padding: 10px 30px; font-size: 15px;' ) ); ?>
