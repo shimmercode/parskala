@@ -215,9 +215,7 @@ if ( ! function_exists( 'vira_add_to_compare_button' ) ) {
 
 if ( ! function_exists( 'vira_swatches_list' ) ) {
     function vira_swatches_list() {
-        if ( function_exists( 'woodmart_swatches_list' ) ) {
-            woodmart_swatches_list();
-        }
+        return;
     }
 }
 

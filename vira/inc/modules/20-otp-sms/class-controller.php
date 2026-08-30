@@ -35,6 +35,9 @@ class Controller {
 		if ( get_transient( $lock ) ) {
 			wp_send_json_error( array( 'message' => 'لطفاً کمی صبر کنید.' ) );
 		}
+		if ( class_exists( 'PRK_OTP_Firewall' ) && ! PRK_OTP_Firewall::allow( $mobile . $ip ) ) {
+			wp_send_json_error( array( 'message' => 'محدودیت تعداد درخواست.' ) );
+		}
 		if ( ! get_option( 'vira_sms_api_key', '' ) ) {
 			wp_send_json_error( array( 'message' => 'OTP service is not configured' ) );
 		}

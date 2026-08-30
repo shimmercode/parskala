@@ -12,32 +12,26 @@ class Controller {
 		}
 		add_action( 'add_meta_boxes', array( __CLASS__, 'box' ) );
 		add_action( 'save_post_product', array( __CLASS__, 'save' ) );
+		add_action( 'product_cat_edit_form_fields', array( __CLASS__, 'cat_field' ) );
+		add_action( 'edited_product_cat', array( __CLASS__, 'save_cat' ) );
 		add_filter( 'woocommerce_product_get_price', array( __CLASS__, 'price' ), 20, 2 );
 		add_filter( 'woocommerce_product_variation_get_price', array( __CLASS__, 'price' ), 20, 2 );
 	}
 
 	public static function box() {
-		add_meta_box( 'vira_b2b', 'قیمت پلکانی B2B', array( __CLASS__, 'render_box' ), 'product', 'normal' );
+		add_meta_box( 'vira_b2b', 'قیمت پلکانی محصول', array( __CLASS__, 'render_box' ), 'product', 'normal' );
 	}
 
 	public static function render_box( $post ) {
 		wp_nonce_field( 'vira_b2b', 'vira_b2b_nonce' );
 		$rows = get_post_meta( $post->ID, '_vira_b2b_tiers', true );
 		if ( ! is_array( $rows ) ) {
-			$rows = array(
-				array( 'min' => 1, 'max' => 4, 'type' => 'percent', 'value' => 0 ),
-				array( 'min' => 5, 'max' => 9, 'type' => 'percent', 'value' => 5 ),
-				array( 'min' => 10, 'max' => 49, 'type' => 'percent', 'value' => 10 ),
-				array( 'min' => 50, 'max' => 0, 'type' => 'percent', 'value' => 15 ),
-			);
+			$rows = array( array( 'min' => 1, 'max' => 4, 'value' => 0 ) );
 		}
-		echo '<p>min / max / percent</p>';
 		foreach ( $rows as $i => $r ) {
-			echo '<p>';
-			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][min]" type="number" value="' . esc_attr( $r['min'] ) . '" style="width:80px">';
-			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][max]" type="number" value="' . esc_attr( $r['max'] ) . '" style="width:80px">';
-			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][value]" type="number" value="' . esc_attr( $r['value'] ) . '" style="width:80px"> %';
-			echo '</p>';
+			echo '<p><input name="vira_b2b[' . esc_attr( $i ) . '][min]" type="number" value="' . esc_attr( $r['min'] ) . '" style="width:70px">';
+			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][max]" type="number" value="' . esc_attr( $r['max'] ) . '" style="width:70px">';
+			echo '<input name="vira_b2b[' . esc_attr( $i ) . '][value]" type="number" value="' . esc_attr( $r['value'] ) . '" style="width:70px"> %</p>';
 		}
 	}
 
@@ -53,20 +47,24 @@ class Controller {
 			$out[] = array(
 				'min'   => absint( $row['min'] ),
 				'max'   => absint( $row['max'] ),
-				'type'  => 'percent',
 				'value' => absint( $row['value'] ),
 			);
 		}
 		update_post_meta( $post_id, '_vira_b2b_tiers', $out );
 	}
 
-	public static function price( $price, $product ) {
-		if ( is_admin() && ! wp_doing_ajax() ) {
-			return $price;
+	public static function cat_field( $term ) {
+		$v = get_term_meta( $term->term_id, '_vira_b2b_percent', true );
+		echo '<tr class="form-field"><th>تخفیف پلکانی دسته %</th><td><input name="vira_b2b_percent" type="number" value="' . esc_attr( $v ) . '"></td></tr>';
+	}
+
+	public static function save_cat( $term_id ) {
+		if ( isset( $_POST['vira_b2b_percent'] ) ) {
+			update_term_meta( $term_id, '_vira_b2b_percent', absint( $_POST['vira_b2b_percent'] ) );
 		}
-		if ( ! $product || $price === '' ) {
-			return $price;
-		}
+	}
+
+	public static function qty_for( $product ) {
 		$qty = 1;
 		if ( function_exists( 'WC' ) && WC()->cart ) {
 			foreach ( WC()->cart->get_cart() as $item ) {
@@ -75,7 +73,10 @@ class Controller {
 				}
 			}
 		}
-		$tiers = get_post_meta( $product->get_id(), '_vira_b2b_tiers', true );
+		return $qty;
+	}
+
+	public static function apply_tiers( $price, $tiers, $qty ) {
 		if ( ! is_array( $tiers ) ) {
 			return $price;
 		}
@@ -88,6 +89,29 @@ class Controller {
 					return (float) $price * ( 1 - ( $pct / 100 ) );
 				}
 			}
+		}
+		return $price;
+	}
+
+	public static function price( $price, $product ) {
+		if ( ( is_admin() && ! wp_doing_ajax() ) || ! $product || $price === '' ) {
+			return $price;
+		}
+		$qty   = self::qty_for( $product );
+		$tiers = get_post_meta( $product->get_id(), '_vira_b2b_tiers', true );
+		if ( is_array( $tiers ) && ! empty( $tiers ) ) {
+			return self::apply_tiers( $price, $tiers, $qty );
+		}
+		$cats = wc_get_product_term_ids( $product->get_id(), 'product_cat' );
+		foreach ( $cats as $cid ) {
+			$pct = (int) get_term_meta( $cid, '_vira_b2b_percent', true );
+			if ( $pct > 0 && $qty >= 5 ) {
+				return (float) $price * ( 1 - ( $pct / 100 ) );
+			}
+		}
+		$global = (int) get_option( 'vira_b2b_global_percent', 0 );
+		if ( $global > 0 && $qty >= 10 ) {
+			return (float) $price * ( 1 - ( $global / 100 ) );
 		}
 		return $price;
 	}

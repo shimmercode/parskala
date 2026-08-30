@@ -119,7 +119,7 @@
 
 	$(document).on('submit', '.vira-price-alert-form', function (e) {
 		e.preventDefault();
-		ajax({ action: 'vira_price_alert', product_id: $(this).data('product'), mobile: $(this).find('[name="mobile"]').val() }).done(function (res) {
+		ajax({ action: 'vira_price_alert', product_id: $(this).data('product'), mobile: $(this).find('[name="mobile"]').val(), target: $(this).find('[name="target"]').val() }).done(function (res) {
 			alert(res.data && res.data.message ? res.data.message : (res.success ? 'ثبت شد' : 'خطا'));
 		});
 	});
@@ -139,33 +139,28 @@
 		e.preventDefault();
 		var $f = $(this);
 		ajax({ action: 'vira_guest_track_order', order_id: $f.find('[name="order_id"]').val(), mobile: $f.find('[name="mobile"]').val() }).done(function (res) {
-			$f.find('.vira-track-result').text(res.success ? ('وضعیت: ' + res.data.status + ' — ' + res.data.total) : (res.data.message || 'یافت نشد'));
+			if (!res.success) {
+				$f.find('.vira-track-result').text(res.data.message || 'یافت نشد');
+				return;
+			}
+			var items = (res.data.items || []).join('، ');
+			$f.find('.vira-track-result').text('وضعیت: ' + res.data.status + ' — ' + res.data.total + ' — ' + items);
 		});
 	});
 
 	$('.comment-form, #commentform').attr('enctype', 'multipart/form-data');
 
-	$('.vira-installment-box').each(function () {
-		var price = parseInt($(this).data('price'), 10) || 0;
-		if (!price) {
-			return;
-		}
-		var $box = $(this);
-		$.get(viraVars.ajaxUrl, { action: 'vira_calc_installments', security: viraVars.nonce, price: price }).done(function (res) {
-			if (res.success) {
-				$box.find('.snapp').html(res.data.snapp_4);
-				$box.find('.tara').html(res.data.tara_6);
-				$box.find('.digi').html(res.data.digi_12);
-			}
-		});
-	});
-
 	var searchTimer;
+	var searchHi = -1;
 	var $live = $('#vira-live-search');
 	var $res = $('#vira-live-search-results');
+	function searchItems() {
+		return $res.find('a');
+	}
 	$live.on('input', function () {
 		var q = $.trim($live.val());
 		clearTimeout(searchTimer);
+		searchHi = -1;
 		if (q.length < 2) {
 			$res.attr('hidden', true).empty();
 			return;
@@ -187,14 +182,58 @@
 		}, 300);
 	});
 	$live.on('keydown', function (e) {
+		var $a = searchItems();
 		if (e.key === 'Escape') {
 			$res.attr('hidden', true);
 		}
-		if (e.key === 'Enter' && $res.find('a').length === 1) {
+		if (e.key === 'ArrowDown') {
 			e.preventDefault();
-			window.location.href = $res.find('a').first().attr('href');
+			searchHi = Math.min(searchHi + 1, $a.length - 1);
+			$a.removeClass('is-active').eq(searchHi).addClass('is-active').focus();
+		}
+		if (e.key === 'ArrowUp') {
+			e.preventDefault();
+			searchHi = Math.max(searchHi - 1, 0);
+			$a.removeClass('is-active').eq(searchHi).addClass('is-active').focus();
+		}
+		if (e.key === 'Enter' && searchHi >= 0 && $a.eq(searchHi).length) {
+			e.preventDefault();
+			window.location.href = $a.eq(searchHi).attr('href');
 		}
 	});
+
+	$(document).on('click', '.vira-quick-view', function () {
+		ajax({ action: 'vira_quick_view', id: $(this).data('id') }).done(function (res) {
+			if (res.success) {
+				var $m = $('#vira-qv-modal');
+				if (!$m.length) {
+					$m = $('<div id="vira-qv-modal" class="vira-modal-overlay active"><div class="vira-modal-box"><button type="button" class="vira-modal-close">&times;</button><div class="vira-modal-body"></div></div></div>');
+					$('body').append($m);
+				}
+				$m.addClass('active').find('.vira-modal-body').html(res.data.html);
+			}
+		});
+	});
+
+	if ($('#vira-checkout-map').length && typeof L !== 'undefined') {
+		var map = L.map('vira-checkout-map').setView([35.6892, 51.389], 11);
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
+		var marker;
+		map.on('click', function (ev) {
+			if (marker) {
+				marker.setLatLng(ev.latlng);
+			} else {
+				marker = L.marker(ev.latlng).addTo(map);
+			}
+			$('#vira_lat').val(ev.latlng.lat);
+			$('#vira_lng').val(ev.latlng.lng);
+			ajax({ action: 'vira_reverse_geo', lat: ev.latlng.lat, lng: ev.latlng.lng }).done(function (res) {
+				if (res.success && res.data.address) {
+					$('[name="vira_manual_address"]').val(res.data.address);
+				}
+			});
+		});
+	}
 
 	var storyIndex = 0;
 	var storyTimer;
@@ -227,19 +266,4 @@
 			showStory(storyIndex - 1);
 		}
 	});
-
-	if ($('#vira-checkout-map').length && typeof L !== 'undefined') {
-		var map = L.map('vira-checkout-map').setView([35.6892, 51.389], 11);
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
-		var marker;
-		map.on('click', function (ev) {
-			if (marker) {
-				marker.setLatLng(ev.latlng);
-			} else {
-				marker = L.marker(ev.latlng).addTo(map);
-			}
-			$('#vira_lat').val(ev.latlng.lat);
-			$('#vira_lng').val(ev.latlng.lng);
-		});
-	}
 })(jQuery);

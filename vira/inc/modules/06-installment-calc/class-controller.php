@@ -5,28 +5,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-interface ViraInstallmentProviderInterface {
-	public function is_available();
-	public function create_payment( $order_id );
-}
-
 class Controller {
 	public static function init() {
 		if ( ! vira_is_module_enabled( '06-installment-calc' ) ) {
 			return;
 		}
+		require_once get_template_directory() . '/inc/installments/class-vira-installments.php';
 		add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'box' ), 25 );
 	}
 
 	public static function box() {
-		$configured = (bool) get_option( 'vira_installment_api_key', '' );
-		echo '<div class="vira-installment-box">';
-		echo '<h4>خرید اقساطی</h4>';
-		if ( ! $configured ) {
-			echo '<p>Provider not configured</p>';
-		} else {
-			echo '<p>درگاه اقساط پیکربندی شده است. تکمیل پرداخت پس از ثبت سفارش انجام می‌شود.</p>';
+		$p = \Vira_Installments::current();
+		echo '<div class="vira-installment-box"><h4>خرید اقساطی</h4>';
+		if ( ! $p || ! $p->is_available() ) {
+			echo '<p>Provider not configured</p></div>';
+			return;
 		}
-		echo '</div>';
+		echo '<p>درگاه فعال: ' . esc_html( $p->get_id() ) . '</p></div>';
 	}
 }

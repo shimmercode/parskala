@@ -34,6 +34,23 @@ class Init {
 		require_once $dir . '/inc/helpers.php';
 		require_once $dir . '/inc/sms/class-vira-sms.php';
 		require_once $dir . '/inc/class-vira-pdf.php';
+		require_once $dir . '/inc/auth/auth.php';
+		$qv = $dir . '/inc/woo-quick-view/classes/class.backend.php';
+		if ( file_exists( $qv ) ) {
+			require_once $qv;
+		}
+		$ga = $dir . '/inc/woocommerce-group-attributes/includes/class-woocommerce-group-attributes.php';
+		if ( file_exists( $ga ) ) {
+			require_once $ga;
+		}
+		$cf = $dir . '/inc/prkwoocfem/includes/class-prkwoocfem-front-end.php';
+		if ( file_exists( $cf ) ) {
+			require_once $cf;
+		}
+		$nt = $dir . '/inc/notify-product-activity/notify-product-activity.php';
+		if ( file_exists( $nt ) ) {
+			require_once $nt;
+		}
 		require_once $dir . '/inc/admin/class-vira-admin.php';
 		require_once $dir . '/inc/ajax/class-vira-ajax.php';
 		require_once $dir . '/inc/integrations/class-vira-core-engine.php';

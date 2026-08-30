@@ -50,6 +50,11 @@ class Admin_Dashboard {
         register_setting( 'vira_admin_modules_group', 'vira_free_shipping_threshold' );
         register_setting( 'vira_admin_modules_group', 'vira_seller_economic_code' );
         register_setting( 'vira_admin_modules_group', 'vira_installment_api_key' );
+        register_setting( 'vira_admin_modules_group', 'vira_installment_provider' );
+        register_setting( 'vira_admin_modules_group', 'vira_geocoding_enable' );
+        register_setting( 'vira_admin_modules_group', 'vira_store_verified' );
+        register_setting( 'vira_admin_modules_group', 'vira_store_trust_score' );
+        register_setting( 'vira_admin_modules_group', 'vira_b2b_global_percent' );
     }
 
     public function get_modules_catalog() {
@@ -160,6 +165,16 @@ class Admin_Dashboard {
                     <input type="text" name="vira_seller_economic_code" value="<?php echo esc_attr( get_option( 'vira_seller_economic_code', '' ) ); ?>"></label></p>
                     <p><label>Installment API Key<br>
                     <input type="password" name="vira_installment_api_key" value="<?php echo esc_attr( get_option( 'vira_installment_api_key', '' ) ); ?>" autocomplete="off"></label></p>
+                    <p><label>Installment provider
+                    <select name="vira_installment_provider">
+                        <option value="snappay" <?php selected( get_option( 'vira_installment_provider' ), 'snappay' ); ?>>SnappPay</option>
+                        <option value="tara" <?php selected( get_option( 'vira_installment_provider' ), 'tara' ); ?>>Tara</option>
+                        <option value="digipay" <?php selected( get_option( 'vira_installment_provider' ), 'digipay' ); ?>>DigiPay</option>
+                    </select></label></p>
+                    <p><label><input type="checkbox" name="vira_geocoding_enable" value="1" <?php checked( get_option( 'vira_geocoding_enable' ), '1' ); ?>> فعال‌سازی reverse geocoding (Nominatim)</label></p>
+                    <p><label><input type="checkbox" name="vira_store_verified" value="1" <?php checked( get_option( 'vira_store_verified' ), '1' ); ?>> فروشگاه تأییدشده ویرا</label></p>
+                    <p><label>امتیاز اعتماد فروشگاه <input type="number" name="vira_store_trust_score" value="<?php echo esc_attr( get_option( 'vira_store_trust_score', 0 ) ); ?>"></label></p>
+                    <p><label>تخفیف سراسری B2B % از ۱۰ عدد <input type="number" name="vira_b2b_global_percent" value="<?php echo esc_attr( get_option( 'vira_b2b_global_percent', 0 ) ); ?>"></label></p>
                 </div>
                 <div style="margin-top: 24px;">
                     <?php submit_button( 'ذخیره تنظیمات ماژول‌های ویرا', 'primary large', 'submit', false, array( 'style' => 'background: #ef394e; border-color: #d62d41; padding: 10px 30px; font-size: 15px;' ) ); ?>

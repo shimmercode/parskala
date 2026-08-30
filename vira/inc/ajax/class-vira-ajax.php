@@ -96,11 +96,18 @@ class Ajax_Controller {
 		if ( $phone === '' || $in === '' || substr( $phone, -10 ) !== substr( $in, -10 ) ) {
 			wp_send_json_error( array( 'message' => 'اطلاعات مطابقت ندارد.' ) );
 		}
+		$items = array();
+		foreach ( $order->get_items() as $item ) {
+			$items[] = $item->get_name() . ' × ' . $item->get_quantity();
+		}
 		wp_send_json_success(
 			array(
-				'status' => wc_get_order_status_name( $order->get_status() ),
-				'total'  => vira_format_toman( $order->get_total() ),
-				'date'   => wc_format_datetime( $order->get_date_created() ),
+				'status'   => wc_get_order_status_name( $order->get_status() ),
+				'total'    => vira_format_toman( $order->get_total() ),
+				'date'     => wc_format_datetime( $order->get_date_created() ),
+				'items'    => $items,
+				'shipping' => $order->get_shipping_method(),
+				'tracking' => $order->get_meta( '_vira_tracking' ),
 			)
 		);
 	}

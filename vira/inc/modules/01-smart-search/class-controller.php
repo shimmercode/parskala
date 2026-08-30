@@ -26,6 +26,7 @@ class Controller {
 			$prod = wc_get_product( $p->ID );
 			$out[] = array( "id"=>$p->ID, "title"=>$p->post_title, "url"=>get_permalink($p), "price"=> $prod ? $prod->get_price_html() : "" );
 		}
+		set_transient( $cache_key, $out, 2 * MINUTE_IN_SECONDS );
 		wp_send_json_success( $out );
 
 	}
