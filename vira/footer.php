@@ -145,29 +145,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 </div>
 
-<!-- [VIRA-02] Mobile Bottom Application Navigation Bar -->
-<div class="vira-mobile-bottom-nav">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-item active">
-        <i class="xts-i-home"></i>
-        <span>خانه</span>
-    </a>
-    <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="nav-item">
-        <i class="xts-i-grid"></i>
-        <span>دسته‌ها</span>
-    </a>
-    <?php if ( function_exists( 'wc_get_cart_url' ) && function_exists( 'WC' ) && WC() && WC()->cart ) : ?>
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="nav-item">
-            <i class="xts-i-bag"></i>
-            <span class="cart-badge"><?php echo esc_html( vira_to_persian_num( WC()->cart->get_cart_contents_count() ) ); ?></span>
-            <span>سبد خرید</span>
-        </a>
-    <?php endif; ?>
-    <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url() ); ?>" class="nav-item">
-        <i class="xts-i-user"></i>
-        <span>حساب من</span>
-    </a>
-</div>
-
 <?php wp_footer(); ?>
 </body>
 </html>

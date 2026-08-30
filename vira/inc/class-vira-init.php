@@ -86,7 +86,7 @@ class Init {
 				continue;
 			}
 			require_once $file_path;
-			$class_full = '\\Vira\\Modules\\' . $config['class'];
+			$class_full = '\Vira\Modules\\' . $config['class'];
 			if ( class_exists( $class_full ) && method_exists( $class_full, 'init' ) ) {
 				$class_full::init();
 				$this->active_modules[] = $slug;
@@ -131,9 +131,15 @@ class Init {
 			}
 		}
 
-		if ( wp_script_is( 'vira-core-js', 'enqueued' ) ) {
+		$mod_js = '/assets/js/vira-modules.js';
+		if ( file_exists( $dir . $mod_js ) ) {
+			wp_enqueue_script( 'vira-modules-js', $uri . $mod_js, array( 'jquery' ), $ver, true );
+		}
+
+		$localize_handle = wp_script_is( 'vira-core-js', 'enqueued' ) ? 'vira-core-js' : ( wp_script_is( 'vira-modules-js', 'enqueued' ) ? 'vira-modules-js' : '' );
+		if ( $localize_handle ) {
 			wp_localize_script(
-				'vira-core-js',
+				$localize_handle,
 				'viraVars',
 				array(
 					'ajaxUrl'  => admin_url( 'admin-ajax.php' ),

@@ -21,32 +21,7 @@ get_header(); ?>
              VIRA IRANIAN E-COMMERCE HOMEPAGE SHOWCASE
              ========================================================================== -->
         <div class="vira-home-showcase">
-            <!-- 1. Product Stories / Highlights Row ([VIRA-02]) -->
-            <section class="vira-section vira-stories-section" style="background: #ffffff; padding: 20px 0; border-bottom: 1px solid #f1f5f9;">
-                <div class="vira-container">
-                    <div class="vira-section-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-                        <h2 style="font-size: 16px; font-weight: 700; color: #1e293b; margin: 0;"><i class="xts-i-play" style="color: #ef394e;"></i> استوری‌های ویژه ویرا</h2>
-                        <span style="font-size: 12px; color: #64748b;">پیشنهادهای ۲۴ ساعته</span>
-                    </div>
-                    <div class="vira-stories-circles" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px;">
-                        <?php
-                        $story_titles = array( 'تخفیف ویژه موبایل', 'لپ‌تاپ‌های گیمینگ', 'ساعت‌های هوشمند', 'پوشاک فصل جدید', 'لوازم خانگی برقی', 'هدفون و ایرپاد', 'کنسول بازی' );
-                        foreach ( $story_titles as $idx => $st_title ) :
-                            ?>
-                            <div class="story-circle-item" style="text-align: center; flex: 0 0 76px; cursor: pointer;">
-                                <div style="width: 68px; height: 68px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #ef394e, #ff8c00); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;">
-                                    <div style="width: 100%; height: 100%; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; font-weight: bold; color: #ef394e; font-size: 18px;">
-                                        <?php echo esc_html( $idx + 1 ); ?>
-                                    </div>
-                                </div>
-                                <span style="font-size: 11px; color: #334155; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo esc_html( $st_title ); ?></span>
-                            </div>
-                            <?php
-                        endforeach;
-                        ?>
-                    </div>
-                </div>
-            </section>
+            <?php do_action( 'vira_home_stories' ); ?>
 
             <!-- 2. Hero Banner & Promo Grid -->
             <section class="vira-section vira-hero-section" style="padding: 24px 0;">
