@@ -4,7 +4,7 @@ Theme URI: https://vira-theme.ir/
 Author: Vira Theme Architect Team
 Author URI: https://vira-theme.ir/
 Description: پلتفرم جامع و انحصاری فروشگاهی نسل جدید ایران (Vira E-Commerce Framework) همراه با ۲۹ ماژول اختصاصی، کارت محصول مدرن، خرید فوری، پنل مدیریت ماژول‌ها و طراحی کاملاً راست‌چین.
-Version: 1.0.2
+Version: 1.3.0
 Tested up to: 6.7
 Requires PHP: 7.4
 Text Domain: vira
@@ -109,6 +109,13 @@ body.has-vira-bottom-nav { padding-bottom: 72px; }
 .vira-stories-circles { display: flex; gap: 16px; overflow-x: auto; padding: 12px 0; }
 .story-circle-item { flex: 0 0 76px; text-align: center; font-size: 11px; }
 .vira-low-stock { color: var(--vira-primary); font-size: 12px; font-weight: 700; }
+.vira-ajax-search-results { position:absolute; top:100%; right:0; left:0; background:#fff; border:1px solid var(--vira-border); border-radius:8px; z-index:50; max-height:280px; overflow:auto; }
+.vira-ajax-search-results ul { list-style:none; margin:0; padding:8px; }
+.vira-ajax-search-results a { display:block; padding:8px; }
+.vira-story-player { position:fixed; inset:0; background:#000; z-index:100001; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.vira-story-player[hidden] { display:none !important; }
+.vira-story-player img, .vira-story-player video { max-height:90vh; max-width:100%; }
+.vira-story-close { position:absolute; top:12px; left:12px; background:transparent; color:#fff; border:0; font-size:28px; }
 .products.vira-products-grid, ul.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 0; }
 @media (max-width: 767px) {
   .vira-header-main .header-main-inner { flex-wrap: wrap; }

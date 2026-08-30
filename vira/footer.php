@@ -61,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
      VIRA MODAL OVERLAYS CONTAINER
      ========================================================================== -->
 
-<!-- 1. [VIRA-20] OTP SMS Login / Registration Modal -->
+<?php if ( function_exists( 'vira_is_module_enabled' ) && vira_is_module_enabled( '20-otp-sms' ) ) : ?>
 <div id="vira-otp-modal" class="vira-modal-overlay">
     <div class="vira-modal-box">
         <div class="vira-modal-header">
@@ -77,8 +77,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 </div>
-
-<!-- 2. Location Selector Modal -->
+<?php endif; ?>
+<?php if ( function_exists( 'vira_is_module_enabled' ) && vira_is_module_enabled( 'vira-location-selector' ) ) : ?>
 <div id="vira-location-modal" class="vira-modal-overlay">
     <div class="vira-modal-box">
         <div class="vira-modal-header">
@@ -110,8 +110,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 </div>
-
-<!-- 3. Price History Chart Modal -->
+<?php endif; ?>
+<?php if ( function_exists( 'vira_is_module_enabled' ) && vira_is_module_enabled( 'vira-price-chart' ) ) : ?>
 <div id="vira-price-chart-modal" class="vira-modal-overlay">
     <div class="vira-modal-box" style="max-width: 650px;">
         <div class="vira-modal-header">
@@ -125,8 +125,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 </div>
-
-<!-- 4. Trust Report Modal (Better Price / Problem Report) -->
+<?php endif; ?>
+<?php if ( function_exists( 'vira_is_module_enabled' ) && vira_is_module_enabled( 'vira-trust-modals' ) ) : ?>
 <div id="vira-trust-modal" class="vira-modal-overlay">
     <div class="vira-modal-box">
         <div class="vira-modal-header">
@@ -144,6 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>

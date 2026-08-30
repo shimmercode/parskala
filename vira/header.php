@@ -62,11 +62,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <!-- [VIRA-01] Smart Search Bar -->
                 <div class="vira-search-wrapper">
                     <form role="search" method="get" class="vira-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <input type="search" class="vira-search-input" placeholder="جستجو در بین هزاران کالا، برند و دسته‌بندی..." value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" />
+                        <input type="search" class="vira-search-input" id="vira-live-search" placeholder="جستجو در بین هزاران کالا، برند و دسته‌بندی..." value="<?php echo esc_attr( get_search_query() ); ?>" name="s" autocomplete="off" />
                         <input type="hidden" name="post_type" value="product" />
-                        <button type="submit" class="vira-search-submit"><i class="xts-i-search"></i></button>
+                        <button type="submit" class="vira-search-submit">جستجو</button>
                     </form>
-                    <div class="vira-ajax-search-results"></div>
+                    <div class="vira-ajax-search-results" id="vira-live-search-results" hidden></div>
                 </div>
 
                 <!-- User Account, Wishlist & Cart Icons -->

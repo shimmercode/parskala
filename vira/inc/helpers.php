@@ -158,18 +158,14 @@ if ( ! function_exists( 'vira_send_sms' ) ) {
         if ( empty( $api_key ) ) {
             return false;
         }
-
-        $result = apply_filters( 'vira_custom_send_sms', false, $mobile, $message, $pattern, $params );
-        if ( false !== $result ) {
-            return $result;
+        $sms_file = get_template_directory() . '/inc/sms/class-vira-sms.php';
+        if ( file_exists( $sms_file ) ) {
+            require_once $sms_file;
+            if ( class_exists( 'Vira_Sms' ) ) {
+                return Vira_Sms::send( $mobile, $message );
+            }
         }
-
-        return array(
-            'success' => true,
-            'mobile'  => $mobile,
-            'gateway' => $gateway,
-            'time'    => time(),
-        );
+        return false;
     }
 }
 
@@ -201,26 +197,19 @@ if ( ! function_exists( 'vira_get_iran_provinces_cities' ) ) {
 
 if ( ! function_exists( 'vira_get_product_brand_name' ) ) {
     function vira_get_product_brand_name( $product_id ) {
-        if ( function_exists( 'woodmart_get_product_brand_name' ) ) {
-            return woodmart_get_product_brand_name( $product_id );
-        }
-        return 'برند رسمی';
+        return '';
     }
 }
 
 if ( ! function_exists( 'vira_add_to_wishlist_button' ) ) {
     function vira_add_to_wishlist_button() {
-        if ( function_exists( 'woodmart_add_to_wishlist_button' ) ) {
-            woodmart_add_to_wishlist_button();
-        }
+        return;
     }
 }
 
 if ( ! function_exists( 'vira_add_to_compare_button' ) ) {
     function vira_add_to_compare_button() {
-        if ( function_exists( 'woodmart_add_to_compare_button' ) ) {
-            woodmart_add_to_compare_button();
-        }
+        return;
     }
 }
 

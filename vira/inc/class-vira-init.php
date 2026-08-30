@@ -32,6 +32,8 @@ class Init {
 	public function load_core_files() {
 		$dir = get_template_directory();
 		require_once $dir . '/inc/helpers.php';
+		require_once $dir . '/inc/sms/class-vira-sms.php';
+		require_once $dir . '/inc/class-vira-pdf.php';
 		require_once $dir . '/inc/admin/class-vira-admin.php';
 		require_once $dir . '/inc/ajax/class-vira-ajax.php';
 		require_once $dir . '/inc/integrations/class-vira-core-engine.php';

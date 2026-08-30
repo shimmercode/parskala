@@ -46,6 +46,10 @@ class Admin_Dashboard {
         register_setting( 'vira_admin_modules_group', 'vira_admin_modules_settings' );
         register_setting( 'vira_admin_modules_group', 'vira_sms_gateway' );
         register_setting( 'vira_admin_modules_group', 'vira_sms_api_key' );
+        register_setting( 'vira_admin_modules_group', 'vira_sms_sender' );
+        register_setting( 'vira_admin_modules_group', 'vira_free_shipping_threshold' );
+        register_setting( 'vira_admin_modules_group', 'vira_seller_economic_code' );
+        register_setting( 'vira_admin_modules_group', 'vira_installment_api_key' );
     }
 
     public function get_modules_catalog() {
@@ -144,6 +148,19 @@ class Admin_Dashboard {
                     <?php endforeach; ?>
                 </div>
 
+                <div class="vira-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-top:24px;">
+                    <h2>تنظیمات یکپارچه‌سازی</h2>
+                    <p><label>آستانه ارسال رایگان (تومان)<br>
+                    <input type="number" name="vira_free_shipping_threshold" value="<?php echo esc_attr( get_option( 'vira_free_shipping_threshold', 1500000 ) ); ?>"></label></p>
+                    <p><label>SMS API Key (Kavenegar)<br>
+                    <input type="password" name="vira_sms_api_key" value="<?php echo esc_attr( get_option( 'vira_sms_api_key', '' ) ); ?>" autocomplete="off"></label></p>
+                    <p><label>SMS Sender<br>
+                    <input type="text" name="vira_sms_sender" value="<?php echo esc_attr( get_option( 'vira_sms_sender', '' ) ); ?>"></label></p>
+                    <p><label>کد اقتصادی فروشنده (فقط اگر واقعی است)<br>
+                    <input type="text" name="vira_seller_economic_code" value="<?php echo esc_attr( get_option( 'vira_seller_economic_code', '' ) ); ?>"></label></p>
+                    <p><label>Installment API Key<br>
+                    <input type="password" name="vira_installment_api_key" value="<?php echo esc_attr( get_option( 'vira_installment_api_key', '' ) ); ?>" autocomplete="off"></label></p>
+                </div>
                 <div style="margin-top: 24px;">
                     <?php submit_button( 'ذخیره تنظیمات ماژول‌های ویرا', 'primary large', 'submit', false, array( 'style' => 'background: #ef394e; border-color: #d62d41; padding: 10px 30px; font-size: 15px;' ) ); ?>
                 </div>

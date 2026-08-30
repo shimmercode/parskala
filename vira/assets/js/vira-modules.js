@@ -160,6 +160,74 @@
 		});
 	});
 
+	var searchTimer;
+	var $live = $('#vira-live-search');
+	var $res = $('#vira-live-search-results');
+	$live.on('input', function () {
+		var q = $.trim($live.val());
+		clearTimeout(searchTimer);
+		if (q.length < 2) {
+			$res.attr('hidden', true).empty();
+			return;
+		}
+		$res.removeAttr('hidden').text('...');
+		searchTimer = setTimeout(function () {
+			$.get(viraVars.ajaxUrl, { action: 'vira_smart_search', security: viraVars.nonce, q: q }).done(function (res) {
+				if (!res.success || !res.data.length) {
+					$res.html('<div class="empty">نتیجه‌ای نیست</div>');
+					return;
+				}
+				var html = '<ul>';
+				res.data.forEach(function (item) {
+					html += '<li><a href="' + item.url + '">' + item.title + '</a></li>';
+				});
+				html += '</ul>';
+				$res.html(html);
+			});
+		}, 300);
+	});
+	$live.on('keydown', function (e) {
+		if (e.key === 'Escape') {
+			$res.attr('hidden', true);
+		}
+		if (e.key === 'Enter' && $res.find('a').length === 1) {
+			e.preventDefault();
+			window.location.href = $res.find('a').first().attr('href');
+		}
+	});
+
+	var storyIndex = 0;
+	var storyTimer;
+	function showStory(i) {
+		if (!window.viraStories || !window.viraStories.length) {
+			return;
+		}
+		storyIndex = (i + window.viraStories.length) % window.viraStories.length;
+		var it = window.viraStories[storyIndex];
+		var $p = $('#vira-story-player').removeAttr('hidden');
+		var media = it.type === 'video'
+			? '<video src="' + it.media + '" autoplay playsinline></video>'
+			: '<img src="' + it.media + '" alt="">';
+		$p.find('.vira-story-media').html(media);
+		$p.find('.vira-story-cta').attr('href', it.cta || '#').toggle(!!it.cta);
+		clearTimeout(storyTimer);
+		storyTimer = setTimeout(function () { showStory(storyIndex + 1); }, (it.duration || 5) * 1000);
+	}
+	$(document).on('click', '.js-vira-story', function () {
+		showStory(parseInt($(this).data('index'), 10) || 0);
+	});
+	$(document).on('click', '.vira-story-close', function () {
+		clearTimeout(storyTimer);
+		$('#vira-story-player').attr('hidden', true);
+	});
+	$(document).on('click', '#vira-story-player .vira-story-media', function (e) {
+		if (e.clientX > window.innerWidth / 2) {
+			showStory(storyIndex + 1);
+		} else {
+			showStory(storyIndex - 1);
+		}
+	});
+
 	if ($('#vira-checkout-map').length && typeof L !== 'undefined') {
 		var map = L.map('vira-checkout-map').setView([35.6892, 51.389], 11);
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
