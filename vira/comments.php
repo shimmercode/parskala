@@ -1,61 +1,99 @@
 <?php
-/**
- * Vira Theme Comments & Reviews Template
- *
- * @package Vira
- * @since   1.0.0
- */
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+$place_holder_text = __('What do you think about this?','parskala');
+
+if ( prk_option('header_account_type') == 'dropdown' ) {
+  $data_link = 'data-custom-open="loginmodal"';
+}else {
+    $data_link = 'href="'.get_permalink( get_option('woocommerce_myaccount_page_id') ).'"';
 }
+  if ( post_password_required() )
+      return;
+  ?>
 
-if ( post_password_required() ) {
-    return;
-}
-?>
-<div id="comments" class="vira-comments-area">
-    <?php if ( have_comments() ) : ?>
-        <h3 class="comments-title">
-            <?php
-            $vira_comment_count = get_comments_number();
-            if ( '1' === $vira_comment_count ) {
-                echo '۱ نظر و دیدگاه';
-            } else {
-                echo esc_html( vira_to_persian_num( $vira_comment_count ) ) . ' نظر و دیدگاه ثبت شده';
-            }
-            ?>
-        </h3>
+  <div class="post-comment">
 
-        <ol class="comment-list">
-            <?php
-            wp_list_comments( array(
-                'style'       => 'ol',
-                'short_ping'  => true,
-                'avatar_size' => 48,
-            ) );
-            ?>
-        </ol>
+  <?php if ( have_comments() ) : ?>
 
-        <?php
-        the_comments_pagination( array(
-            'prev_text' => '« دیدگاه‌های قبلی',
-            'next_text' => 'دیدگاه‌های بعدی »',
-        ) );
-    endif;
+    <h2 class="comments-title">
+      <?php $number_c =  get_comments_number();?>
+        <span><i class="fal fa-comment-alt-lines"></i></span>
+          <?php echo $number_c;?>
+          <span><?php _e('Wrote a comment for this' , 'parskala');?></span>
+    </h2>
 
-    if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-        ?>
-        <p class="no-comments">بخش دیدگاه‌ها برای این صفحه بسته شده است.</p>
-        <?php
-    endif;
-
-    comment_form( array(
-        'title_reply'          => 'دیدگاه خود را ثبت کنید',
-        'title_reply_to'       => 'پاسخ به %s',
-        'cancel_reply_link'    => 'انصراف از پاسخ',
-        'label_submit'         => 'ارسال دیدگاه',
-        'comment_field'        => '<p class="comment-form-comment"><label for="comment">متن دیدگاه <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="5" required></textarea></p>',
-    ) );
+  <?php else:
+  
+     $place_holder_text = __('Be the first to leave your opinion','parskala');
     ?>
-</div>
+
+    <h2 class="comments-title">
+          <span><?php _e('Submit your first comment' , 'parskala');?></span>
+    </h2>
+
+  <?php endif;?>
+
+    <?php if ( ( prk_option('comment_Rules') == '1' || prk_option('comment_Rules') == '' )  ):?>
+
+      <div class="comment-rules">
+        <?= prk_option('comment_Rules_contents') ?>
+      </div>
+
+    <?php endif;?>
+  <div id="comments" class="comments-area">
+
+
+
+
+  
+
+
+   <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
+     <div id="respond" class="comment-respond">
+     		<p class="must-log-in"><?= _e('You must write a comment','parskala') ?><a class="login_commenter" <?php echo $data_link;?> ><?= _e('log in','parskala') ?></a>.</p>	</div>
+    <?php else: ?>
+
+
+
+
+      <ol class="comment-list">
+        <?php
+        wp_list_comments( array(
+            'max_depth' => '5',
+            'style'     => 'ol',
+            'walker'  => new TwentyTwenty_Walker_Comment(),
+        ));
+        ?>
+
+      </ol>
+
+    
+    <div class="comment-forms">
+
+
+      <?php
+        $args = array(
+          'fields' => array(
+          'author' => '<div class="form-comment flexed"><span class="input-name"><span class="text-com">نام شما<i>*</i></span><input name="author" type="text" placeholder="نام شما" class="form_name"/></span>',
+          'email' => '<span class="input-name in-2"><span class="text-com">ایمیل شما<i>*</i></span><input name="email" type="text" placeholder="ایمیل کاربری" class="form_name"/></span></div>',
+          ),
+          'comment_notes_before' => '',
+          'comment_notes_after' => '',
+          'comment_field' => '<p><textarea name="comment" class="text-input" placeholder=" '.$place_holder_text.' "></textarea></p>',
+          'label_submit' => 'فرستان دیدگاه',
+          'cancel_reply_before' =>'<span>',
+          'cancel_reply_after' => '</span>',
+          'cancel_reply_link' => __( 'لغو پاسخ' ),
+        );
+
+      echo comment_form($args);
+      ?>
+
+
+
+    </div>
+    
+    <?php endif; // If registration required and not logged in ?>
+
+  </div><!-- #comments -->
+  </div>

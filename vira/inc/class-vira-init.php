@@ -110,6 +110,9 @@ class Init {
 	}
 
 	public function enqueue_frontend_assets() {
+		if ( function_exists( 'add_theme_scripts' ) ) {
+			return;
+		}
 		$uri = get_template_directory_uri();
 		$ver = VIRA_THEME_VERSION;
 		$dir = get_template_directory();

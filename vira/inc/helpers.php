@@ -29,8 +29,10 @@ if ( ! function_exists( 'prk_option' ) ) {
         }
         $defaults = array(
             'header_style_type'       => 'default',
+            'header_type'             => 'default',
+            'footer_type'             => 'default',
             'footer_style_type'       => 'default',
-            'theme-style'             => 'digikala', // Loads 3.vira-classic.css (Digikala Iranian storefront style)
+            'theme-style'             => 'digikala',
             'prk_topbar_true'         => true,
             'prk_topbar_stikey'       => true,
             'header_search_true'      => true,
