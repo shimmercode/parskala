@@ -1,0 +1,15 @@
+body .csf-sections{
+  float: right;
+}
+
+body .prk_theme_style .csf-content {
+    margin-right: 0;
+    margin-left: 23%;
+}
+body .prk_theme_style .csf-nav ul li a i.csf-tab-icon{
+  padding-right: 14px;
+  padding-left: 0;
+}
+body .prk_theme_style .csf-nav ul li .csf-arrow::after{
+  transform: rotate(180deg);
+}

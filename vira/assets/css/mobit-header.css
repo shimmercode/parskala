@@ -1,0 +1,237 @@
+.header-mobiter{
+    margin-bottom: 20px;
+}
+.header-mobiter.fixed_header{
+    position: sticky;
+    top: 0;
+    z-index: 10025;
+    width: 100%;  
+}
+body.customize-support .header-mobiter.fixed_header{
+    top: 32px;
+}
+.header-mobiter header{
+    background-image: linear-gradient(126deg,#2124b5,#3b3ece 30%,#3b3ece 70%,#2124b5);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10026;
+    position: relative;
+    padding: 0 15px;
+    padding-top: 15px;
+}
+.header-mobiter header .logo-sec{
+    display: flex;
+    align-items: center;
+    width: 45%;
+    justify-content: start;
+}
+/* .header-mobiter header .logo-sec .logo{
+    width: 9%;
+} */
+.header-mobiter header .menu-mobiter{
+    width: 85%;
+}
+.header-mobiter header .search-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding-bottom: 10px;
+}
+.header-mobiter header .logo-sec .logo img{
+    width: 80px;
+    height: 36px;
+    margin-left: 25px;
+    padding-bottom: 10px;
+}
+.header-mobiter header .prk_mega_menu{
+    width: 100%;
+}
+.header-mobiter header .prk_mega_menu > li{
+
+    border:none
+}
+.header-mobiter header .prk_mega_menu > li.line_men::after{
+   display: none;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li > ul > li{
+  width: unset;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li > ul{
+    width: 70%;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul{
+    width: 30%;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li:hover,
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li.active{
+    border: 0;
+    background: #fafafa !important;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
+.header-mobiter header .prk_mega_menu li.menu-item ul li a .item-icon-title{
+    font-size: 13px;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items{
+    /* top: 115%; */
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li > a{
+    padding: 15px 15px;
+}
+.header-mobiter header .prk_mega_menu > li > a{
+    padding: 8px 15px;
+    padding-bottom: 20px;
+    font-size: 13px;
+    gap: 6px;
+}
+.header-mobiter header .prk_mega_menu li a .item-icon-title{
+    gap: 7px;
+}
+.header-mobiter header .prk_mega_menu > li.mega_menu_two_level:hover > ul > li{
+    width: unset;
+}
+
+.header-mobiter header .search-section{
+    background: transparent linear-gradient(270deg,hsla(0,0%,100%,.2),hsla(0,0%,100%,0))!important;
+    box-shadow: none!important;
+    border: 1px solid transparent;
+    border-left: 0 !important;
+    border-radius: 15px !important;
+    padding: unset;
+}
+.header-mobiter header .prk_input_serach{
+    background: transparent;
+    border-right: 1px solid;
+    color: #fff;
+    padding: 0px 15px;
+    font-weight: 600;
+}
+.header-mobiter header .search-section #submit_search i{
+    color: #fff;
+    top: 2px;
+    font-weight: 100;
+    right: 2px;
+}
+.header-mobiter header .prk-plus.prk-account.nologin .account-icon i{
+    display: unset;
+    margin: unset;
+}
+.header-mobiter header .prk_input_serach::placeholder {
+	color: #fff;
+	opacity: 1;
+}
+.header-mobiter header .form_search #submit_search{
+    background: transparent !important;
+    width: 47px;
+    height: 42px;
+}
+.header-mobiter header .search-section.active{
+    border-color: #fff !important;
+    border-left: 1px solid #fff !important;
+}
+.header-mobiter header .account-icon{
+    margin-left: 7px;
+}
+.header-mobiter header .account-icon svg{
+    width: 19px;
+    height: 19px;
+}
+.header-mobiter header .account{
+    border: 0;
+    padding: 0;
+    max-width: inherit;
+    /* width: 124px; */
+    min-width: 124px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-around;
+}
+.header-mobiter header .prk-account.logined .account-text{
+    padding-left: 0 !important;
+}
+.header-mobiter header .prk-plus.prk-account.logined .account{
+    min-width: unset;
+}
+body .header-mobiter header .account-text,body .header-mobiter header .active  .account-text{
+    color: #fff !important;
+    font-size: 12px;
+    padding: unset;
+}
+body .header-mobiter header .prk-dashboard{
+    width: 190px;
+    right: unset;
+    left: 0px;
+}
+.header-mobiter header .prk-account{
+    max-width: max-content;
+}
+.header-mobiter header .cart-btn em{
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 3px;
+    width: 0px;
+    height: 4px;
+    border-radius: 50%;
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 0px;
+    line-height: 11px;
+    min-width: 5px;
+    min-height: 0px;
+}
+.header-mobiter header .cart-btn em {
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: -4px;
+    right: -8px;
+    background: #f74a67 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+}
+.header-mobiter header .cart-btn i svg{
+    width: 16px;
+    height: 16px;
+}
+.header-mobiter header .cart-modal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;    
+}
+.header-mobiter header .cart-btn i,.header-mobiter header  .cart-btn-hover i{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    top: unset;
+}
+.header-mobiter header .cart-modal .cart-text{
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 600;
+}
+.cart-btns{
+    margin-right: 18px;
+}
+body .header-mobiter header .prk-account i.prk-arrow-down-1{
+    margin-right: 10px;
+    margin-right: 10px;
+    font-size: 11px;
+    color: #fff !important;
+}
+
+body.product-single .woocommerce-breadcrumb{
+    margin-bottom: 19px;
+    padding: 0 0px;
+    border-radius: 6px;
+}
+body .col-single1{
+    border: 0;
+    margin-top: 0;
+    padding: 0;
+}

@@ -1,0 +1,274 @@
+.prk-size-guide {
+	padding: 15px 15px 10px 15px;
+  margin: 0 auto;
+  position: relative;
+  max-height: 390px;
+  min-height: 390px;
+  overflow-y: auto;
+}
+body .open-popup-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: normal;
+	text-align: center !important;
+	border: 1px solid #e0e0e2;
+	padding: 5px;
+	font-size: 14px !important;
+	background-color: #f8f8f8;
+	max-width: 400px !important;
+	border-radius: 14px;
+	margin: 6px 0 20px 0;
+	width: 100%;
+	padding: 12px;
+	color: #3d3d3d;
+}
+body .open-popup-link:hover{
+	background-color: #f7ebeb78;
+}
+body .open-popup-link i{
+	margin-left: 11px;
+	font-size: 20px;
+	color: #3d3d3d;
+}
+.prk-size-tab.tabs-form{
+  margin-bottom: 15px;
+}
+.prk-size-tab.tabs-form li{
+	width: unset;
+	padding: 13px 18px;
+	background: #dee2e6;
+	margin-left: 12px;
+	border-radius: 14px;
+	cursor: pointer;
+	line-height: 15px;
+}
+.prk-size-guide .tabs-panel {
+  line-height: 32px;
+}
+.prk-size-guide .tabs-panel hr{
+	margin: 10px 0;
+}
+body .prk-size-tab.tabs-form li a{
+	width: 100% !important;
+  padding:0;
+  display: unset !important;
+  color: unset !important;
+  background: unset !important;
+	font-size: 14px;
+	font-weight: 500;
+}
+body .prk-size-tab.tabs-form li.active a{
+  color: #fff !important;
+}
+/* .prk-size-guide > div {
+	max-width: 520px !important;
+} */
+
+.prk-size-guide.prk_sg_tabbed {
+	padding: 0px;
+	max-width: 100%;
+}
+
+.prk-size-guide table {
+	width: 100%;
+}
+
+.prk-size-guide table td{
+	color: #000000;
+}
+
+.prk-size-guide table tr:nth-child(1n+1) {
+    color: #000000;
+}
+.prk-size-guide table tr:first-child{
+	background-color: #aeaeae;
+	color: #fff;
+}
+.prk_sg_tabbed .sg_content {
+	max-width: 100%;
+}
+
+.prk_table_caption {
+	font-size: small;
+	color: #808080;
+	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+button.mfp-close {
+	position: absolute;
+}
+.prk-size-guide .sg_title {
+	margin-bottom: 50px;
+}
+h2.sg_title {
+	font-weight: 400;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.sg_content h4 {
+	clear: none;
+}
+
+.prk_table_container .prk-table-hover{
+    background: #999999;
+}
+
+.prk_table_container .prk-table-cursor{
+    background: #2C72AD;
+    color: #FFFFFF;
+}
+
+/*responsive tables */
+
+@media only screen and (max-width: 800px) {
+
+  body .prk-size-guide{
+		padding: 15px 10px 10px 10px;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive .cf:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+
+	.prk-size-guide * html .cf {
+		zoom: 1;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive *:first-child + html .cf {
+		zoom: 1;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive table {
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive th,
+	.prk-size-guide .prk-size-guide--Responsive td {
+		margin: 0;
+		vertical-align: top;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive table {
+		display: block;
+		position: relative;
+		width: 100%;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive thead {
+		display: block;
+		float: left;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive tbody {
+		display: block;
+		width: auto;
+		position: relative;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive thead tr {
+		display: block;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive th {
+		display: block;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive tbody tr {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive td {
+		display: block;
+		min-height: 1.25em;
+	}
+
+	/* sort out borders */
+	.prk-size-guide .prk-size-guide--Responsive th {
+		border: 0;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive td {
+		border: 0;
+	}
+
+	.prk-size-guide .prk-size-guide--Responsive tbody tr {
+		border: 0;
+	}
+
+
+
+	.prk-size-guide .prk-size-guide--Responsive{
+		position: relative;
+	}
+	.prk-size-guide .prk-size-guide--Responsive:after {
+		position: absolute;
+		bottom: -25px;
+		left: 5px;
+		display: inline-block;
+		font-family: 'Glyphicons Halflings';
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\e120";
+	}
+
+	.prk_table_container .prk-size-guide--Responsive td{
+		padding: 5px;
+	}
+
+	.prk_table_container .prk-size-guide--Responsive + hr{
+		display: none;
+	}
+
+
+}
+/* Tabbing */
+.prk-size-guide .sizeGuideTabs {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 20px;
+}
+.prk-size-guide .sizeGuideTabs .tab {
+	flex: 1;
+	text-align: center;
+	cursor: pointer;
+}
+.prk-size-guide .sizeGuideTabs .tab.active {
+	border-bottom: solid 1px;
+	font-weight: bold;
+}
+.prk-size-guide .sizeGuideTabContents .content {
+	padding-top: 10px;
+	display: none;
+}
+.prk-size-guide .sizeGuideTabContents .content.active {
+	display: block;
+}
+/* Hide sg button on variation price */
+.woocommerce-variation-price .button_sg {
+	display: none;
+}

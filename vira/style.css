@@ -1,0 +1,66 @@
+/*
+Theme Name: Vira (ویرا)
+Theme URI: https://vira-theme.ir/
+Author: Vira Theme Architect Team
+Author URI: https://vira-theme.ir/
+Description: پلتفرم جامع و انحصاری فروشگاهی نسل جدید ایران (Vira E-Commerce Framework) همراه با ۲۹ ماژول اختصاصی، کارت محصول مدرن، خرید فوری، پنل مدیریت ماژول‌ها و طراحی کاملاً راست‌چین.
+Version: 1.0.0
+Tested up to: 6.7
+Requires PHP: 7.4
+Text Domain: vira
+Tags: e-commerce, rtl, persian, woocommerce, vira, iranian-store, modern-store
+License: GNU General Public License v3.0
+*/
+
+@charset "UTF-8";
+
+/* ==========================================================================
+   VIRA DESIGN SYSTEM TOKENS — متغیرهای طراحی فارسی و پالت رنگی اختصاصی ویرا
+   ========================================================================== */
+:root {
+    --vira-primary: #ef394e;
+    --vira-primary-hover: #d62d41;
+    --vira-success: #00a651;
+    --vira-warning: #ff8c00;
+    --vira-info: #0082fd;
+    --vira-dark: #222222;
+    --vira-muted: #777777;
+    --vira-border: #f0f0f1;
+    --vira-bg: #f8f9fa;
+    --vira-card-bg: #ffffff;
+    --vira-radius-sm: 6px;
+    --vira-radius-md: 12px;
+    --vira-radius-lg: 18px;
+    --vira-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --vira-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --vira-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+    --vira-font-family: IRANSansX, Vazirmatn, Tahoma, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   RTL & BASE RESET FOR VIRA THEME
+   ========================================================================== */
+body, html {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--vira-font-family);
+    color: var(--vira-dark);
+    background-color: var(--vira-bg);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Persian currency badge */
+.vira-toman-badge {
+    font-size: 0.75em;
+    font-weight: 500;
+    color: var(--vira-muted);
+    margin-right: 2px;
+}
