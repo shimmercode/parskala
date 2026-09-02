@@ -775,6 +775,7 @@ function vira_iran_weight_shipping_init() {
 		}
 	}
 }
+}
 
 add_filter(
 	'woocommerce_shipping_methods',
