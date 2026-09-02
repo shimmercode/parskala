@@ -1,0 +1,351 @@
+/* استایل زوم تصویر شاخص محصول */
+#show_zoom_container{
+  left: 120%;
+}
+.product-seller-info .product-seller-row .product-seller-row-detail ul li::after{
+  right: unset;
+  left: -28px;
+}
+.product-seller-info .product-seller-row .product-seller-row-detail .product-seller-row-detail-title i.chevrons-right{
+  display: none;
+}
+.head-pros{
+  padding-bottom: 20px;
+}
+body .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul{
+  float: left;
+}
+body .prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li > ul{
+  right: 0;
+  left: unset !important
+}
+#show_zoom_container{
+	position: absolute;
+	left: 120%;
+	bottom: 100%;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+	border-radius: 8px;
+}
+.prk_mega_menu > li.line_men::after{
+  display: none;
+}
+.search-box,.call-page{
+  margin-left: 0;
+  margin-right: 30px;
+}
+.cart-btn{
+  margin-right: 0;
+  margin-left: 40px;
+}
+.prk_mega_menu > li.mega_menu_tree_level ul > li > a > i, .prk_mega_menu > li.mega_menu_tree_level ul > li > a > img{
+  margin-left: 0;
+  margin-right: 9px;
+}
+.prk_mega_menu > li > a i, .prk_mega_menu > li > a img{
+  margin-left: 0;
+  margin-right: 4px;
+}
+.prk_mega_menu > li.mega_menu_tree_level.prk-side-tab > .prk-tab-menu-items > ul > li > ul > li > a::before, .prk_mega_menu > li.mega_menu_two_level > ul > li > a::before{
+  margin-left: 0;
+  margin-right: 5px;
+}
+.mega_menu_two_level .sub-menu.prk-level-0{
+  background-position: right bottom;
+}
+.swiper_promotion_produt .swiper-slide.promotion_item{
+  padding: 10px 20px;
+}
+.swiper_promotion_produt .offer_titles img{
+  right: 16px;
+}
+.swiper_promotion_produt::before{
+  border-radius: 0px 0px 50px 50px;
+  right: 100px
+}
+.meta-additional ul li::before{
+  margin-left: 0;
+  margin-right: 5px;
+}
+.daynamic_banner_item{
+  margin-left: 0 !important;
+  margin-right: 15px;
+}
+.daynamic_banner_item:last-child {
+    margin-right: 0;
+}
+.product-item-link i{
+  margin-right: 0;
+  margin-left: 6px;
+}
+.jump-box i{
+  margin-left: 7px;
+  margin-right: 0;
+}
+.foot-box.text{
+  margin-right: 25px;
+  margin-left: 0;
+}
+.col-single1 .brand_logo{
+  margin-right: 10px;
+  margin-left: 0;
+}
+.des-info{
+  display: flex;
+  justify-content: space-between;
+}
+.btns-pro-slider{
+  margin-top: 0;
+  float: left;
+}
+.des-info .product-en span.en_name_pro{
+  padding-left: 0;
+}
+.rating_and_nummbercomment .rating_product i{
+  margin-right: 4px;
+  margin-left: 0;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a::before{
+  margin-left: 0;
+  margin-right: 10px;
+}
+body.ceckout_page .shop_table.woocommerce-checkout-review-order-table tbody tr.woocommerce-shipping-totals.shipping td ul li::before{
+  margin-left: 0;
+  margin-right: 5px;
+}
+body.ceckout_page .shop_table.woocommerce-checkout-review-order-table tbody tr.woocommerce-shipping-totals.shipping td ul li input{
+  left: unset;
+  right: 10px;
+}
+body.ceckout_page .woocommerce-checkout-payment ul li::before{
+  float: left;
+  margin-right: 6px;
+  margin-left: 0;
+}
+body.ceckout_page .woocommerce-checkout-payment ul li input{
+  float: right;
+}
+.side-posts{
+  float: left;
+}
+.left-cont{
+  float: right;
+}
+.toggle_icon{
+  left: unset;
+  right: 18px;
+}
+.searchpartdiv .searchcity-input{
+  padding-right: 0;
+  padding-left: 6px;
+  width: 95%;
+}
+.location-piker i{
+  margin-right: 7px;
+  margin-left: 0;
+}
+.prk-account .prk-dashboard ul li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--ordertrak::after{
+  right: unset;
+  left: 15px;
+}
+.prk-dashboard ul li a::before{
+  padding-right: 9px;
+  padding-left: 0;
+}
+.prk-dashboard ul li.woocommerce-MyAccount-navigation-link--customer-logout a::before{
+  padding-right: 9px;
+  padding-left: 0;
+}
+.prk-account .prk-dashboard ul li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--ordertrak a{
+  margin-left: 27px;
+  margin-right: 0;
+}
+.input_better{
+  right: 50px;
+  left: unset;
+}
+.info-feed label.swich_before{
+  padding-right: 0;
+  padding-left: 15px;
+}
+.special_send_box .special_content_box ul li::before{
+  margin-left: 0;
+  margin-right: 10px;
+}
+.btns-pro .tooltiptext{
+  left: 180%;
+  right: unset;
+}
+.btns-pro .tooltiptext::after{
+  left: -10px;
+  right: unset;
+  transform: rotate(180deg);
+}
+.special_send_box .special_header img{
+  margin-right: 7px;
+  margin-left: -5px;
+}
+.carousel_lister{
+  justify-content: left !important;
+}
+.thwvsf-wrapper-ul .thwvsf-color-li.attr_swatch_design_2 .tooltiptext{
+  margin-left: 6px !important;
+  margin-right: unset !important;
+}
+.mail-foot input{
+  margin-left: unset;
+  margin-right: 11px;
+}
+body .modal-menu.modern-menu .off-canvas-main .menu li > a i, body .modal-menu.modern-menu .off-canvas-main .menu li > a img{
+  margin-right: unset;
+  margin-right: 12px;
+}
+.off-canvas-main li.menu-item-has-children span.toggle-submenu{
+  left: unset;
+  right: 8px;
+  transform: rotate(180deg);
+}
+.location-piker_mob i{
+  margin-left: unset;
+  margin-right: 7px;
+}
+.location-piker_mob i.ri-arrow-left-s-line{
+  transform: rotate(180deg);
+}
+.socials-box{
+  left: unset;
+  right: 16px;
+}
+body .modal-menu{
+  right: unset;
+  left: -100%;
+}
+body .modal-menu.toggle {
+  right: unset;
+  left: 0;
+}
+header.modern .modal-menu.toggle, body header.modern .modal-menu .menu ul.toggle {
+  right: unset;
+  left: 16px;
+}
+.location-item i{
+  transform: rotate(180deg);
+}
+.location-item .allcity i{
+  margin-left: unset;
+  margin-right: 15px;
+  transform: rotate(180deg);
+}
+.article_mobile_box{
+  padding-right: 100px;
+  padding-left: 10px;
+}
+.close_modal_view{
+  margin-left: unset;
+  margin-right: 10px;
+}
+body .prk_close_search_result{
+  right: 20px;
+  left: unset;
+  top: -40px;
+}
+.form_search.mobile span#submited_search{
+  top: 3px;
+}
+.box-filter-shop span i{
+  margin-left: unset;
+  margin-right: 6px;
+}
+.widgettitle:after{
+  left: unset;
+  right: 0;
+}
+.price_slider_wrapper .price_slider_amount .button::before{
+  margin-left: unset;
+  margin-right: 5px;
+}
+body.cart_page.empty .return-to-shop a.button i,.product-tab-nav-mobiles ul li.nav-item_mobile div.wc_mobile_nav_tab h4::before{
+  margin-left: unset;
+  margin-right: 9px;
+}
+.cart_page .woocommerce-cart-form__contents div.quantity{
+  margin-left: unset;
+  margin-right: 10px;
+}
+.woocommerce .totals-order-user table.shop_table tr.order-total th{
+  text-align: right;
+}
+#billing_city_field .select2-container--default .select2-selection--single .select2-selection__arrow b::before, #billing_state_field .select2-container--default .select2-selection--single .select2-selection__arrow b::before{
+  left: -15px;
+}
+body .prs{
+  left: unset;
+  float: right;
+  right: 0 !important;
+}
+.widget_woocommerce-widget-layered-on_stock ul li a:before, .widget_woocommerce-widget-layered-nav_cat ul li a:before, .widget_woocommerce-widget-layered-nav_brand ul li a:before, .woocommerce-widget-layered-nav ul li a:before, .widget_woocommerce-widget-layered-nav ul li a:before{
+  margin-left: unset;
+  margin-right: 10px;
+}
+.delivery_mobile .delivery_time_mobile_header span.order-delivery-title i,.get_factor_field label .icon-caret-left-blue{
+  margin-left: unset;
+  margin-right: 7px;
+}
+.des-right .variations .label{
+  text-align: left;
+}
+.rating_and_nummbercomment .rating_product,.prK_orderby_filtering .menu_order_title{
+  margin-right: 10px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab a i{
+  margin-left: 6px;
+}
+.header-carter span{
+  margin-left: 3rem;
+}
+.swiper_promotion_produt .offer_titles{
+  right: 108px;
+  top: 34px;
+}
+.custom-option-ratings{
+  margin-left: 0;
+  margin-right: 5rem;
+}
+.reviw-tabs .commnet-lister::before{
+  margin-left: 0;
+  margin-right: 13px;
+}
+body .left-store{
+  float: right;
+}
+body .sides{
+  float: left;
+}
+@media (max-width: 990px){
+  body .order-delivery-times ul{
+    justify-content: left !important;
+  }
+  .searchpartdiv .searchcity-input {
+      padding-left: 10px !important;
+      width: 93%;
+  }
+  .des-info {
+    flex-direction: column;
+  }
+  .show-export .right-des-pro{
+     width: 100%;
+  }
+  .rating_and_nummbercomment .rating_count{
+    margin-right: unset;
+    margin-left: 7px;
+  }
+  body .product-seller-info .product-seller-row .product-seller-row-detail ul li::after{
+    display: none;
+  }
+  body.product-single .product-more-icon-dates a i{
+    margin-left: unset;
+    margin-right: 15px !important;
+  }
+  .main-footer .continer .foot-box.has-menu .foot-title::before{
+    margin-right: 10px;
+  }
+}
