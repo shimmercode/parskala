@@ -301,6 +301,12 @@
 			: '<img src="' + it.media + '" alt="">';
 		$p.find('.vira-story-media').html(media);
 		$p.find('.vira-story-cta').attr('href', it.cta || '#').toggle(!!it.cta);
+		var $atc = $p.find('.vira-story-atc');
+		if (it.product_id) {
+			$atc.removeAttr('hidden').data('pid', it.product_id);
+		} else {
+			$atc.attr('hidden', true);
+		}
 		clearTimeout(storyTimer);
 		storyTimer = setTimeout(function () { showStory(storyIndex + 1); }, (it.duration || 5) * 1000);
 	}

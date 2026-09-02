@@ -97,6 +97,7 @@ class Admin_Dashboard {
                     'vira-loyalty-rewards'   => 'تبدیل امتیاز به کد تخفیف در حساب کاربری (Loyalty Rewards)',
                     'vira-next-shopping'     => 'لیست خرید بعدی / انتقال از سبد خرید (Save for Later)',
                     'vira-size-guide'        => 'راهنمای سایز اختصاصی پوشاک و کفش (Size Guide Modal)',
+                    'vira-creative-pack'     => 'پک خلاق ویرا: مرجوعی، اسلات تحویل، کیف پول، Q&A، ارسال وزنی، واتساپ، گارانتی PDF',
                 ),
             ),
         );

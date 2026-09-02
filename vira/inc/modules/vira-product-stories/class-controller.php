@@ -44,6 +44,8 @@ class Controller {
 		echo '<p>نوع <select name="vira_story_type"><option value="image"' . selected( $type, 'image', false ) . '>image</option><option value="video"' . selected( $type, 'video', false ) . '>video</option></select></p>';
 		echo '<p>مدت ثانیه <input name="vira_story_duration" type="number" value="' . esc_attr( $dur ? $dur : 5 ) . '"></p>';
 		echo '<p>CTA URL <input name="vira_story_cta" style="width:100%" value="' . esc_attr( $cta ) . '"></p>';
+		$spid = get_post_meta( $post->ID, '_vira_story_product', true );
+		echo '<p>شناسه محصول برای افزودن به سبد <input name="vira_story_product" type="number" value="' . esc_attr( $spid ) . '"></p>';
 		$start = get_post_meta( $post->ID, '_vira_story_start', true );
 		$end   = get_post_meta( $post->ID, '_vira_story_end', true );
 		echo '<p>شروع (Y-m-d H:i) <input name="vira_story_start" value="' . esc_attr( $start ) . '"></p>';
@@ -58,6 +60,7 @@ class Controller {
 		update_post_meta( $post_id, '_vira_story_type', sanitize_key( wp_unslash( $_POST['vira_story_type'] ) ) );
 		update_post_meta( $post_id, '_vira_story_duration', absint( $_POST['vira_story_duration'] ) );
 		update_post_meta( $post_id, '_vira_story_cta', esc_url_raw( wp_unslash( $_POST['vira_story_cta'] ) ) );
+		update_post_meta( $post_id, '_vira_story_product', absint( $_POST['vira_story_product'] ?? 0 ) );
 		update_post_meta( $post_id, '_vira_story_start', sanitize_text_field( wp_unslash( $_POST['vira_story_start'] ) ) );
 		update_post_meta( $post_id, '_vira_story_end', sanitize_text_field( wp_unslash( $_POST['vira_story_end'] ) ) );
 	}
@@ -80,21 +83,23 @@ class Controller {
 				$media = get_the_post_thumbnail_url( $s->ID, 'large' );
 			}
 			$out[] = array(
-				'title'    => $s->post_title,
-				'media'    => $media,
-				'type'     => get_post_meta( $s->ID, '_vira_story_type', true ) ? get_post_meta( $s->ID, '_vira_story_type', true ) : 'image',
-				'duration' => (int) get_post_meta( $s->ID, '_vira_story_duration', true ) ? (int) get_post_meta( $s->ID, '_vira_story_duration', true ) : 5,
-				'cta'      => get_post_meta( $s->ID, '_vira_story_cta', true ),
+				'title'      => $s->post_title,
+				'media'      => $media,
+				'type'       => get_post_meta( $s->ID, '_vira_story_type', true ) ? get_post_meta( $s->ID, '_vira_story_type', true ) : 'image',
+				'duration'   => (int) get_post_meta( $s->ID, '_vira_story_duration', true ) ? (int) get_post_meta( $s->ID, '_vira_story_duration', true ) : 5,
+				'cta'        => get_post_meta( $s->ID, '_vira_story_cta', true ),
+				'product_id' => (int) get_post_meta( $s->ID, '_vira_story_product', true ),
 			);
 		}
 		if ( ! $out && function_exists( 'wc_get_products' ) ) {
 			foreach ( wc_get_products( array( 'limit' => 8, 'status' => 'publish' ) ) as $p ) {
 				$out[] = array(
-					'title'    => $p->get_name(),
-					'media'    => $p->get_image_id() ? wp_get_attachment_url( $p->get_image_id() ) : '',
-					'type'     => 'image',
-					'duration' => 5,
-					'cta'      => $p->get_permalink(),
+					'title'      => $p->get_name(),
+					'media'      => $p->get_image_id() ? wp_get_attachment_url( $p->get_image_id() ) : '',
+					'type'       => 'image',
+					'duration'   => 5,
+					'cta'        => $p->get_permalink(),
+					'product_id' => $p->get_id(),
 				);
 			}
 		}

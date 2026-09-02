@@ -81,6 +81,21 @@ class Controller {
 				$rows['موجودی'][] = $p->is_in_stock() ? 'موجود' : 'ناموجود';
 				$rows['وزن'][]    = $p->get_weight() ? $p->get_weight() : '—';
 				$rows['امتیاز'][] = $p->get_average_rating();
+				foreach ( $p->get_attributes() as $attr ) {
+					$label = wc_attribute_label( $attr->get_name() );
+					if ( ! isset( $rows[ $label ] ) ) {
+						$rows[ $label ] = array_fill( 0, count( $products ), '—' );
+					}
+				}
+			}
+			$idx = 0;
+			foreach ( $products as $p ) {
+				foreach ( $p->get_attributes() as $attr ) {
+					$label = wc_attribute_label( $attr->get_name() );
+					$val   = $attr->is_taxonomy() ? implode( '، ', wc_get_product_terms( $p->get_id(), $attr->get_name(), array( 'fields' => 'names' ) ) ) : implode( '، ', $attr->get_options() );
+					$rows[ $label ][ $idx ] = $val ? $val : '—';
+				}
+				$idx++;
 			}
 			foreach ( $rows as $label => $vals ) {
 				$unique = count( array_unique( array_map( 'strval', $vals ) ) ) > 1;
