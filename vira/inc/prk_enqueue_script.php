@@ -265,7 +265,8 @@ function load_admin_style() {
 // لود فایل ترجمه قالب
 function my_theme_setup(){
 
-   $prk_increase_max_variation_wc = get_option('prk_option')['prk_increase_max_variation_wc'] ? get_option('prk_option')['prk_increase_max_variation_wc'] : '30';
+   $prk_opts = get_option('prk_option');
+   $prk_increase_max_variation_wc = ( is_array( $prk_opts ) && ! empty( $prk_opts['prk_increase_max_variation_wc'] ) ) ? $prk_opts['prk_increase_max_variation_wc'] : '30';
    if(filter_var($prk_increase_max_variation_wc, FILTER_VALIDATE_INT) == false || $prk_increase_max_variation_wc <= 0){
      $prk_increase_max_variation_wc = 50;
    }

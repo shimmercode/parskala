@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VIRA_THEME_VERSION', '1.5.2' );
+define( 'VIRA_THEME_VERSION', '1.5.3' );
 define( 'VIRA_THEME_DIR', get_template_directory() );
 define( 'VIRA_THEME_URI', get_template_directory_uri() );
 
@@ -44,7 +44,6 @@ $vira_boot = array(
 	'/inc/prk_enqueue_script.php',
 	'/inc/woocomerce_functions/woocomerce_includes.php',
 	'/inc/admin/post-type.php',
-	'/custom-css.php',
 );
 
 foreach ( $vira_boot as $rel ) {

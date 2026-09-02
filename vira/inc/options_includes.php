@@ -16,10 +16,12 @@ if ( file_exists( $vira_csf_file ) ) {
     require_once $vira_csf_file;
 }
 
-// 2. Load Custom CSS selector arrays BEFORE settings-opt.php so gradient_general_selector() is defined
-$vira_css_selectors = parskala_TEMPLATEPATH . '/inc/vira-custom-css.php';
-if ( file_exists( $vira_css_selectors ) ) {
-    require_once $vira_css_selectors;
+// 2. Selectors already live in core.php — do not reload or PHP fatals (Cannot redeclare).
+if ( ! function_exists( 'gradient_general_selector' ) ) {
+    $vira_css_selectors = parskala_TEMPLATEPATH . '/inc/vira-custom-css.php';
+    if ( file_exists( $vira_css_selectors ) ) {
+        require_once $vira_css_selectors;
+    }
 }
 
 // 3. Load Size Guide Plugin safely
