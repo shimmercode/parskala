@@ -150,9 +150,11 @@ function add_theme_scripts() {
     }
   }
 
+    if ( function_exists( 'is_checkout' ) && is_checkout() ) {
     wp_enqueue_script( 'leaflet', get_template_directory_uri() . '/assets/js/leaflet.js', array ( 'jquery' ), PRK_VERSION, false);
     wp_enqueue_script( 'checkout', get_template_directory_uri() . '/assets/js/checkout.js', array ( 'jquery' ), PRK_VERSION, false);
     wp_enqueue_style('leaflet-css', parskala_URI . '/assets/css/leaflet.css', array(), '4.3.3', 'all');
+    }
 
 if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 

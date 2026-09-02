@@ -1,0 +1,20 @@
+.vira-hide-stories .dk-stories,
+.vira-hide-hero .dk-hero,
+.vira-hide-chips .dk-chips,
+.vira-hide-amazing .dk-amazing,
+.vira-hide-banners .dk-banners,
+.vira-hide-trust .dk-trust{display:none!important;}
+.vira-shop-bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
+.vira-shop-bar button{background:#fff;border:1px solid #e0e0e2;border-radius:8px;padding:8px 12px;cursor:pointer;}
+.vira-shop-bar button.is-on{border-color:#ef4056;color:#ef4056;}
+.vira-qv{display:block;width:100%;margin-top:8px;background:#ef4056;color:#fff;border:0;border-radius:8px;padding:8px;cursor:pointer;}
+.vira-swatches{display:flex;gap:4px;margin-top:6px;}
+.vira-swatches i{width:14px;height:14px;border-radius:50%;background:#ccc;border:1px solid #ddd;}
+.vira-qv-modal{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100000;display:flex;align-items:center;justify-content:center;}
+.vira-qv-modal[hidden]{display:none!important;}
+.vira-qv-body{background:#fff;border-radius:12px;padding:20px;max-width:520px;width:92%;}
+.vira-qv-x{position:absolute;top:12px;left:12px;background:#fff;border:0;font-size:24px;cursor:pointer;}
+.vira-hdr-compact .header .continer{max-width:1100px;}
+.vira-hdr-centered .logo{order:2;margin:0 auto;}
+.vira-plus-user .dk-amazing-head strong::after{content:' پلاس';font-size:12px;}
+body.vira-plus-user{--dk-red:#7c3aed;}

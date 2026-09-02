@@ -127,7 +127,13 @@ class Vira_Digikala_Layer {
 
 	public static function render_home() {
 		$amazing = self::products( array( 'limit' => 10, 'orderby' => 'popularity' ) );
-		$on_sale = class_exists( 'WooCommerce' ) ? wc_get_products( array( 'status' => 'publish', 'limit' => 10, 'include' => wc_get_product_ids_on_sale() ) ) : array();
+		$on_sale = array();
+		if ( class_exists( 'Vira_Pro' ) ) {
+			$on_sale = Vira_Pro::amazing_products();
+		}
+		if ( empty( $on_sale ) && class_exists( 'WooCommerce' ) ) {
+			$on_sale = wc_get_products( array( 'status' => 'publish', 'limit' => 10, 'include' => wc_get_product_ids_on_sale() ) );
+		}
 		if ( empty( $on_sale ) ) {
 			$on_sale = $amazing;
 		}

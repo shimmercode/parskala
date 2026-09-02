@@ -7,7 +7,9 @@
 
 get_header();
 
-if ( class_exists( 'Vira_Digikala_Layer' ) ) {
+if ( class_exists( 'Vira_Pro' ) ) {
+	Vira_Pro::home();
+} elseif ( class_exists( 'Vira_Digikala_Layer' ) ) {
 	Vira_Digikala_Layer::render_home();
 } elseif ( have_posts() ) {
 	while ( have_posts() ) {

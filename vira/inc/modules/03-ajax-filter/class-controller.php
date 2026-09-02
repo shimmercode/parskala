@@ -56,7 +56,9 @@ class Controller {
 	}
 
 	public static function filter() {
-		check_ajax_referer( 'vira_ajax_nonce', 'security' );
+		if ( ! check_ajax_referer( 'vira_ajax_nonce', 'security', false ) && ! check_ajax_referer( 'vira_pro', 'nonce', false ) ) {
+			wp_send_json_error( array( 'message' => 'bad nonce' ), 403 );
+		}
 		$cats = isset( $_POST['cats'] ) ? array_map( 'absint', (array) $_POST['cats'] ) : array();
 		$min  = isset( $_POST['min_price'] ) ? absint( $_POST['min_price'] ) : 0;
 		$max  = isset( $_POST['max_price'] ) ? absint( $_POST['max_price'] ) : 0;

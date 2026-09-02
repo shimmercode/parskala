@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VIRA_THEME_VERSION', '1.6.0' );
+define( 'VIRA_THEME_VERSION', '1.7.0' );
 define( 'VIRA_THEME_DIR', get_template_directory() );
 define( 'VIRA_THEME_URI', get_template_directory_uri() );
 
@@ -55,6 +55,7 @@ foreach ( $vira_boot as $rel ) {
 
 require_once VIRA_THEME_DIR . '/inc/class-vira-init.php';
 require_once VIRA_THEME_DIR . '/inc/digikala/digikala-layer.php';
+require_once VIRA_THEME_DIR . '/inc/pro/class-vira-pro.php';
 
 function vira_theme_setup() {
 	load_theme_textdomain( 'vira', VIRA_THEME_DIR . '/languages' );
