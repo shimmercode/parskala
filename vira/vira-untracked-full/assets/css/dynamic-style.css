@@ -1,0 +1,11 @@
+body .shop_table.table-shop-cart-user,
+body .shop_table_responsive.table-shop-cart-user,
+body.ceckout_page .shop_table.woocommerce-checkout-review-order-table, body.ceckout_page .woocommerce-checkout-payment {
+  border-radius: 11px !important;
+}
+.col-single1 .des-left .ui-box, .col-single1 .des-left .tippy-content {
+  border-radius: 11px !important;
+}
+.single-product .woocommerce div.product form.cart .button.single_add_to_cart_button {
+  background: linear-gradient(to right, #ff3a30, #ff6a00) !important;
+}

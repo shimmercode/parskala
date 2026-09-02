@@ -1,0 +1,117 @@
+/* ==========================================================================
+   VIRA NEXT-GEN IRANIAN PRODUCT CARD CSS ([VIRA-04])
+   ========================================================================== */
+.wd-iran-product-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #f0f0f1;
+    border-radius: 16px;
+    padding: 14px;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    direction: rtl;
+    text-align: right;
+    height: 100%;
+}
+
+.wd-iran-product-card:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+    transform: translateY(-3px);
+}
+
+.wd-iran-product-card .card-badges {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wd-iran-product-card .badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.wd-iran-product-card .badge-special {
+    background: #ef394e;
+}
+
+.wd-iran-product-card .badge-shipping {
+    background: #00a651;
+}
+
+.wd-iran-product-card .product-title {
+    margin: 10px 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.wd-iran-product-card .product-title a {
+    color: #1e293b;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.wd-iran-product-card .product-pricing-wrapper {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.wd-iran-product-card .price-discount-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wd-iran-product-card .old-price {
+    font-size: 12px;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.wd-iran-product-card .discount-badge {
+    background: #ef394e;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.wd-iran-product-card .current-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+}
+
+/* Instant Buy Express button in Single Product */
+.vira-instant-buy-btn {
+    background: #ef394e !important;
+    border-color: #ef394e !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    margin-right: 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.vira-instant-buy-btn:hover {
+    background: #d62d41 !important;
+    transform: scale(1.02);
+}

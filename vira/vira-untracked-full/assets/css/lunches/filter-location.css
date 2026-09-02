@@ -1,0 +1,183 @@
+.remodal-wrapper .remodal.filter-location{
+  border-radius: 6px !important;
+  padding: 0px 0 0 0 !important;
+}
+
+#location-piker .modal__container{
+  padding: 18px 18px 0 18px !important;
+  width: 31% !important;
+}
+.location-piker_mob{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 11px 6px;
+  border-bottom: 1px solid #eee;
+  color: #424750;
+  font-size: 13px;
+}
+.location-piker_mob i{
+  font-size: 21px;
+  margin-left: 7px;
+}
+.location-piker_mob span{
+  width: 100%;
+}
+.flex-location .title-feed{
+  font-weight: 600;
+}
+.des-location{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  color: #b7b7b7;
+  font-weight: 300;
+}
+#checkbox-container{
+  max-height: 360px;
+  overflow-y: auto;
+  margin-top: 15px;
+  padding: 5px 0;
+  border-top: 1px solid #e3e3e3c9;
+}
+#checkbox-container .location-item:last-child{
+  border-bottom: 1px solid transparent;
+}
+.location-item {
+  height: 45px;
+  padding: 14px 0;
+  border-bottom: 1px solid #b0b0b05c;
+  border-right: 0;
+  border-left: 0;
+  margin: 0 28px 0 35px;
+  cursor: pointer;
+}
+.location-item .city,.location-item .subcity{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.location-item label{
+  cursor: pointer;
+  display: block;
+}
+.location-item label:hover{
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+.location-item input[type="checkbox"]{
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+}
+.location-item input[type="checkbox"]:checked:before{
+  height: 20px;
+  width: 20px;
+}
+.location-item i{
+  font-size: 23px;
+  line-height: 0;
+  color: rgba(0,0,0,.32);
+}
+.location-item .allcity i{
+  margin-left: 15px;
+  font-size: 21px;
+  line-height: 0;
+  color: rgb(0 0 0 / 60%);
+  position: relative;
+  top: 8px;
+}
+
+.filter-location-header{
+  padding: 15px 25px 5px 25px
+}
+.flex-location{
+  padding: 0 25px;
+}
+.filter-location-header .title-feed{
+  font-size: 16px;
+  font-weight: 650;
+}
+.filter-location-header .delallcities{
+  color: #a62626;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 11px;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.filter-location-header .delallcities:hover{
+  transition: 0.2s all;
+  background-color: rgba(166,38,38,.08);
+}
+.selected-cities{
+  padding: 4px 25px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,.56);
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.selected-cities .selectedcty{
+  display: inline-block;
+  margin-left: 6px;
+  margin-top: 6px;
+  border: 1px solid;
+  padding: 4px 10px 7px 0;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  border-color: rgba(166,38,38,.56);
+  color: #a62626;
+}
+.selected-cities .selectedcty i{
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+  padding: 9px;
+}
+
+
+.remodal-wrapper .remodal.filter-location .remodal-footer{
+  margin-top: 0;
+  box-shadow: 0 -1px 2px 0 rgb(0 0 0 / 12%);
+  padding: 13px 15px;
+}
+.button_border {
+  padding: 7px 15px;
+  font-size: 16px;
+  line-height: 1.571;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,.48);
+  color: rgba(0,0,0,.56);
+  background: none;
+  border-radius: 5px;
+  width: 48%;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.button_border:hover{
+  transition: 0.2s all;
+  color: #000;
+}
+.button_bodner{
+  padding: 7px 15px;
+  font-size: 16px;
+  line-height: 1.571;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 49%;
+  transition: 0.2s all;
+  color: #fff;
+  background-color: #ff6a00;
+  cursor: pointer;
+}
+
+@media (min-width: 990px){
+  .location-piker_mob{
+      display: none;
+  }
+}
