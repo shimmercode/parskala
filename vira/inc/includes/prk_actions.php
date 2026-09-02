@@ -199,6 +199,7 @@ function title_meta(){
 
 
 
+if ( ! function_exists( 'prk_grid_loop_columns_product' ) ) {
 function prk_grid_loop_columns_product(){
 
 	$columns_product = '';
@@ -208,6 +209,7 @@ function prk_grid_loop_columns_product(){
 	return $columns_product;
 
  }
+}
 
 
 
