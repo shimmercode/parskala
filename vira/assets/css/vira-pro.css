@@ -18,3 +18,11 @@
 .vira-hdr-centered .logo{order:2;margin:0 auto;}
 .vira-plus-user .dk-amazing-head strong::after{content:' پلاس';font-size:12px;}
 body.vira-plus-user{--dk-red:#7c3aed;}
+.vira-installment-box,.vira-vendor-shield,.vira-price-chart,.vira-loyalty-box{background:#fff;border:1px solid #e0e0e2;border-radius:12px;padding:12px;margin:12px 0;}
+.vira-bars{display:flex;align-items:flex-end;gap:4px;height:90px;}
+.vira-bar i{display:block;width:10px;background:#ef4056;border-radius:4px 4px 0 0;}
+.vira-sticky-purchase-bar{position:fixed;bottom:0;right:0;left:0;z-index:99990;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;padding:8px 16px;gap:12px;}
+.vira-otp-fab{position:fixed;bottom:80px;left:16px;z-index:99991;background:#ef4056;color:#fff;border-radius:24px;padding:10px 16px;cursor:pointer;}
+#vira-otp-modal.vira-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100001;display:none;align-items:center;justify-content:center;}
+#vira-otp-modal.active{display:flex;}
+#vira-otp-modal .vira-modal-box{background:#fff;border-radius:12px;padding:20px;width:92%;max-width:360px;}

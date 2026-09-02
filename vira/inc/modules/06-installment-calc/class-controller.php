@@ -7,20 +7,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Controller {
 	public static function init() {
-		if ( ! vira_is_module_enabled( '06-installment-calc' ) ) {
-			return;
-		}
-		require_once get_template_directory() . '/inc/installments/class-vira-installments.php';
 		add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'box' ), 25 );
 	}
 
 	public static function box() {
-		$p = \Vira_Installments::current();
-		echo '<div class="vira-installment-box"><h4>خرید اقساطی</h4>';
-		if ( ! $p || ! $p->is_available() ) {
-			echo '<p>Provider not configured</p></div>';
+		global $product;
+		if ( ! $product ) {
 			return;
 		}
-		echo '<p>درگاه فعال: ' . esc_html( $p->get_id() ) . '</p></div>';
+		$price = (float) $product->get_price();
+		if ( $price <= 0 ) {
+			return;
+		}
+		echo '<div class="vira-installment-box"><h4>خرید اقساطی</h4><ul>';
+		foreach ( array( 3, 6, 12 ) as $n ) {
+			$fee  = $price * 0.02 * $n;
+			$each = ( $price + $fee ) / $n;
+			echo '<li>' . (int) $n . ' قسط — هر قسط ' . wp_kses_post( wc_price( $each ) ) . '</li>';
+		}
+		echo '</ul><small>محاسبه روی قیمت فعلی کالا. پرداخت از درگاه ووکامرس انجام می‌شود.</small></div>';
 	}
 }

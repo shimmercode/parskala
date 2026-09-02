@@ -110,12 +110,29 @@ class Init {
 	}
 
 	public function enqueue_frontend_assets() {
+		$uri = get_template_directory_uri();
+		$ver = defined( 'VIRA_THEME_VERSION' ) ? VIRA_THEME_VERSION : '1.8.0';
+		$dir = get_template_directory();
+
+		$mod_js = '/assets/js/vira-modules.js';
+		if ( file_exists( $dir . $mod_js ) ) {
+			wp_enqueue_script( 'vira-modules-js', $uri . $mod_js, array( 'jquery' ), $ver, true );
+			wp_localize_script(
+				'vira-modules-js',
+				'viraVars',
+				array(
+					'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
+					'nonce'    => wp_create_nonce( 'vira_ajax_nonce' ),
+					'location' => function_exists( 'vira_get_user_location' ) ? vira_get_user_location() : array(),
+					'tomanStr' => 'تومان',
+					'isLogged' => is_user_logged_in(),
+				)
+			);
+		}
+
 		if ( function_exists( 'add_theme_scripts' ) ) {
 			return;
 		}
-		$uri = get_template_directory_uri();
-		$ver = VIRA_THEME_VERSION;
-		$dir = get_template_directory();
 
 		$styles = array(
 			'vira-remixicon'     => '/assets/fonts/ri-fonts/remixicon.css',

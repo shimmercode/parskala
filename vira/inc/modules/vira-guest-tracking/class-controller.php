@@ -14,6 +14,34 @@ class Controller {
 		add_action( 'init', array( __CLASS__, 'ensure_page' ) );
 		add_action( 'add_meta_boxes', array( __CLASS__, 'box' ) );
 		add_action( 'woocommerce_process_shop_order_meta', array( __CLASS__, 'save' ) );
+		add_action( 'wp_ajax_vira_guest_track_order', array( __CLASS__, 'ajax' ) );
+		add_action( 'wp_ajax_nopriv_vira_guest_track_order', array( __CLASS__, 'ajax' ) );
+	}
+
+	public static function ajax() {
+		check_ajax_referer( 'vira_ajax_nonce', 'security' );
+		$id  = absint( isset( $_POST['order_id'] ) ? $_POST['order_id'] : 0 );
+		$mob = isset( $_POST['mobile'] ) ? preg_replace( '/\D+/', '', wp_unslash( $_POST['mobile'] ) ) : '';
+		$order = wc_get_order( $id );
+		if ( ! $order ) {
+			wp_send_json_error( array( 'message' => 'سفارش یافت نشد.' ) );
+		}
+		$bill = preg_replace( '/\D+/', '', (string) $order->get_billing_phone() );
+		if ( $mob !== $bill ) {
+			wp_send_json_error( array( 'message' => 'موبایل با سفارش مطابقت ندارد.' ) );
+		}
+		$items = array();
+		foreach ( $order->get_items() as $item ) {
+			$items[] = $item->get_name();
+		}
+		wp_send_json_success(
+			array(
+				'status'   => wc_get_order_status_name( $order->get_status() ),
+				'total'    => wp_strip_all_tags( $order->get_formatted_order_total() ),
+				'items'    => $items,
+				'tracking' => $order->get_meta( '_vira_tracking' ),
+			)
+		);
 	}
 
 	public static function box() {

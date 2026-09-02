@@ -21,7 +21,16 @@ class Controller {
 		if ( is_user_logged_in() ) {
 			return;
 		}
+		$key = get_option( 'vira_sms_api_key', '' );
+		if ( ! $key && function_exists( 'prk_get_option' ) ) {
+			$key = (string) prk_get_option( 'gateway_sms_panel_api_key', '' );
+		}
+		if ( ! $key ) {
+			return;
+		}
 		echo '<div class="vira-otp-fab js-open-otp-modal">ورود</div>';
+		echo '<div id="vira-otp-modal" class="vira-modal-overlay"><div class="vira-modal-box"><button type="button" class="vira-modal-close js-close-otp">&times;</button>';
+		echo '<h3>ورود با موبایل</h3><form id="vira-otp-form"><input type="tel" name="mobile" placeholder="09xxxxxxxxx" required><button type="submit" class="button">ارسال کد</button></form></div></div>';
 	}
 
 	public static function send() {
@@ -38,7 +47,14 @@ class Controller {
 		if ( class_exists( '\\PRK_OTP_Firewall', false ) && ! \PRK_OTP_Firewall::allow( $mobile . $ip ) ) {
 			wp_send_json_error( array( 'message' => 'محدودیت تعداد درخواست.' ) );
 		}
-		if ( ! get_option( 'vira_sms_api_key', '' ) ) {
+		$key = get_option( 'vira_sms_api_key', '' );
+		if ( ! $key && function_exists( 'prk_get_option' ) ) {
+			$key = (string) prk_get_option( 'gateway_sms_panel_api_key', '' );
+			if ( $key ) {
+				update_option( 'vira_sms_api_key', $key, false );
+			}
+		}
+		if ( ! $key ) {
 			wp_send_json_error( array( 'message' => 'OTP service is not configured' ) );
 		}
 		$code = (string) wp_rand( 10000, 99999 );

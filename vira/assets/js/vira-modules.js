@@ -16,6 +16,24 @@
 		e.preventDefault();
 		$('#vira-otp-modal').addClass('active');
 	});
+	$(document).on('click', '.js-close-otp, #vira-otp-modal', function (e) {
+		if (e.target === this || $(e.target).hasClass('js-close-otp')) {
+			$('#vira-otp-modal').removeClass('active');
+		}
+	});
+
+	$(document).on('click', '.vira-sticky-add-btn', function () {
+		var $bar = $(this).closest('.vira-sticky-purchase-bar');
+		var $form = $('form.cart').first();
+		if ($form.length) {
+			$form.find('input.qty').val($bar.find('.vira-sticky-qty').val() || 1);
+			$form.find('button[type=submit], .single_add_to_cart_button').trigger('click');
+			return;
+		}
+		ajax({ action: 'woocommerce_add_to_cart', product_id: $bar.data('product-id'), quantity: $bar.find('.vira-sticky-qty').val() || 1 }).done(function () {
+			window.location.href = (typeof wc_add_to_cart_params !== 'undefined' && wc_add_to_cart_params.cart_url) ? wc_add_to_cart_params.cart_url : '/cart';
+		});
+	});
 
 	$(document).on('submit', '#vira-otp-form', function (e) {
 		e.preventDefault();
