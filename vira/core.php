@@ -144,11 +144,12 @@ function inline_style_prk(){
   $footer_color = prk_option('footer_color');
   $general_color2 = prk_option('general_color2');
   $links_color2 = prk_option('general_links');
-  $options = get_option( 'prk_option' );
-  $faq_img = $options['gradient_faq_color'];
-  $faq_gradient = $options['gradient_faq_color'];
-  $animated_color = $options['animated_color'];
-  $search_bg_color = $options['prk_search_bg_backcolor'];
+  $options = get_option( 'prk_option', array() );
+  if ( ! is_array( $options ) ) { $options = array(); }
+  $faq_img = isset($options['gradient_faq_color']) ? $options['gradient_faq_color'] : '';
+  $faq_gradient = $faq_img;
+  $animated_color = isset($options['animated_color']) ? $options['animated_color'] : '';
+  $search_bg_color = isset($options['prk_search_bg_backcolor']) ? $options['prk_search_bg_backcolor'] : '';
   ?>
 
 <style media="screen" id="style_prk">
@@ -691,7 +692,7 @@ function add_script_foot(){
   <script type='text/javascript' id='prk-ajax-jquery-js'>
   /* <![CDATA[ */
   var parskala_values = {"ajax_url":"<?php echo admin_url( 'admin-ajax.php' ); ?>","elementor_editor":"disable"};
-  var cart_url = {"ajax_url":"<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>","elementor_editor":"disable"};
+  var cart_url = {"ajax_url":"<?php echo ( function_exists('wc_get_page_id') ? get_permalink( wc_get_page_id( 'cart' ) ) : home_url('/cart') ); ?>","elementor_editor":"disable"};
   var prk_general_color = "<?php echo prk_option('general_color') ?>";
   var ajax_added_text = "<?php echo prk_option('ajax_added_cart_text') ?>";
   var ajax_added_confirm_text = "<?php echo prk_option('ajax_cart_confirm_text') ? prk_option('ajax_cart_confirm_text') : 'سبدخرید' ?>";

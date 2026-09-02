@@ -24,7 +24,7 @@ class Vira_Pro {
 		add_action( 'woocommerce_after_shop_loop_item', array( __CLASS__, 'loop_swatches_qv' ), 20 );
 		add_action( 'add_meta_boxes', array( __CLASS__, 'campaign_box' ) );
 		add_action( 'save_post_product', array( __CLASS__, 'save_campaign' ) );
-		add_action( 'woocommerce_order_status_completed', array( __CLASS__, 'points_on_order' ) );
+		// Points granted once in Loyalty_Rewards — do not double-credit.
 		add_filter( 'body_class', array( __CLASS__, 'body_class' ) );
 		add_action( 'wp_footer', array( __CLASS__, 'qv_modal' ), 20 );
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'elementor' ) );

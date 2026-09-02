@@ -82,6 +82,9 @@ class Controller {
 				$rows['وزن'][]    = $p->get_weight() ? $p->get_weight() : '—';
 				$rows['امتیاز'][] = $p->get_average_rating();
 				foreach ( $p->get_attributes() as $attr ) {
+					if ( ! is_object( $attr ) || ! method_exists( $attr, 'get_name' ) ) {
+						continue;
+					}
 					$label = wc_attribute_label( $attr->get_name() );
 					if ( ! isset( $rows[ $label ] ) ) {
 						$rows[ $label ] = array_fill( 0, count( $products ), '—' );
@@ -91,8 +94,11 @@ class Controller {
 			$idx = 0;
 			foreach ( $products as $p ) {
 				foreach ( $p->get_attributes() as $attr ) {
+					if ( ! is_object( $attr ) || ! method_exists( $attr, 'get_name' ) ) {
+						continue;
+					}
 					$label = wc_attribute_label( $attr->get_name() );
-					$val   = $attr->is_taxonomy() ? implode( '، ', wc_get_product_terms( $p->get_id(), $attr->get_name(), array( 'fields' => 'names' ) ) ) : implode( '، ', $attr->get_options() );
+					$val   = $attr->is_taxonomy() ? implode( '، ', wc_get_product_terms( $p->get_id(), $attr->get_name(), array( 'fields' => 'names' ) ) ) : implode( '، ', (array) $attr->get_options() );
 					$rows[ $label ][ $idx ] = $val ? $val : '—';
 				}
 				$idx++;

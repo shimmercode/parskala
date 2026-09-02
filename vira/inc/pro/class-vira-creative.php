@@ -29,6 +29,7 @@ class Vira_Creative {
 		add_action( 'woocommerce_account_dashboard', array( __CLASS__, 'account' ), 6 );
 		add_action( 'woocommerce_thankyou', array( __CLASS__, 'thankyou' ), 8 );
 		add_action( 'template_redirect', array( __CLASS__, 'downloads_and_restore' ) );
+		add_action( 'admin_init', array( __CLASS__, 'print_label' ) );
 		add_action( 'init', array( __CLASS__, 'register_status' ) );
 		add_filter( 'wc_order_statuses', array( __CLASS__, 'list_status' ) );
 		add_action( 'woocommerce_cart_calculate_fees', array( __CLASS__, 'wallet_fee' ) );
@@ -57,7 +58,8 @@ class Vira_Creative {
 	public static function assets() {
 		$uri = get_template_directory_uri();
 		$ver = defined( 'VIRA_THEME_VERSION' ) ? VIRA_THEME_VERSION : '1.9.0';
-		wp_enqueue_style( 'vira-creative', $uri . '/assets/css/vira-creative.css', array( 'vira-pro' ), $ver );
+		$deps = wp_style_is( 'vira-pro', 'registered' ) || wp_style_is( 'vira-pro', 'enqueued' ) ? array( 'vira-pro' ) : array();
+		wp_enqueue_style( 'vira-creative', $uri . '/assets/css/vira-creative.css', $deps, $ver );
 		wp_enqueue_script( 'vira-creative', $uri . '/assets/js/vira-creative.js', array( 'jquery' ), $ver, true );
 		$pid = ( function_exists( 'is_product' ) && is_product() ) ? get_the_ID() : 0;
 		wp_localize_script(
@@ -323,6 +325,12 @@ class Vira_Creative {
 	}
 
 	public static function email_meta( $fields, $sent_to_admin, $order ) {
+		if ( ! is_array( $fields ) ) {
+			$fields = array();
+		}
+		if ( ! $order || ! is_a( $order, 'WC_Order' ) ) {
+			return $fields;
+		}
 		$fields['slot'] = array(
 			'label' => 'بازه تحویل',
 			'value' => $order->get_meta( '_vira_ship_day' ) . ' ' . $order->get_meta( '_vira_ship_slot' ),
@@ -353,7 +361,7 @@ class Vira_Creative {
 		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 			return;
 		}
-		if ( empty( WC()->session ) || ! WC()->session->get( 'vira_use_wallet' ) || ! is_user_logged_in() ) {
+		if ( ! function_exists( 'WC' ) || ! WC() || empty( WC()->session ) || ! WC()->session->get( 'vira_use_wallet' ) || ! is_user_logged_in() ) {
 			return;
 		}
 		$w = (int) get_user_meta( get_current_user_id(), 'vira_wallet', true );
@@ -467,21 +475,29 @@ class Vira_Creative {
 				exit;
 			}
 		}
-		if ( is_admin() && ! empty( $_GET['vira_label'] ) && current_user_can( 'manage_woocommerce' ) && isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'vira_label' ) ) {
-			$o = wc_get_order( absint( $_GET['vira_label'] ) );
-			if ( $o ) {
-				header( 'Content-Type: text/html; charset=utf-8' );
-				echo '<html><body style="font-family:Tahoma;padding:24px"><h1>#' . (int) $o->get_id() . '</h1>';
-				echo '<p style="font-size:28px;letter-spacing:4px">*' . (int) $o->get_id() . '*</p>';
-				echo '<p>' . wp_kses_post( $o->get_formatted_shipping_address() ?: $o->get_formatted_billing_address() ) . '</p>';
-				echo '<p>' . esc_html( $o->get_meta( '_vira_ship_day' ) . ' ' . $o->get_meta( '_vira_ship_slot' ) ) . '</p>';
-				foreach ( $o->get_items() as $item ) {
-					echo '<p>' . esc_html( $item->get_name() . ' × ' . $item->get_quantity() ) . '</p>';
-				}
-				echo '<script>window.print()</script></body></html>';
-				exit;
-			}
+	}
+
+	public static function print_label() {
+		if ( empty( $_GET['vira_label'] ) || ! current_user_can( 'manage_woocommerce' ) ) {
+			return;
 		}
+		if ( empty( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'vira_label' ) ) {
+			return;
+		}
+		$o = wc_get_order( absint( $_GET['vira_label'] ) );
+		if ( ! $o ) {
+			return;
+		}
+		header( 'Content-Type: text/html; charset=utf-8' );
+		echo '<html><body style="font-family:Tahoma;padding:24px"><h1>#' . (int) $o->get_id() . '</h1>';
+		echo '<p style="font-size:28px;letter-spacing:4px">*' . (int) $o->get_id() . '*</p>';
+		echo '<p>' . wp_kses_post( $o->get_formatted_shipping_address() ? $o->get_formatted_shipping_address() : $o->get_formatted_billing_address() ) . '</p>';
+		echo '<p>' . esc_html( $o->get_meta( '_vira_ship_day' ) . ' ' . $o->get_meta( '_vira_ship_slot' ) ) . '</p>';
+		foreach ( $o->get_items() as $item ) {
+			echo '<p>' . esc_html( $item->get_name() . ' × ' . $item->get_quantity() ) . '</p>';
+		}
+		echo '<script>window.print()</script></body></html>';
+		exit;
 	}
 
 	public static function ajax_waitlist() {
@@ -703,6 +719,7 @@ class Vira_Creative {
 	}
 }
 
+if ( ! function_exists( 'vira_iran_weight_shipping_init' ) ) {
 add_action( 'woocommerce_shipping_init', 'vira_iran_weight_shipping_init' );
 function vira_iran_weight_shipping_init() {
 	if ( class_exists( 'Vira_Iran_Weight_Shipping' ) || ! class_exists( 'WC_Shipping_Method' ) ) {

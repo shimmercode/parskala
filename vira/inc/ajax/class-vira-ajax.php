@@ -29,10 +29,6 @@ class Ajax_Controller {
 		if ( vira_is_module_enabled( 'vira-loyalty-rewards' ) ) {
 			add_action( 'wp_ajax_vira_convert_points_coupon', array( $this, 'points' ) );
 		}
-		if ( vira_is_module_enabled( 'vira-guest-tracking' ) ) {
-			add_action( 'wp_ajax_vira_guest_track_order', array( $this, 'track' ) );
-			add_action( 'wp_ajax_nopriv_vira_guest_track_order', array( $this, 'track' ) );
-		}
 	}
 
 	private function verify() {

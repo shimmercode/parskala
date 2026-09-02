@@ -101,7 +101,7 @@ class Init {
 				continue;
 			}
 			require_once $file_path;
-			$class_full = '\Vira\Modules\\' . $config['class'];
+			$class_full = '\Vira\Modules\' . $config['class'];
 			if ( class_exists( $class_full ) && method_exists( $class_full, 'init' ) ) {
 				$class_full::init();
 				$this->active_modules[] = $slug;
