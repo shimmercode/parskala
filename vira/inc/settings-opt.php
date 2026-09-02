@@ -1,5 +1,4 @@
 <?php
-if ( ! class_exists( "CSF" ) ) { return; }
 
 function dina_product_attributes_array() {
 
@@ -70,7 +69,7 @@ foreach ($footer_posts as $key => $value) {
 CSF::createOptions($prefix, array(
 
     // framework title
-    'framework_title' => 'قالب ویرا (Vira)',
+    'framework_title' => 'پارس کالا',
     'framework_class' => 'prk_head',
 
     // menu settings
@@ -492,7 +491,7 @@ CSF::createSection($prefix, array(
             'type' => 'select',
             'default' => 'parskala',
             'options' => array(
-                'parskala' => esc_html__('قالب ویرا (Vira)', 'prk'),
+                'parskala' => esc_html__('پارس کالا', 'prk'),
                 'prk-plus' => esc_html__('پارس پلاس', 'prk'),
                 'prk-fashion' => esc_html__('پارس فشن', 'prk'),
                 'digikala' => esc_html__('دیجی کالا', 'prk'),

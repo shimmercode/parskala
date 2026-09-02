@@ -33,6 +33,8 @@ if ( ! function_exists( 'prk_option' ) ) {
             'footer_type'             => 'default',
             'footer_style_type'       => 'default',
             'theme-style'             => 'digikala',
+            'fonts'                   => 'IRANSans',
+            'fonts_admin'             => 'iransans',
             'prk_topbar_true'         => true,
             'prk_topbar_stikey'       => true,
             'header_search_true'      => true,
@@ -224,23 +226,5 @@ if ( ! function_exists( 'vira_swatches_list' ) ) {
 if ( ! function_exists( 'prk_grid_loop_columns_product' ) ) {
 	function prk_grid_loop_columns_product() {
 		return 'style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;"';
-	}
-}
-
-if ( ! function_exists( 'mobile_cheker' ) ) {
-	function mobile_cheker() {
-		return wp_is_mobile();
-	}
-}
-
-if ( ! function_exists( 'tablet_cheker' ) ) {
-	function tablet_cheker() {
-		return false;
-	}
-}
-
-if ( ! function_exists( 'theme_style' ) ) {
-	function theme_style() {
-		return (string) prk_option( 'theme-style', 'digikala' );
 	}
 }

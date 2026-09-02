@@ -39,11 +39,10 @@ function tablet_cheker(){
 
 // انتخاب تم قالب
 function theme_style(){
-  if (prk_option('theme-style')  ) {
+  if ( prk_option('theme-style')  ) {
       return prk_option('theme-style');
-  }else {
-    return false;
   }
+  return 'digikala';
 }
 
 
@@ -121,11 +120,10 @@ function product_seller_show(){
 
 
 function prk_footer_type(){
-  if (prk_option('footer_type') ) {
+  if ( prk_option('footer_type') ) {
       return prk_option('footer_type');
-  }else {
-    return false;
   }
+  return 'default';
 }
 
 function prk_footer_seen_true(){
